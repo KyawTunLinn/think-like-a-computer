@@ -1,4 +1,4 @@
-[← Back to Menu](pre-programming.md)
+
 
 # Chapter 5: Problem Solving & Debugging (ပြဿနာဖြေရှင်းခြင်းနန့် အမှားရှာခြင်း)
 
@@ -86,6 +86,6 @@ Programming မှာ အမှား (၂) မျိုး အတွေ့ရ�
 - **Errors**: Syntax Error (သဒ္ဒါမှား) vs Logic Error (တွေးခေါ်ပုံမှား)။
 
 
-[Next: Conclusion >](chapter_6_conclusion.md)
 
-[Back to Main Menu >](../README.md)
+
+ 

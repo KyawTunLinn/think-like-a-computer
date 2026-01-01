@@ -1,4 +1,4 @@
-[← Back to Main Menu](menu.md)
+
 
 # Applied System Design (လက်တွေ့ စနစ်ဒီဇိုင်းများ)
 
@@ -18,4 +18,4 @@ Code ရွီးရုံမကဘဲ၊ စနစ်တစ်ခုလုံ�
     *   Algorithms တိကို အသုံးပြုပနာ Facebook/TikTok ပိုင် Feed တစ်ခု တည်ဆောက်ပုံ။
 
 ---
-[Back to Main Menu >](../README.md)
+ 

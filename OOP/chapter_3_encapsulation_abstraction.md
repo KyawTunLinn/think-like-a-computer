@@ -85,6 +85,6 @@ End Class
 2. **Car Dashboard**: ကားမောင်းသူရေ အင်ဂျင်အလုပ်လုပ်ပုံကို သိစရာမလိုဘဲ စတီယာရင်နှင့် ဘရိတ်ကိုယာ သုံးရရေ။ အေအခြီအနီရေ OOP ဧ့ ဇာ Concept နှင့် ကိုက်ညီလဲ? (*Abstraction* or *Inheritance*?)
 
 
-[Next: Applied System Design >](../System%20Design/system_design.md)
 
-[Back to Main Menu >](../README.md)
+
+ 

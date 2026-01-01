@@ -1,4 +1,4 @@
-[← Back to System Design Index](system_design.md)
+
 
 # Chapter 3: Design a Traffic Light Controller (မီးပွိုင့်စနစ်)
 
@@ -68,6 +68,6 @@ END STATE
 1.  **Pedestrian Button**: လမ်းကူးလူက ခလုတ်ဖိလိုက်ကေ (Input) လက်ဟိဇာအရောင်ဖြစ်နီနီ မီးနီ (Red) ကို ချက်ချင်းပြောင်းချင်ရေ။ State Machine မှာ ဇာပိုင် Logic ထည့်ဖို့?
 2.  **Emergency Mode**: Ambulanceကား လာကေ ခလုတ်တစ်ခု ဖိလိုက်စာနန့် မီးအားလုံး အနီဖြစ်လားပနာ တန့်လားရပါဖို့။ ယင့်စာကို State အသစ် တစ်ခုအနီနန့် ထည့်ဖို့လား၊ ဟိပြီးသား State တိကိုရာ ပြင်ဖို့လား?
 
-[Next: Design a Social Feed >](chapter_4_social_feed.md)
 
-[Back to Main Menu >](../README.md)
+
+ 

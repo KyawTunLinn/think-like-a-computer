@@ -1,5 +1,3 @@
-[← Back to Algorithms Index](algorithms.md)
-
 # Chapter 2: Sorting Algorithms (အစဉ်လိုက် စီခြင်း Algorithms)
 
 အချက်အလက်တိကို စနစ်တကျ စီစီညီညီဖြစ်အောင် စီရေ Algorithms တိကို လေ့လာကတ်ပါဖို့။
@@ -148,7 +146,4 @@ END FUNCTION
 1. **Card Game**: ဖဲချပ်တိကို လက်ထဲတွင် ကိုင်ထားပြီး ငယ်စဉ်ကြီးလိုက် စီချင်သည်။ ဖဲချပ်အသစ်တစ်ချပ် ဆွဲတိုင်း နေရာမှန်တွင် ထိုးထည့်လိုက်ခြင်းသည် မည်သည့် Sorting Algorithm နှင့် တူသနည်း?
 2. **School Assembly**: ကျောင်းသားတိကို အရပ်အမြင့်အလိုက် တန်းစီခိုင်းသည်။ ဘေးချင်းယှဉ်ရပ်နီရေ ကျောင်းသားနှစ်ဦးကို ကြည့်ပြီး အရပ်ရှည်သူကို နောက်ပို့ရေနည်းလမ်းရေ ဇာ Algorithm လဲ?
 
-
-[Next: Graph Algorithms >](chapter_3_graph_algorithms.md)
-
-[Back to Main Menu >](../README.md)
+ 

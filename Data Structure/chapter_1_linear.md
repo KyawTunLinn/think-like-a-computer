@@ -1,4 +1,4 @@
-[← Back to Data Structures Index](data-structure.md)
+
 
 # Chapter 1: Linear Data Structures (အစဉ်လိုက် အချက်အလက် တည်ဆောက်ပုံများ)
 
@@ -104,6 +104,6 @@ Rear -> [ C ] -> [ B ] -> [ A ] -> Front
 2. **Browser History**: Web Browser ၏ "Back" ခလုတ်ကို ဖိလိုက်ကေ နောက်ဆုံးကြည့်ထားရေ စာမျက်နှာကို ပြန်ရောက်လားရေ။ အေစနစ်အတွက် *Stack* သို့မဟုတ် *Queue* မည်သည်ကို သုံးသင့်လဲ?
 
 
-[Next: Non-Linear Data Structures >](chapter_2_non_linear.md)
 
-[Back to Main Menu >](../README.md)
+
+ 

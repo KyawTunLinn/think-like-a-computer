@@ -1,4 +1,4 @@
-[← Back to Data Structures Index](data-structure.md)
+
 
 # Chapter 2: Non-Linear Data Structures (ကွန်ရက်ပုံစံ အချက်အလက် တည်ဆောက်ပုံများ)
 
@@ -131,4 +131,4 @@ Root -> [C] -> [A] -> [T] (End)
 2. **Friend Recommendation**: "မင်း သူငယ်ချင်း၏ သူငယ်ချင်းတိ" ကို ရှာဖွေပြီး မိတ်ဆက်ပီးချင်ရေ။ ဇာ Data Structure ကို သုံးဖို့လဲ?
 
 
-[Back to Main Menu >](../README.md)
+ 

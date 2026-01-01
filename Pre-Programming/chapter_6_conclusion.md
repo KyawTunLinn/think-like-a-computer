@@ -1,4 +1,4 @@
-[← Back to Menu](pre-programming.md)
+
 
 # Chapter 6: Conclusion & Next Steps (နိဂုံးနန့် ရှေ့ဆက်ရန်)
 
@@ -61,4 +61,4 @@ Programming သင်ယူရစွာ ခက်ခဲနိုင်ပါရ�
 - **Consistency**: နေ့စဉ် ပုံမှန် လေ့လာခြင်းက အဓိက။
 
 
-[Back to Main Menu >](../README.md)
+ 

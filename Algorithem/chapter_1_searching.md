@@ -1,5 +1,3 @@
-[← Back to Algorithms Index](algorithms.md)
-
 # Chapter 1: Searching Algorithms (ရှာဖွီခြင်း Algorithms)
 
 Information တိကို ရှာဖွေရာမှာ အသုံးပြုရေ အခြေခံ Algorithms တိကို လေ့လာကတ်ပါဖို့။
@@ -91,7 +89,4 @@ END
 1. **Phone Book**: ဖုန်းစာအုပ်ထဲတွင် "Mg Mg" ဆိုသော အမည်ကို ရှာချင်ရေ။ ဖုန်းစာအုပ်ရေ အက္ခရာစဉ်အလိုက် စီထားလျှင် *Linear Search* သို့မဟုတ် *Binary Search* ဇာကို သုံးသင့်လဲ?
 2. **Missing Sock**: အဝတ်ပုံထဲမှာ ပျောက်နီရေ ခြီစွပ်တစ်ဖက်ကို ရှာချင်ရေ။ *Linear Search* နှင့် တူလား၊ *Binary Search* နှင့် တူလား?
 
-
-[Next: Sorting Algorithms >](chapter_2_sorting.md)
-
-[Back to Main Menu >](../README.md)
+ 

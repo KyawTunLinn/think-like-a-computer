@@ -1,4 +1,4 @@
-[← Back to Menu](pre-programming.md)
+
 
 # Chapter 0: Introduction (နိဒါန်း)
 
@@ -51,6 +51,6 @@ Software Developer တစ်ယောက် ဖြစ်ဖို့အတွက
 - **Programming**: ကွန်ပျူတာကို တိကျရေ ညွှန်ကြားချက်တိ ပီးခြင်း။
 
 
-[Next: Chapter 1 >](chapter_1_cs_basics.md)
 
-[Back to Main Menu >](../README.md)
+
+ 

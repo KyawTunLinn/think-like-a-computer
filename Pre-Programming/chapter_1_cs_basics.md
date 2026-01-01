@@ -1,4 +1,4 @@
-[← Back to Menu](pre-programming.md)
+
 
 # Chapter 1: Computer Science Basics (ကွန်ပျူတာသိပ္ပံ အခြီခံ)
 
@@ -80,6 +80,6 @@ AI ဆိုစွာ ကွန်ပျူတာတိကို လူသား
 - **AI**: ကွန်ပျူတာကို လူပိုင် သင်ယူခိုင်းခြင်း (Machine Learning)။
 
 
-[Next: Chapter 2 >](chapter_2_logic_and_algorithms.md)
 
-[Back to Main Menu >](../README.md)
+
+ 

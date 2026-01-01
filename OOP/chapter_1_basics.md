@@ -78,6 +78,5 @@ End Class
 2. **Object Creation**: အထက်ပါ `Student` Class ကိုသုံးပြီး သင့်ကိုယ်ပိုင် Object (Instance) တစ်ခု တည်ဆောက်ပြပါ။
 
 
-[Next: Inheritance & Polymorphism >](chapter_2_inheritance_polymorphism.md)
 
-[Back to Main Menu >](../README.md)
+ 

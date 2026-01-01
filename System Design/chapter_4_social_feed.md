@@ -1,4 +1,4 @@
-[← Back to System Design Index](system_design.md)
+
 
 # Chapter 4: Design a Social News Feed (Facebook Feed Design)
 
@@ -69,6 +69,6 @@ END FUNCTION
 1.  **Video Recommendation**: TikTok မှာဆိုကေ Friend မဟုတ်တေလူတိနန့် Video တိကိုပါ ပြပီးရေ။ ယင့်စာကိုပါ Algorithm ဇာပိုင် ရွီးဖို့လဲ? (Hint: User ကြိုက်တေ Category တူစာတိကို ရှာဖို့လား?)
 2.  **Performance**: Post ပေါင်း ၁ သန်းလောက်ဟိကေ တစ်ခုချင်းတိုင်း လိုက်တွက်ဖို့ တဝကြာလားနိုင်ပါရေ။ ယင်အောင် ဇာပိုင်လုပ်ဖို့လဲ? (Hint: Algorithm အခန်းက Binary Search နန့်ဆိုင်ဖို့လား၊ Hash Map နန့်ဆိုင်မလား?)
 
-[Back to System Design Index >](system_design.md)
 
-[Back to Main Menu >](../README.md)
+
+ 

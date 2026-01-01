@@ -77,6 +77,5 @@ player2.play() // Output: Playing Movie 🎬
 2. **Shape Polymorphism**: `Shape` Class တွင် `draw()` method ရှိသည်။ `Circle` နှင့် `Square` ရို့ရေ `Shape` မှ ဆင်းသက်လာပြီး `draw()` ကို ခေါ်လိုက်လျှင် မတူညီရေ ပုံစံတိ (စက်ဝိုင်း၊ စတုရန်း) ဆွဲပြအောင် ဇာပိုင် စီစိုင်ဖို့လည်း?
 
 
-[Next: Encapsulation & Abstraction >](chapter_3_encapsulation_abstraction.md)
 
-[Back to Main Menu >](../README.md)
+ 

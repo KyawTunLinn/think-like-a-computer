@@ -1,4 +1,4 @@
-[← Back to Menu](pre-programming.md)
+
 
 # Chapter 4: Control Structures (ထိန်းချုပ်မှု တည်ဆောက်ပုံတိ)
 
@@ -93,6 +93,6 @@ END
 - **Iteration**: ထပ်ခါထပ်ခါ လုပ်ဆောင်ခြင်း (Loops)။
 
 
-[Next: Problem Solving >](chapter_5_problem_solving.md)
 
-[Back to Main Menu >](../README.md)
+
+ 

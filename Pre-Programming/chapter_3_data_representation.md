@@ -1,4 +1,4 @@
-[← Back to Menu](pre-programming.md)
+
 
 # Chapter 3: Data Representation (အချက်အလက်တိ သိမ်းဆည်းပုံ)
 
@@ -90,6 +90,6 @@ Programming မှာ အချက်အလက်တိကို ခေတ္တ
 - **Data Types**: Integer (ကိန်းပြည့်)၊ String (စာသား)၊ Boolean (အမှား/အမှန်)။
 
 
-[Next: Chapter 4 >](chapter_4_control_structures.md)
 
-[Back to Main Menu >](../README.md)
+
+ 

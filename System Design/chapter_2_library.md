@@ -1,4 +1,4 @@
-[← Back to System Design Index](system_design.md)
+
 
 # Chapter 2: Design a Library Management System (စာကြည့်တိုက်စနစ်)
 
@@ -54,6 +54,6 @@
 1.  **Undo Feature**: စာကြည့်တိုက်မှူးက စာအုပ်အချက်အလက်ကို ပြင်နီယင်း မှားဖျက်မိလားရေ။ "Undo" နှိပ်ပနာ အရင်အခြီအနီကို ပြန်လားချင်ကေ ဇာ Data Structure က အသင့်တော်ဆုံးလဲ? (Hint: Stack vs Queue)
 2.  **Books by Author**: စာရွီးဆရာ နာမည်တူ စာအုပ်တိကို စုထားချင်ရေ။ Array နန့် သိမ်းစွာ ကောင်းလား၊ Linked List နန့် ချိတ်ထားစွာ ကောင်းလား?
 
-[Next: Traffic Light Controller >](chapter_3_traffic_light.md)
 
-[Back to Main Menu >](../README.md)
+
+ 

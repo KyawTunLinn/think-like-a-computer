@@ -17,4 +17,4 @@ Blueprint နန့် အိမ်ဆောက်သလို၊ Class နန�
 ### [Chapter 3: Encapsulation & Abstraction](chapter_3_encapsulation_abstraction.md)
 အချက်အလက်ကို လုံခြုံစွာ သိမ်းဆည်းခြင်းနန့် မလိုရေ အစိတ်အပိုင်းတိကို ဖျောက်ထားခြင်း။
 
-[Back to Main Menu >](../README.md)
+ 

@@ -1,4 +1,4 @@
-[← Back to Menu](pre-programming.md)
+
 
 # Chapter 2: Logic & Algorithms (ယုတ္တိဗေဒနန့် လုပ်ထုံးလုပ်နည်းတိ)
 
@@ -88,6 +88,6 @@ END
 - **Tools**: Flowchart (ပုံ) နန့် Pseudocode (စာ)။
 
 
-[Next: Data Representation >](chapter_3_data_representation.md)
 
-[Back to Main Menu >](../README.md)
+
+ 

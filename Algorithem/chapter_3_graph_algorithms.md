@@ -1,5 +1,3 @@
-[← Back to Algorithms Index](algorithms.md)
-
 # Chapter 3: Graph Algorithms (ကွန်ရက် ရှာဖွီခြင်း Algorithms)
 
 Algorithm လောကမှာ အရေးအကြီးဆုံးဖြစ်ရေ Graph (ကွန်ရက်) တိကို ဇာပိုင် ရှာဖွီလဲ၊ အတိုဆုံးလမ်းကြောင်း ဇာပိုင်ရှာလဲ ဆိုစွာကို လေ့လာကတ်ပါဖို့။
@@ -100,4 +98,4 @@ END
 2. **Maze Solver**: ဝင်္ကပါထဲမှ ထွက်ပေါက်ရှာစာမာ လမ်းဆုံးရေအထိ ဆက်လားပြီးမှ ပြန်လှည့်စာရေ *BFS* လား၊ *DFS* လား?
 
 
-[Back to Main Menu >](../README.md)
+ 

@@ -1,4 +1,4 @@
-[← Back to System Design Index](system_design.md)
+
 
 # Chapter 1: Design an ATM System (ငွေထုတ်စက် ဒီဇိုင်းဆွဲခြင်း)
 
@@ -75,6 +75,6 @@ END CLASS
 1.  **Deposit Feature**: အကယ်လို့ ATM မှာ ငွေပြန်သွင်းလို့ရရေ (Deposit) စနစ် ပါလာဖို့ဆိုကေ ဇာ Class မှာ `deposit()` method ကို ထည့်သင့်လဲ? (`ATM` လား `BankAccount` လား? ဇာဖြစ်လို့လဲ?)
 2.  **Card Limit**: တစ်နိကို အများဆုံး ၅ သိန်းရာ ထုတ်လို့ရဖို့ဆိုရေ စည်းကမ်း (Limit) သတ်မှတ်ချင်ကေ Logic ကို ဇာနားမှာ ပြင်ရွီးဖို့လဲ?
 
-[Next: Design a Library >](chapter_2_library.md)
 
-[Back to Main Menu >](../README.md)
+
+ 
