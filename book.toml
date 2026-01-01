@@ -3,7 +3,7 @@ authors = ["ကျော်ထွန်းလင်း"]
 language = "my"
 multilingual = false
 src = "."
-title = "Thinking Like a Computer | ကွန်ပျူတာတစ်လုံးပိုင် တွီးခေါ်ခြင်း"
+title = "Thinking Like a Computer"
 
 [build]
 create-missing = false
