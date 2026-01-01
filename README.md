@@ -47,3 +47,14 @@
 
 ### [Applied System Design](System%20Design/system_design.md)
 *OOP, Data Structure, Algorithm တို့ကို ပေါင်းစပ်ပြီး လက်တွိ့ဘဝ စနစ်တိ (ATM, Library, Social Feed) တည်ဆောက်ပုံကို လေ့လာပါမည်။*
+
+## License
+This book is distributed under the [Creative Commons Attribution-ShareAlike 4.0 International License (CC BY-SA 4.0)](LICENSE).
+
+You are free to:
+- **Share** — copy and redistribute the material in any medium or format
+- **Adapt** — remix, transform, and build upon the material
+
+Under the following terms:
+- **Attribution** — You must give appropriate credit to the original author.
+- **ShareAlike** — If you remix, transform, or build upon the material, you must distribute your contributions under the same license as the original.
