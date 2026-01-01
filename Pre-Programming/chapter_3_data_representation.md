@@ -92,4 +92,4 @@ Programming မှာ အချက်အလက်တိကို ခေတ္တ
 
 [Next: Chapter 4 >](chapter_4_control_structures.md)
 
-[Back to Main Menu >](../menu.md)
+[Back to Main Menu >](../README.md)

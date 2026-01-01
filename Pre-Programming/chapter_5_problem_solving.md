@@ -88,4 +88,4 @@ Programming မှာ အမှား (၂) မျိုး အတွေ့ရ�
 
 [Next: Conclusion >](chapter_6_conclusion.md)
 
-[Back to Main Menu >](../menu.md)
+[Back to Main Menu >](../README.md)

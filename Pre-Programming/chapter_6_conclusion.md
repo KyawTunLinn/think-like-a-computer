@@ -61,4 +61,4 @@ Programming သင်ယူရစွာ ခက်ခဲနိုင်ပါရ�
 - **Consistency**: နေ့စဉ် ပုံမှန် လေ့လာခြင်းက အဓိက။
 
 
-[Back to Main Menu >](../menu.md)
+[Back to Main Menu >](../README.md)

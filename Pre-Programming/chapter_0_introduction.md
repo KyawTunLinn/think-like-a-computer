@@ -53,4 +53,4 @@ Software Developer တစ်ယောက် ဖြစ်ဖို့အတွက
 
 [Next: Chapter 1 >](chapter_1_cs_basics.md)
 
-[Back to Main Menu >](../menu.md)
+[Back to Main Menu >](../README.md)

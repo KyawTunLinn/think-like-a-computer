@@ -82,4 +82,4 @@ AI ဆိုစွာ ကွန်ပျူတာတိကို လူသား
 
 [Next: Chapter 2 >](chapter_2_logic_and_algorithms.md)
 
-[Back to Main Menu >](../menu.md)
+[Back to Main Menu >](../README.md)
