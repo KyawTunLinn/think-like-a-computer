@@ -1,7 +1,7 @@
 # ကွန်ပျူတာတစ်လုံးပိုင် တွေးခေါ်ခြင်း - ပရိုဂရမ်းမင်း လောဂျစ်နှင့် အခြေခံများ
 *(Think Like a Computer: The Complete Programming Logic)*
 ***ကျော်ထွန်းလင်း***
-***v0.1***
+***v0.2***
 
 ![Book Cover](assets/book_cover.png)
 
