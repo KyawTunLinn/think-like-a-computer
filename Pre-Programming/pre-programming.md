@@ -2,7 +2,7 @@
 
 ## A Gentle Introduction to Programming
 ***ကျော်ထွန်းလင်း***
-***v0.1***
+***v0.2***
 
 ## [၁။ နိဒါန်း (Introduction)](chapter_0_introduction.md)
 - **ကွန်ပျူတာဆိုစွာ ဇာလဲ?** (What is a Computer?)
