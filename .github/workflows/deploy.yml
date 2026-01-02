@@ -13,14 +13,11 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Install mdBook and mdbook-epub
+      - name: Install mdBook
         run: |
           mkdir mdbook
           curl -sSL https://github.com/rust-lang/mdBook/releases/download/v0.4.36/mdbook-v0.4.36-x86_64-unknown-linux-gnu.tar.gz | tar -xz -C mdbook
           echo "$PWD/mdbook" >> $GITHUB_PATH
-          # Install mdbook-epub
-          curl -L https://github.com/michael-f-bryan/mdbook-epub/releases/latest/download/mdbook-epub-x86_64-unknown-linux-gnu.tar.gz | tar -xz -C mdbook
-
 
       - name: Build Book
         run: mdbook build
