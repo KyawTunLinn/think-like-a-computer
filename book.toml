@@ -11,3 +11,6 @@ create-missing = false
 [output.html]
 git-repository-url = "https://github.com/KyawTunLinn/think-like-a-computer"
 additional-js = ["assets/visitor-tracking.js"]
+
+[output.epub]
+
