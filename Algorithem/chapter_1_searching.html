@@ -1,0 +1,314 @@
+<!DOCTYPE HTML>
+<html lang="my" class="light" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Chapter 1: Searching Algorithms - Thinking Like a Computer</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+    </head>
+    <body class="sidebar-visible no-js">
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('light')
+            html.classList.add(theme);
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var body = document.querySelector('body');
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../index.html">Introduction</a></li><li class="chapter-item expanded "><a href="../Pre-Programming/pre-programming.html"><strong aria-hidden="true">1.</strong> Pre-Programming</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../Pre-Programming/chapter_0_introduction.html"><strong aria-hidden="true">1.1.</strong> ၁။ နိဒါန်း (Introduction)</a></li><li class="chapter-item expanded "><a href="../Pre-Programming/chapter_1_cs_basics.html"><strong aria-hidden="true">1.2.</strong> ၂။ Computer Science Basics</a></li><li class="chapter-item expanded "><a href="../Pre-Programming/chapter_2_logic_and_algorithms.html"><strong aria-hidden="true">1.3.</strong> ၃။ Logic & Algorithms</a></li><li class="chapter-item expanded "><a href="../Pre-Programming/chapter_3_data_representation.html"><strong aria-hidden="true">1.4.</strong> ၄။ Data Representation</a></li><li class="chapter-item expanded "><a href="../Pre-Programming/chapter_4_control_structures.html"><strong aria-hidden="true">1.5.</strong> ၅။ Control Structures</a></li><li class="chapter-item expanded "><a href="../Pre-Programming/chapter_5_problem_solving.html"><strong aria-hidden="true">1.6.</strong> ၆။ Problem Solving & Debugging</a></li><li class="chapter-item expanded "><a href="../Pre-Programming/chapter_6_conclusion.html"><strong aria-hidden="true">1.7.</strong> ၇။ Conclusion & Next Steps</a></li></ol></li><li class="chapter-item expanded "><a href="../Data Structure/data-structure.html"><strong aria-hidden="true">2.</strong> Data Structures</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../Data Structure/chapter_1_linear.html"><strong aria-hidden="true">2.1.</strong> Chapter 1: Linear Data Structures</a></li><li class="chapter-item expanded "><a href="../Data Structure/chapter_2_non_linear.html"><strong aria-hidden="true">2.2.</strong> Chapter 2: Non-Linear Data Structures</a></li></ol></li><li class="chapter-item expanded "><a href="../Algorithem/algorithms.html"><strong aria-hidden="true">3.</strong> Algorithms</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../Algorithem/chapter_1_searching.html" class="active"><strong aria-hidden="true">3.1.</strong> Chapter 1: Searching Algorithms</a></li><li class="chapter-item expanded "><a href="../Algorithem/chapter_2_sorting.html"><strong aria-hidden="true">3.2.</strong> Chapter 2: Sorting Algorithms</a></li><li class="chapter-item expanded "><a href="../Algorithem/chapter_3_graph_algorithms.html"><strong aria-hidden="true">3.3.</strong> Chapter 3: Graph Algorithms</a></li></ol></li><li class="chapter-item expanded "><a href="../OOP/oop.html"><strong aria-hidden="true">4.</strong> Object Oriented Programming</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../OOP/chapter_1_basics.html"><strong aria-hidden="true">4.1.</strong> Chapter 1: Classes & Objects</a></li><li class="chapter-item expanded "><a href="../OOP/chapter_2_inheritance_polymorphism.html"><strong aria-hidden="true">4.2.</strong> Chapter 2: Inheritance & Polymorphism</a></li><li class="chapter-item expanded "><a href="../OOP/chapter_3_encapsulation_abstraction.html"><strong aria-hidden="true">4.3.</strong> Chapter 3: Encapsulation & Abstraction</a></li></ol></li><li class="chapter-item expanded "><a href="../System Design/system_design.html"><strong aria-hidden="true">5.</strong> Applied System Design</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../System Design/chapter_1_atm.html"><strong aria-hidden="true">5.1.</strong> Chapter 1: Design an ATM</a></li><li class="chapter-item expanded "><a href="../System Design/chapter_2_library.html"><strong aria-hidden="true">5.2.</strong> Chapter 2: Design a Library</a></li><li class="chapter-item expanded "><a href="../System Design/chapter_3_traffic_light.html"><strong aria-hidden="true">5.3.</strong> Chapter 3: Traffic Light Controller</a></li><li class="chapter-item expanded "><a href="../System Design/chapter_4_social_feed.html"><strong aria-hidden="true">5.4.</strong> Chapter 4: Social Media Feed</a></li></ol></li><li class="chapter-item expanded "><a href="../LICENSE.html">License</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Thinking Like a Computer</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        <a href="https://github.com/KyawTunLinn/think-like-a-computer" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="chapter-1-searching-algorithms-ရှာဖွီခြငး-algorithms"><a class="header" href="#chapter-1-searching-algorithms-ရှာဖွီခြငး-algorithms">Chapter 1: Searching Algorithms (ရှာဖွီခြင်း Algorithms)</a></h1>
+<p>Information တိကို ရှာဖွေရာမှာ အသုံးပြုရေ အခြေခံ Algorithms တိကို လေ့လာကတ်ပါဖို့။</p>
+<hr />
+<h2 id="1-linear-search-အစဉလိုက-ရှာဖွီခြငး"><a class="header" href="#1-linear-search-အစဉလိုက-ရှာဖွီခြငး">1. Linear Search (အစဉ်လိုက် ရှာဖွီခြင်း)</a></h2>
+<p><img src="illustration/linear_vs_binary_search.png" alt="Linear Search vs Binary Search" /></p>
+<p><strong>ယင်းက ဇာလဲ?</strong>
+စာအုပ်ပုံထဲမှာ ကိုယ်လိုချင်ရေ စာအုပ်ကို မတွိ့မချင်း တစ်အုပ်ပြီးတစ်အုပ် လိုက်ရှာရေ နည်းလမ်းပါ။ ရှာစရာရှိစွာ အကုန်လုံးကို အစကနီ အဆုံးထိ တစ်ခုချင်းစီ လိုက်စစ်ဆေးပါရေ။</p>
+<p><strong>လက်တွိ့ဘဝ ဥပမာ -</strong>
+အင်္ကျီဆိုင်မှာ ကိုယ်လိုချင်ရေ &quot;အနီရောင်တီရှပ်&quot; ကို ရှာရေအခါ၊ ချိတ်ထားရေ အင်္ကျီတိကို ထိပ်ဆုံးကနီစပြီး &quot;ဒါလား? မဟုတ်ဘူး.. ဒါလား? မဟုတ်ဘူး&quot; နန့် မတွိ့မချင်း လိုက်ကြည့်သပိုင်မျိုးပါ။</p>
+<p><strong>ဇာပိုင် အလုပ်လုပ်သလဲ?</strong></p>
+<ol>
+<li>ပထမဆုံး တစ်ခုကို ယူကြည့်ပါ။</li>
+<li>ကိုယ်ရှာချင်စွာ ဟုတ်လား?
+<ul>
+<li><strong>ဟုတ်ရေ</strong> ဆိုကေ တွိ့ဗျာယ်! (ပြီးပါယာ)</li>
+<li><strong>မဟုတ်ဘူး</strong> ဆိုကေ နောက်တစ်ခုကို ဆက်ကြည့်မယ်။</li>
+</ul>
+</li>
+<li>အကုန်ကုန်ရေအထိ မတွိ့ကေ &quot;မရှိပါ&quot; လို့ ပြန်ပြောပါ။</li>
+</ol>
+<p><strong>Visualization:</strong></p>
+<pre><code class="language-text">Target: 30 (၃၀ ကို ရှာမေ)
+[ 10 ] -&gt; [ 50 ] -&gt; [ 30 ] -&gt; တွိ့ပြီ!
+ စစ်မည်    စစ်မည်    စစ်မည်
+</code></pre>
+<p><strong>Pseudocode:</strong></p>
+<pre><code class="language-text">START
+  FOR EACH Item IN List
+    IF Item == Target THEN
+      RETURN Index (Found)
+    END IF
+  END FOR
+  RETURN -1 (Not Found)
+END
+</code></pre>
+<hr />
+<h2 id="2-binary-search-ထကဝကခွဲ-ရှာဖွေခြငး"><a class="header" href="#2-binary-search-ထကဝကခွဲ-ရှာဖွေခြငး">2. Binary Search (ထက်ဝက်ခွဲ ရှာဖွေခြင်း)</a></h2>
+<p><strong>ယင်းက ဇာလဲ?</strong>
+ဒါကတော့ ပိုယင်ရေ နည်းလမ်းပါ။ ယေလည်း Data တိက <strong>အစဉ်လိုက် စီထားပြီးသား (Sorted)</strong> ဖြစ်မှ သုံးလို့ရပါဖို့။ ရှာရဖို့ အပိုင်းအခြားကို ထက်ဝက်စီ ချိုးပြီး ရှာစွာပါ။</p>
+<p><strong>လက်တွိ့ဘဝ ဥပမာ -</strong>
+၁ ကနီ ၁၀၀ ကြား ဂဏန်းတစ်ခု စဉ်းစားထားပါ။ ကျွန်တော်က ၅၀ လို့ ခန့်မှန်းလိုက်မေ။</p>
+<ul>
+<li>မင်းက &quot;၅၀ ထက်ကြီးရေ&quot; လို့ပြောကေ ၁-၅၀ ထိ ဂဏန်းတိကို ကျွန်တော် ထပ်ရှာစရာ မလိုဗျာယ်။ ၅၁-၁၀၀ ကြားကိုရာ ဆက်ရှာမေ။</li>
+<li>ဒီပိုင်နည်းနန့် မလိုအပ်ရေ ထက်ဝက်ကို ဖယ်ထုတ်လိုက်စွာကြောင့် တဝယင်ပါရေ။</li>
+</ul>
+<p><strong>ဇာပိုင် အလုပ်လုပ်သလဲ?</strong></p>
+<ol>
+<li>အလယ်တည့်တည့်က Data ကို ရွီးလိုက်ပါ။</li>
+<li>ကိုယ်ရှာချင်စွာနန့် တူလား?
+<ul>
+<li>တူကေ တွိ့ဗျာယ်!</li>
+<li>ကိုယ်ရှာချင်စွာက <strong>ပိုကြီးနီကေ</strong> ညာဘက်ခြမ်း (ဂဏန်းကြီးရေဘက်) ကို ဆက်ရှာပါ။</li>
+<li>ကိုယ်ရှာချင်စွာက <strong>ပိုငယ်နီကေ</strong> ဘယ်ဘက်ခြမ်း (ဂဏန်းငယ်ရေဘက်) ကို ဆက်ရှာပါ။</li>
+</ul>
+</li>
+<li>မတွိ့မချင်း ထက်ဝက်စီ ခွဲပြီး ရှာလားပါ။</li>
+</ol>
+<p><strong>Pseudocode:</strong></p>
+<pre><code class="language-text">START
+  Left = 0, Right = Length - 1
+  WHILE Left &lt;= Right
+    Mid = (Left + Right) / 2
+    IF Array[Mid] == Target THEN
+      RETURN Mid (Found)
+    ELSE IF Target &lt; Array[Mid] THEN
+      Right = Mid - 1
+    ELSE
+      Left = Mid + 1
+    END IF
+  END WHILE
+  RETURN -1 (Not Found)
+END
+</code></pre>
+<hr />
+<h2 id="သငခနးစာ-အကျဉးချုပ"><a class="header" href="#သငခနးစာ-အကျဉးချုပ">သင်ခန်းစာ အကျဉ်းချုပ်</a></h2>
+<ul>
+<li><strong>Linear Search</strong>: တစ်ခုချင်းစီ လိုက်ရှာရေ နည်းလမ်း (နှေးရေ)။</li>
+<li><strong>Binary Search</strong>: ထက်ဝက်စီ ခွဲရှာရေ နည်းလမ်း (ယင်ရေ၊ Data စီထားဖို့လိုရေ)။</li>
+</ul>
+<h2 id="လေကျငခနး-exercises"><a class="header" href="#လေကျငခနး-exercises">လေ့ကျင့်ခန်း (Exercises)</a></h2>
+<ol>
+<li><strong>Phone Book</strong>: ဖုန်းစာအုပ်ထဲတွင် &quot;Mg Mg&quot; ဆိုသော အမည်ကို ရှာချင်ရေ။ ဖုန်းစာအုပ်ရေ အက္ခရာစဉ်အလိုက် စီထားလျှင် <em>Linear Search</em> သို့မဟုတ် <em>Binary Search</em> ဇာကို သုံးသင့်လဲ?</li>
+<li><strong>Missing Sock</strong>: အဝတ်ပုံထဲမှာ ပျောက်နီရေ ခြီစွပ်တစ်ဖက်ကို ရှာချင်ရေ။ <em>Linear Search</em> နှင့် တူလား၊ <em>Binary Search</em> နှင့် တူလား?</li>
+</ol>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../Algorithem/algorithms.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="../Algorithem/chapter_2_sorting.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../Algorithem/algorithms.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="../Algorithem/chapter_2_sorting.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../elasticlunr.min.js"></script>
+        <script src="../mark.min.js"></script>
+        <script src="../searcher.js"></script>
+
+        <script src="../clipboard.min.js"></script>
+        <script src="../highlight.js"></script>
+        <script src="../book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </div>
+    </body>
+</html>

@@ -1,0 +1,12 @@
+[book]
+authors = ["ကျော်ထွန်းလင်း"]
+language = "my"
+multilingual = false
+src = "."
+title = "Thinking Like a Computer"
+
+[build]
+create-missing = false
+
+[output.html]
+git-repository-url = "https://github.com/KyawTunLinn/think-like-a-computer"

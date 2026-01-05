@@ -1,0 +1,349 @@
+<!DOCTYPE HTML>
+<html lang="my" class="light" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Pre-Programming - Thinking Like a Computer</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+    </head>
+    <body class="sidebar-visible no-js">
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('light')
+            html.classList.add(theme);
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var body = document.querySelector('body');
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../index.html">Introduction</a></li><li class="chapter-item expanded "><a href="../Pre-Programming/pre-programming.html" class="active"><strong aria-hidden="true">1.</strong> Pre-Programming</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../Pre-Programming/chapter_0_introduction.html"><strong aria-hidden="true">1.1.</strong> ၁။ နိဒါန်း (Introduction)</a></li><li class="chapter-item expanded "><a href="../Pre-Programming/chapter_1_cs_basics.html"><strong aria-hidden="true">1.2.</strong> ၂။ Computer Science Basics</a></li><li class="chapter-item expanded "><a href="../Pre-Programming/chapter_2_logic_and_algorithms.html"><strong aria-hidden="true">1.3.</strong> ၃။ Logic & Algorithms</a></li><li class="chapter-item expanded "><a href="../Pre-Programming/chapter_3_data_representation.html"><strong aria-hidden="true">1.4.</strong> ၄။ Data Representation</a></li><li class="chapter-item expanded "><a href="../Pre-Programming/chapter_4_control_structures.html"><strong aria-hidden="true">1.5.</strong> ၅။ Control Structures</a></li><li class="chapter-item expanded "><a href="../Pre-Programming/chapter_5_problem_solving.html"><strong aria-hidden="true">1.6.</strong> ၆။ Problem Solving & Debugging</a></li><li class="chapter-item expanded "><a href="../Pre-Programming/chapter_6_conclusion.html"><strong aria-hidden="true">1.7.</strong> ၇။ Conclusion & Next Steps</a></li></ol></li><li class="chapter-item expanded "><a href="../Data Structure/data-structure.html"><strong aria-hidden="true">2.</strong> Data Structures</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../Data Structure/chapter_1_linear.html"><strong aria-hidden="true">2.1.</strong> Chapter 1: Linear Data Structures</a></li><li class="chapter-item expanded "><a href="../Data Structure/chapter_2_non_linear.html"><strong aria-hidden="true">2.2.</strong> Chapter 2: Non-Linear Data Structures</a></li></ol></li><li class="chapter-item expanded "><a href="../Algorithem/algorithms.html"><strong aria-hidden="true">3.</strong> Algorithms</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../Algorithem/chapter_1_searching.html"><strong aria-hidden="true">3.1.</strong> Chapter 1: Searching Algorithms</a></li><li class="chapter-item expanded "><a href="../Algorithem/chapter_2_sorting.html"><strong aria-hidden="true">3.2.</strong> Chapter 2: Sorting Algorithms</a></li><li class="chapter-item expanded "><a href="../Algorithem/chapter_3_graph_algorithms.html"><strong aria-hidden="true">3.3.</strong> Chapter 3: Graph Algorithms</a></li></ol></li><li class="chapter-item expanded "><a href="../OOP/oop.html"><strong aria-hidden="true">4.</strong> Object Oriented Programming</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../OOP/chapter_1_basics.html"><strong aria-hidden="true">4.1.</strong> Chapter 1: Classes & Objects</a></li><li class="chapter-item expanded "><a href="../OOP/chapter_2_inheritance_polymorphism.html"><strong aria-hidden="true">4.2.</strong> Chapter 2: Inheritance & Polymorphism</a></li><li class="chapter-item expanded "><a href="../OOP/chapter_3_encapsulation_abstraction.html"><strong aria-hidden="true">4.3.</strong> Chapter 3: Encapsulation & Abstraction</a></li></ol></li><li class="chapter-item expanded "><a href="../System Design/system_design.html"><strong aria-hidden="true">5.</strong> Applied System Design</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../System Design/chapter_1_atm.html"><strong aria-hidden="true">5.1.</strong> Chapter 1: Design an ATM</a></li><li class="chapter-item expanded "><a href="../System Design/chapter_2_library.html"><strong aria-hidden="true">5.2.</strong> Chapter 2: Design a Library</a></li><li class="chapter-item expanded "><a href="../System Design/chapter_3_traffic_light.html"><strong aria-hidden="true">5.3.</strong> Chapter 3: Traffic Light Controller</a></li><li class="chapter-item expanded "><a href="../System Design/chapter_4_social_feed.html"><strong aria-hidden="true">5.4.</strong> Chapter 4: Social Media Feed</a></li></ol></li><li class="chapter-item expanded "><a href="../LICENSE.html">License</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Thinking Like a Computer</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        <a href="https://github.com/KyawTunLinn/think-like-a-computer" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="pre-programming-course"><a class="header" href="#pre-programming-course">Pre-Programming Course:</a></h1>
+<h2 id="a-gentle-introduction-to-programming"><a class="header" href="#a-gentle-introduction-to-programming">A Gentle Introduction to Programming</a></h2>
+<p><em><strong>ကျော်ထွန်းလင်း</strong></em>
+<em><strong>v0.2</strong></em></p>
+<h2 id="၁-နိဒါနး-introduction"><a class="header" href="#၁-နိဒါနး-introduction"><a href="chapter_0_introduction.html">၁။ နိဒါန်း (Introduction)</a></a></h2>
+<ul>
+<li><strong>ကွန်ပျူတာဆိုစွာ ဇာလဲ?</strong> (What is a Computer?)
+<ul>
+<li>ဟာ့ဒ်ဝဲလ် (Hardware) နန့် ဆော့ဖ်ဝဲလ် (Software) အခြေခံ</li>
+</ul>
+</li>
+<li><strong>ပရိုဂရမ်းမင်းဆိုစွာ ဇာလဲ?</strong> (What is Programming?)
+<ul>
+<li>လူနန့် ကွန်ပျူတာ ဆက်သွယ်ပုံ (Human-Computer Interaction)</li>
+<li>ပရိုဂရမ်းမင်း ဘာသာစကားတိ (Programming Languages Overview)</li>
+</ul>
+</li>
+<li><strong>ဇာဖြစ်လို့ သင်ယူသင့်လဲ?</strong> (Why Learn Programming?)
+<ul>
+<li>ပြဿနာဖြေရှင်းနိုင်စွမ်း (Problem Solving Skills)</li>
+<li>Career Opportunities</li>
+</ul>
+</li>
+</ul>
+<h2 id="၁-computer-science-basics-ကွနပျူတာသိပပံ-အခြီခံ"><a class="header" href="#၁-computer-science-basics-ကွနပျူတာသိပပံ-အခြီခံ"><a href="chapter_1_cs_basics.html">၁။ Computer Science Basics (ကွန်ပျူတာသိပ္ပံ အခြီခံ)</a></a></h2>
+<ul>
+<li><strong>Hardware</strong>: ကွန်ပျူတာ အစိတ်အပိုင်းတိအကြောင်း</li>
+<li><strong>Networking</strong>: အင်တာနက်နန့် ချိတ်ဆက်မှုတိအကြောင်း</li>
+<li><strong>AI (Artificial Intelligence)</strong>: စက်ရုပ်နန့် ဉာဏ်ရည်တုအကြောင်း</li>
+<li><strong>Programming</strong>: ကွန်ပျူတာကို ခိုင်းစီဖို့ ကုဒ်ရွီးခြင်း</li>
+</ul>
+<h2 id="၂-logic--algorithms-ယုတတိဗေဒနန-လုပထုံးလုပနညးတိ"><a class="header" href="#၂-logic--algorithms-ယုတတိဗေဒနန-လုပထုံးလုပနညးတိ"><a href="chapter_2_logic_and_algorithms.html">၂။ Logic &amp; Algorithms (ယုတ္တိဗေဒနန့် လုပ်ထုံးလုပ်နည်းတိ)</a></a></h2>
+<ul>
+<li><strong>Thinking Like a Computer</strong> (ကွန်ပျူတာတစ်လုံးပိုင် တွေးခေါ်ခြင်း)
+<ul>
+<li>Decomposition (ပြဿနာကို ခွဲခြမ်းစိတ်ဖြာခြင်း)</li>
+<li>Pattern Recognition (ပုံစံတူ ရှာဖွေခြင်း)</li>
+</ul>
+</li>
+<li><strong>Algorithms ဆိုစွာ ဇာလဲ?</strong> (What is an Algorithm?)
+<ul>
+<li>နိစဉ်ဘဝ ဥပမာတိ (Breakfast ပြင်ဆင်ခြင်း၊ လမ်းလျှောက်ခြင်း)</li>
+</ul>
+</li>
+<li><strong>Flowcharts &amp; Pseudocode</strong>
+<ul>
+<li>Flowchart ဆွဲနည်း အခြေခံ (Symbols and Usage)</li>
+<li>Pseudocode ရေးသားနည်း</li>
+</ul>
+</li>
+<li><strong>Logic Gates အခြီခံ</strong> (Optional)
+<ul>
+<li>AND, OR, NOT gates ရှင်းလင်းချက်</li>
+</ul>
+</li>
+</ul>
+<h2 id="၃-data-representation-အချကအလကတိ-သိမးဆညးပုံ"><a class="header" href="#၃-data-representation-အချကအလကတိ-သိမးဆညးပုံ"><a href="chapter_3_data_representation.html">၃။ Data Representation (အချက်အလက်တိ သိမ်းဆည်းပုံ)</a></a></h2>
+<ul>
+<li><strong>Binary System</strong> (သုည နန့် တစ်)
+<ul>
+<li>Decimal vs Binary</li>
+<li>Data Sizes (Bit, Byte, KB, MB, GB)</li>
+<li>စာလုံးတိ သိမ်းဆည်းပုံ (ASCII, Unicode)</li>
+</ul>
+</li>
+<li><strong>Variables &amp; Data Types</strong> (ကိန်းရှင်တိနန့် အချက်အလက်အမျိုးအစားတိ)
+<ul>
+<li>Numbers (Integers, Floats)</li>
+<li>Text (Strings)</li>
+<li>Booleans (True/False)</li>
+</ul>
+</li>
+</ul>
+<h2 id="၄-control-structures-ထိနးချုပမှု-တညဆောကပုံတိ"><a class="header" href="#၄-control-structures-ထိနးချုပမှု-တညဆောကပုံတိ"><a href="chapter_4_control_structures.html">၄။ Control Structures (ထိန်းချုပ်မှု တည်ဆောက်ပုံတိ)</a></a></h2>
+<ul>
+<li><strong>Sequence</strong> (အစဉ်လိုက် လုပ်ဆောင်ခြင်း)</li>
+<li><strong>Selection / Conditionals</strong> (ရွီးချယ်လုပ်ဆောင်ခြင်း)
+<ul>
+<li>If, Else If, Else statements</li>
+<li>နှိုင်းယှဉ်မှုတိ (Greater than, Less than, Equal to)</li>
+</ul>
+</li>
+<li><strong>Iteration / Loops</strong> (ထပ်ခါထပ်ခါ လုပ်ဆောင်ခြင်း)
+<ul>
+<li>For Loops</li>
+<li>While Loops</li>
+<li>Infinite Loops ဆိုစွာ ဇာလဲ?</li>
+</ul>
+</li>
+</ul>
+<h2 id="၅-problem-solving--debugging-ပြဿနာဖြေရှငးခြငးနန-အမှားရှာခြငး"><a class="header" href="#၅-problem-solving--debugging-ပြဿနာဖြေရှငးခြငးနန-အမှားရှာခြငး"><a href="chapter_5_problem_solving.html">၅။ Problem Solving &amp; Debugging (ပြဿနာဖြေရှင်းခြင်းနန့် အမှားရှာခြင်း)</a></a></h2>
+<ul>
+<li><strong>ပြဿနာတစ်ခုကို ဇာပိုင် ချဉ်းကပ်ဖို့လဲ?</strong>
+<ul>
+<li>Input, Process, Output (IPO Model)</li>
+</ul>
+</li>
+<li><strong>အမှားရှာခြင်း (Debugging)</strong>
+<ul>
+<li>Syntax Errors vs Semantic Errors</li>
+<li>အမှားရှာရာမှာ သုံးဖို့ နည်းလမ်းတိ (Print debugging, structured walkthroughs)</li>
+</ul>
+</li>
+</ul>
+<h2 id="၆-နိဂုံးနန-ရှေဆကရန-conclusion--next-steps"><a class="header" href="#၆-နိဂုံးနန-ရှေဆကရန-conclusion--next-steps"><a href="chapter_6_conclusion.html">၆။ နိဂုံးနန့် ရှေ့ဆက်ရန် (Conclusion &amp; Next Steps)</a></a></h2>
+<ul>
+<li><strong>ဇာဘာသာစကားကို စလေ့လာသင့်လဲ?</strong> (Choosing your first language)
+<ul>
+<li>Python? JavaScript? Java? C++?</li>
+</ul>
+</li>
+<li><strong>Programming Ethics</strong> (ကျင့်ဝတ်တိ)
+<ul>
+<li>Do No Harm, Privacy, Honesty</li>
+</ul>
+</li>
+<li><strong>ဆက်လက်လေ့လာဖို့ အရင်းအမြစ်တိ</strong></li>
+</ul>
+<hr />
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../index.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="../Pre-Programming/chapter_0_introduction.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="../Pre-Programming/chapter_0_introduction.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../elasticlunr.min.js"></script>
+        <script src="../mark.min.js"></script>
+        <script src="../searcher.js"></script>
+
+        <script src="../clipboard.min.js"></script>
+        <script src="../highlight.js"></script>
+        <script src="../book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </div>
+    </body>
+</html>

@@ -1,0 +1,2275 @@
+<!DOCTYPE HTML>
+<html lang="my" class="light" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Thinking Like a Computer</title>
+        <meta name="robots" content="noindex">
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+    </head>
+    <body class="sidebar-visible no-js">
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('light')
+            html.classList.add(theme);
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var body = document.querySelector('body');
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="index.html">Introduction</a></li><li class="chapter-item expanded "><a href="Pre-Programming/pre-programming.html"><strong aria-hidden="true">1.</strong> Pre-Programming</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="Pre-Programming/chapter_0_introduction.html"><strong aria-hidden="true">1.1.</strong> ၁။ နိဒါန်း (Introduction)</a></li><li class="chapter-item expanded "><a href="Pre-Programming/chapter_1_cs_basics.html"><strong aria-hidden="true">1.2.</strong> ၂။ Computer Science Basics</a></li><li class="chapter-item expanded "><a href="Pre-Programming/chapter_2_logic_and_algorithms.html"><strong aria-hidden="true">1.3.</strong> ၃။ Logic & Algorithms</a></li><li class="chapter-item expanded "><a href="Pre-Programming/chapter_3_data_representation.html"><strong aria-hidden="true">1.4.</strong> ၄။ Data Representation</a></li><li class="chapter-item expanded "><a href="Pre-Programming/chapter_4_control_structures.html"><strong aria-hidden="true">1.5.</strong> ၅။ Control Structures</a></li><li class="chapter-item expanded "><a href="Pre-Programming/chapter_5_problem_solving.html"><strong aria-hidden="true">1.6.</strong> ၆။ Problem Solving & Debugging</a></li><li class="chapter-item expanded "><a href="Pre-Programming/chapter_6_conclusion.html"><strong aria-hidden="true">1.7.</strong> ၇။ Conclusion & Next Steps</a></li></ol></li><li class="chapter-item expanded "><a href="Data Structure/data-structure.html"><strong aria-hidden="true">2.</strong> Data Structures</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="Data Structure/chapter_1_linear.html"><strong aria-hidden="true">2.1.</strong> Chapter 1: Linear Data Structures</a></li><li class="chapter-item expanded "><a href="Data Structure/chapter_2_non_linear.html"><strong aria-hidden="true">2.2.</strong> Chapter 2: Non-Linear Data Structures</a></li></ol></li><li class="chapter-item expanded "><a href="Algorithem/algorithms.html"><strong aria-hidden="true">3.</strong> Algorithms</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="Algorithem/chapter_1_searching.html"><strong aria-hidden="true">3.1.</strong> Chapter 1: Searching Algorithms</a></li><li class="chapter-item expanded "><a href="Algorithem/chapter_2_sorting.html"><strong aria-hidden="true">3.2.</strong> Chapter 2: Sorting Algorithms</a></li><li class="chapter-item expanded "><a href="Algorithem/chapter_3_graph_algorithms.html"><strong aria-hidden="true">3.3.</strong> Chapter 3: Graph Algorithms</a></li></ol></li><li class="chapter-item expanded "><a href="OOP/oop.html"><strong aria-hidden="true">4.</strong> Object Oriented Programming</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="OOP/chapter_1_basics.html"><strong aria-hidden="true">4.1.</strong> Chapter 1: Classes & Objects</a></li><li class="chapter-item expanded "><a href="OOP/chapter_2_inheritance_polymorphism.html"><strong aria-hidden="true">4.2.</strong> Chapter 2: Inheritance & Polymorphism</a></li><li class="chapter-item expanded "><a href="OOP/chapter_3_encapsulation_abstraction.html"><strong aria-hidden="true">4.3.</strong> Chapter 3: Encapsulation & Abstraction</a></li></ol></li><li class="chapter-item expanded "><a href="System Design/system_design.html"><strong aria-hidden="true">5.</strong> Applied System Design</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="System Design/chapter_1_atm.html"><strong aria-hidden="true">5.1.</strong> Chapter 1: Design an ATM</a></li><li class="chapter-item expanded "><a href="System Design/chapter_2_library.html"><strong aria-hidden="true">5.2.</strong> Chapter 2: Design a Library</a></li><li class="chapter-item expanded "><a href="System Design/chapter_3_traffic_light.html"><strong aria-hidden="true">5.3.</strong> Chapter 3: Traffic Light Controller</a></li><li class="chapter-item expanded "><a href="System Design/chapter_4_social_feed.html"><strong aria-hidden="true">5.4.</strong> Chapter 4: Social Media Feed</a></li></ol></li><li class="chapter-item expanded "><a href="LICENSE.html">License</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Thinking Like a Computer</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        <a href="https://github.com/KyawTunLinn/think-like-a-computer" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="ကွနပျူတာတစလုံးပိုင-တွီးခေါခြငး---ပရိုဂရမးမငး-လောဂျစနှင-အခြီခံ-v02"><a class="header" href="#ကွနပျူတာတစလုံးပိုင-တွီးခေါခြငး---ပရိုဂရမးမငး-လောဂျစနှင-အခြီခံ-v02">ကွန်ပျူတာတစ်လုံးပိုင် တွီးခေါ်ခြင်း - ပရိုဂရမ်းမင်း လောဂျစ်နှင့် အခြီခံ (v0.2)</a></h1>
+<p><em>(Think Like a Computer: The Complete Programming Logic)</em>
+<em><strong>ကျော်ထွန်းလင်း</strong></em></p>
+<p><img src="assets/book_cover.png" alt="Book Cover" /> </p>
+<p>ဂါရဝပြုပါရေ </p>
+<h2 id="စာအုပအကြောငး"><a class="header" href="#စာအုပအကြောငး">စာအုပ်အကြောင်း</a></h2>
+<p>အေစာအုပ်က ကွန်ပျူတာ ပရိုဂရမ်းမင်းကို အခြီခံကစလို့ လေ့လာချင်ရေ လူတိအဖို့ ရွီးသားထားစွာ ဖြစ်ပါရေ။ ကွန်ပျူတာတစ်လုံးပိုင် ဇာပိုင်တွီးခေါ်ဖို့လဲ၊ အချက်အလက်တိကို ဇာပိုင် စနစ်တကျ သိမ်းဆည်းဖို့လဲဆိုစွာတိကို သင်ကြားပီးလားပါဖို့။ ဘာသာစကားတစ်ခုကို အလွတ်ကျက်မှတ်နီဖို့အစား Logic နန့် Theory သဘောတရားတိကို ဦးစားပီး တင်ပြထားပါရေ။</p>
+<h2 id="အသူရို-ဖတသငလဲ"><a class="header" href="#အသူရို-ဖတသငလဲ">အသူရို့ ဖတ်သင့်လဲ?</a></h2>
+<ul>
+<li>ကွန်ပျူတာ ပရိုဂရမ်းမင်းကို စိတ်ဝင်စားရေ လူငယ်တိ။</li>
+<li>Computer Science (CS) ဘာသာရပ်ကို စလေ့လာနီရေ ကျောင်းသား/သူ တိ။</li>
+<li>Logic နန့် Algorithm ကို သေချာ နားလည်ချင်သူတိ။</li>
+</ul>
+<h2 id="ရရှိနိုငဖို-အကျိုးကျေးဇူးတိ"><a class="header" href="#ရရှိနိုငဖို-အကျိုးကျေးဇူးတိ">ရရှိနိုင်ဖို့ အကျိုးကျေးဇူးတိ</a></h2>
+<ul>
+<li><strong>အခြီခံခိုင်မာခြင်း</strong>: Programming ဘာသာစကားတစ်ခုကို စလေ့လာရေအချိန်မှာ အခက်အခဲမဟိဘဲ သဘောတရားကိုအယင် နားလည်လာနိုင်ပါဖို့။</li>
+<li><strong>တွေးခေါ်ပုံပြောင်းလဲခြင်း</strong>: ပြဿနာတစ်ခုကို ကွန်ပျူတာတစ်လုံးပိုင် စနစ်တကျ ခွဲခြမ်းစိတ်ဖြာပြီး ဖြေရှင်းတတ်လာပါဖို့ (Computational Thinking)။</li>
+<li><strong>လက်တွိ့အသုံးချနိုင်ခြင်း</strong>: သီအိုရီသက်သက်မဟုတ်ဘဲ လက်တွိ့လုပ်ငန်းခွင်မှာသုံးရေ ATM, Social Media စနစ်တိကိုပါ ကိုယ်တိုင် အခြီနိန်ပေါ်မူတည်ပနာ စဉ်းစားတည်ဆောက်တတ်လာပါဖို့။</li>
+</ul>
+<h2 id="လေလာဖို-လမးညွှနချက"><a class="header" href="#လေလာဖို-လမးညွှနချက">လေ့လာဖို့ လမ်းညွှန်ချက်</a></h2>
+<ul>
+<li><strong>အစိုင်လိုက်လေ့လာပါ</strong>: Pre-Programming ကနိန်စလို့ Data Structures ၊ Algorithms ၊ OOP ၊ ပြီးခါမှ System Design ကို လေ့လာပါ။</li>
+<li><strong>လေ့ကျင့်ခန်းတိ လုပ်ပါ</strong>: သင်ခန်းစာ တစ်ခုပြီးတိုင်း ကိုယ်တိုင် စိုင်းစားပနာ လေ့ကျင့်ခန်းတိကို ဖြေဆိုပါ။</li>
+<li><strong>ပြန်လည်သုံးသပ်ပါ</strong>: နားမလည်စွာဟိက ရှေ့သင်ခန်းစာတိကို ပြန်ဖတ်ပနာ သဘောတရားကို သေချာအောင် လုပ်ပါ။</li>
+</ul>
+<p>သင်ခန်းစာတိကို ရွီးချယ်ပါ။</p>
+<h2 id="စာအုပအချက"><a class="header" href="#စာအုပအချက">စာအုပ်အချက်</a></h2>
+<h3 id="pre-programming"><a class="header" href="#pre-programming"><a href="Pre-Programming/pre-programming.html">Pre-Programming</a></a></h3>
+<p><em>ကွန်ပျူတာဆိုစွာ ဇာလဲ?</em></p>
+<h3 id="data-structures"><a class="header" href="#data-structures"><a href="Data%20Structure/data-structure.html">Data Structures</a></a></h3>
+<p><em>အချက်အလက်တိ သိမ်းဆည်းပုံ</em></p>
+<h3 id="algorithms"><a class="header" href="#algorithms"><a href="Algorithem/algorithms.html">Algorithms</a></a></h3>
+<p><em>ပြဿနာဖြေရှင်းခြင်းနန့် အမှားရှာခြင်း</em></p>
+<h3 id="object-oriented-programming"><a class="header" href="#object-oriented-programming"><a href="OOP/oop.html">Object Oriented Programming</a></a></h3>
+<p><em>Class, Object နန့် OOP သဘောတရားတိ</em></p>
+<h3 id="applied-system-design"><a class="header" href="#applied-system-design"><a href="System%20Design/system_design.html">Applied System Design</a></a></h3>
+<p><em>OOP, Data Structure, Algorithm တို့ကို ပေါင်းစပ်ပြီး လက်တွိ့ဘဝ စနစ်တိ (ATM, Library, Social Feed) တည်ဆောက်ပုံကို လေ့လာပါမည်။</em></p>
+<h2 id="license"><a class="header" href="#license">License</a></h2>
+<p>This book is distributed under the <a href="LICENSE">Creative Commons Attribution-ShareAlike 4.0 International License (CC BY-SA 4.0)</a>.</p>
+<p>You are free to:</p>
+<ul>
+<li><strong>Share</strong> — copy and redistribute the material in any medium or format</li>
+<li><strong>Adapt</strong> — remix, transform, and build upon the material</li>
+</ul>
+<p>Under the following terms:</p>
+<ul>
+<li><strong>Attribution</strong> — You must give appropriate credit to the original author.</li>
+<li><strong>ShareAlike</strong> — If you remix, transform, or build upon the material, you must distribute your contributions under the same license as the original.</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="pre-programming-course"><a class="header" href="#pre-programming-course">Pre-Programming Course:</a></h1>
+<h2 id="a-gentle-introduction-to-programming"><a class="header" href="#a-gentle-introduction-to-programming">A Gentle Introduction to Programming</a></h2>
+<p><em><strong>ကျော်ထွန်းလင်း</strong></em>
+<em><strong>v0.2</strong></em></p>
+<h2 id="၁-နိဒါနး-introduction"><a class="header" href="#၁-နိဒါနး-introduction"><a href="Pre-Programming/chapter_0_introduction.html">၁။ နိဒါန်း (Introduction)</a></a></h2>
+<ul>
+<li><strong>ကွန်ပျူတာဆိုစွာ ဇာလဲ?</strong> (What is a Computer?)
+<ul>
+<li>ဟာ့ဒ်ဝဲလ် (Hardware) နန့် ဆော့ဖ်ဝဲလ် (Software) အခြေခံ</li>
+</ul>
+</li>
+<li><strong>ပရိုဂရမ်းမင်းဆိုစွာ ဇာလဲ?</strong> (What is Programming?)
+<ul>
+<li>လူနန့် ကွန်ပျူတာ ဆက်သွယ်ပုံ (Human-Computer Interaction)</li>
+<li>ပရိုဂရမ်းမင်း ဘာသာစကားတိ (Programming Languages Overview)</li>
+</ul>
+</li>
+<li><strong>ဇာဖြစ်လို့ သင်ယူသင့်လဲ?</strong> (Why Learn Programming?)
+<ul>
+<li>ပြဿနာဖြေရှင်းနိုင်စွမ်း (Problem Solving Skills)</li>
+<li>Career Opportunities</li>
+</ul>
+</li>
+</ul>
+<h2 id="၁-computer-science-basics-ကွနပျူတာသိပပံ-အခြီခံ"><a class="header" href="#၁-computer-science-basics-ကွနပျူတာသိပပံ-အခြီခံ"><a href="Pre-Programming/chapter_1_cs_basics.html">၁။ Computer Science Basics (ကွန်ပျူတာသိပ္ပံ အခြီခံ)</a></a></h2>
+<ul>
+<li><strong>Hardware</strong>: ကွန်ပျူတာ အစိတ်အပိုင်းတိအကြောင်း</li>
+<li><strong>Networking</strong>: အင်တာနက်နန့် ချိတ်ဆက်မှုတိအကြောင်း</li>
+<li><strong>AI (Artificial Intelligence)</strong>: စက်ရုပ်နန့် ဉာဏ်ရည်တုအကြောင်း</li>
+<li><strong>Programming</strong>: ကွန်ပျူတာကို ခိုင်းစီဖို့ ကုဒ်ရွီးခြင်း</li>
+</ul>
+<h2 id="၂-logic--algorithms-ယုတတိဗေဒနန-လုပထုံးလုပနညးတိ"><a class="header" href="#၂-logic--algorithms-ယုတတိဗေဒနန-လုပထုံးလုပနညးတိ"><a href="Pre-Programming/chapter_2_logic_and_algorithms.html">၂။ Logic &amp; Algorithms (ယုတ္တိဗေဒနန့် လုပ်ထုံးလုပ်နည်းတိ)</a></a></h2>
+<ul>
+<li><strong>Thinking Like a Computer</strong> (ကွန်ပျူတာတစ်လုံးပိုင် တွေးခေါ်ခြင်း)
+<ul>
+<li>Decomposition (ပြဿနာကို ခွဲခြမ်းစိတ်ဖြာခြင်း)</li>
+<li>Pattern Recognition (ပုံစံတူ ရှာဖွေခြင်း)</li>
+</ul>
+</li>
+<li><strong>Algorithms ဆိုစွာ ဇာလဲ?</strong> (What is an Algorithm?)
+<ul>
+<li>နိစဉ်ဘဝ ဥပမာတိ (Breakfast ပြင်ဆင်ခြင်း၊ လမ်းလျှောက်ခြင်း)</li>
+</ul>
+</li>
+<li><strong>Flowcharts &amp; Pseudocode</strong>
+<ul>
+<li>Flowchart ဆွဲနည်း အခြေခံ (Symbols and Usage)</li>
+<li>Pseudocode ရေးသားနည်း</li>
+</ul>
+</li>
+<li><strong>Logic Gates အခြီခံ</strong> (Optional)
+<ul>
+<li>AND, OR, NOT gates ရှင်းလင်းချက်</li>
+</ul>
+</li>
+</ul>
+<h2 id="၃-data-representation-အချကအလကတိ-သိမးဆညးပုံ"><a class="header" href="#၃-data-representation-အချကအလကတိ-သိမးဆညးပုံ"><a href="Pre-Programming/chapter_3_data_representation.html">၃။ Data Representation (အချက်အလက်တိ သိမ်းဆည်းပုံ)</a></a></h2>
+<ul>
+<li><strong>Binary System</strong> (သုည နန့် တစ်)
+<ul>
+<li>Decimal vs Binary</li>
+<li>Data Sizes (Bit, Byte, KB, MB, GB)</li>
+<li>စာလုံးတိ သိမ်းဆည်းပုံ (ASCII, Unicode)</li>
+</ul>
+</li>
+<li><strong>Variables &amp; Data Types</strong> (ကိန်းရှင်တိနန့် အချက်အလက်အမျိုးအစားတိ)
+<ul>
+<li>Numbers (Integers, Floats)</li>
+<li>Text (Strings)</li>
+<li>Booleans (True/False)</li>
+</ul>
+</li>
+</ul>
+<h2 id="၄-control-structures-ထိနးချုပမှု-တညဆောကပုံတိ"><a class="header" href="#၄-control-structures-ထိနးချုပမှု-တညဆောကပုံတိ"><a href="Pre-Programming/chapter_4_control_structures.html">၄။ Control Structures (ထိန်းချုပ်မှု တည်ဆောက်ပုံတိ)</a></a></h2>
+<ul>
+<li><strong>Sequence</strong> (အစဉ်လိုက် လုပ်ဆောင်ခြင်း)</li>
+<li><strong>Selection / Conditionals</strong> (ရွီးချယ်လုပ်ဆောင်ခြင်း)
+<ul>
+<li>If, Else If, Else statements</li>
+<li>နှိုင်းယှဉ်မှုတိ (Greater than, Less than, Equal to)</li>
+</ul>
+</li>
+<li><strong>Iteration / Loops</strong> (ထပ်ခါထပ်ခါ လုပ်ဆောင်ခြင်း)
+<ul>
+<li>For Loops</li>
+<li>While Loops</li>
+<li>Infinite Loops ဆိုစွာ ဇာလဲ?</li>
+</ul>
+</li>
+</ul>
+<h2 id="၅-problem-solving--debugging-ပြဿနာဖြေရှငးခြငးနန-အမှားရှာခြငး"><a class="header" href="#၅-problem-solving--debugging-ပြဿနာဖြေရှငးခြငးနန-အမှားရှာခြငး"><a href="Pre-Programming/chapter_5_problem_solving.html">၅။ Problem Solving &amp; Debugging (ပြဿနာဖြေရှင်းခြင်းနန့် အမှားရှာခြင်း)</a></a></h2>
+<ul>
+<li><strong>ပြဿနာတစ်ခုကို ဇာပိုင် ချဉ်းကပ်ဖို့လဲ?</strong>
+<ul>
+<li>Input, Process, Output (IPO Model)</li>
+</ul>
+</li>
+<li><strong>အမှားရှာခြင်း (Debugging)</strong>
+<ul>
+<li>Syntax Errors vs Semantic Errors</li>
+<li>အမှားရှာရာမှာ သုံးဖို့ နည်းလမ်းတိ (Print debugging, structured walkthroughs)</li>
+</ul>
+</li>
+</ul>
+<h2 id="၆-နိဂုံးနန-ရှေဆကရန-conclusion--next-steps"><a class="header" href="#၆-နိဂုံးနန-ရှေဆကရန-conclusion--next-steps"><a href="Pre-Programming/chapter_6_conclusion.html">၆။ နိဂုံးနန့် ရှေ့ဆက်ရန် (Conclusion &amp; Next Steps)</a></a></h2>
+<ul>
+<li><strong>ဇာဘာသာစကားကို စလေ့လာသင့်လဲ?</strong> (Choosing your first language)
+<ul>
+<li>Python? JavaScript? Java? C++?</li>
+</ul>
+</li>
+<li><strong>Programming Ethics</strong> (ကျင့်ဝတ်တိ)
+<ul>
+<li>Do No Harm, Privacy, Honesty</li>
+</ul>
+</li>
+<li><strong>ဆက်လက်လေ့လာဖို့ အရင်းအမြစ်တိ</strong></li>
+</ul>
+<hr />
+<div style="break-before: page; page-break-before: always;"></div><h1 id="chapter-0-introduction-နိဒါနး"><a class="header" href="#chapter-0-introduction-နိဒါနး">Chapter 0: Introduction (နိဒါန်း)</a></h1>
+<p>ဂါရဝပါ။ &quot;Pre-Programming Course&quot; ကနိန် ကြိုဆိုပါရေ။ ကွန်ပျူတာပရိုဂရမ်းမင်းကို လေ့လာချင်ပနာ ဇာကစရဖို့လဲ မသိဖြစ်နီလူတိ၊ အခြေခံ သဘောတရားတိကို သေချာ နားလည်ချင်လူတိအတွက် ရည်ရွယ်ပါရေ။</p>
+<p>ကျောင်းမှာ၊ လုပ်ငန်းခွင်မှာ ကွန်ပျူတာကို နိတိုင်း သုံးနီကေလေ့၊ ယင်းက ကွန်ပျူတာက ဇာပိုင် အလုပ်လုပ်လဲဆိုစွာကို သတိမထားမိတတ်ကတ်ပါ။ ဒေအခန်းမှာ ကွန်ပျူတာနန့် ပတ်သက်တေ အခြီခံအကျဆုံး အချက်တိကို မိတ်ဆက်ပီးလားပါဖို့။</p>
+<h2 id="၂-ကွနပျူတာဆိုစွာ-ဇာလဲ-what-is-a-computer"><a class="header" href="#၂-ကွနပျူတာဆိုစွာ-ဇာလဲ-what-is-a-computer">၂။ ကွန်ပျူတာဆိုစွာ ဇာလဲ? (What is a Computer?)</a></h2>
+<p>ရှင်းရှင်းပြောရဖို့ဆိုကေ ကွန်ပျူတာဆိုစွာ အချက်အလက်တိ (Data) ကို လက်ခံယူရေ၊ တွက်ချက်ခွဲခြမ်းစိတ်ဖြာရေ (Process)၊ ပြီးကေ ရလဒ် (Output) ကို ပြန်ထုတ်ပီးရေ စက်ပစ္စည်း ဖြစ်ပါရေ။</p>
+<p>ကွန်ပျူတာစနစ်တစ်ခုမှာ အဓိက အပိုင်း (၂) ပိုင်း ပါဝင်ပါရေ -</p>
+<p><img src="Pre-Programming/./illustration/hardware_software_analogy.png" alt="Hardware vs Software Analogy" /></p>
+<ol>
+<li><strong>Hardware (ဟာ့ဒ်ဝဲလ်)</strong>: ကိုင်တွယ်ထိတွိလို့ရတဲ့ အပိုင်းတိ ဖြစ်ပါရေ။ (ဥပမာ - Keyboard၊ Mouse၊ Screen၊ CPU၊ Hard Disk)။ ဒေဒါကို လူတစ်ယောက်ရဲ့ &quot;ခန္ဓာကိုယ်&quot; နန့် တူရေလို့ မြင်ယောင်ကြည့်နိုင်ပါရေ။</li>
+<li><strong>Software (ဆော့ဖ်ဝဲလ်)</strong>: ကိုင်တွယ်လို့မရရေ ညွှန်ကြားချက်တိ ဖြစ်ပါရေ။ (ဥပမာ - Windows၊ Phone Apps၊ Games)။ လူတစ်ယောက်ရဲ့ &quot;စိတ် သို့မဟုတ် အတွေးအခေါ်&quot; နန့် တူပါရေ။</li>
+</ol>
+<p>ခန္ဓာကိုယ် (Hardware) ဇာလောက်သန်မာသန်မာ၊ စိတ် (Software) မရှိကေ ဇာမှလုပ်လို့မရပါ။ Software တိကို ဖန်တီးပီးစွာကတော့ Programming ပဲ ဖြစ်ပါရေ။</p>
+<h2 id="၂-ပရိုဂရမးမငးဆိုစွာ-ဇာလဲ-what-is-programming"><a class="header" href="#၂-ပရိုဂရမးမငးဆိုစွာ-ဇာလဲ-what-is-programming">၂။ ပရိုဂရမ်းမင်းဆိုစွာ ဇာလဲ? (What is Programming?)</a></h2>
+<p>Programming ဆိုစွာ ကွန်ပျူတာကို အလုပ်ခိုင်းခြင်း (Giving Instructions) ပါ။</p>
+<p>ကွန်ပျူတာတိက အလိုလျောက် သိတတ်နားလည်ရေ အသိဉာဏ် မရှိပါ။ သူရို့ကို ဇာလုပ်ရဖို့လဲ ဆိုစွာ <strong>တိတိကျကျ</strong> ခိုင်းစေရပါရေ။ လူအချင်းချင်း စကားပြောရေပိုင် ပြောလို့မရပါ။ ကွန်ပျူတာ နားလည်တဲ့ ဘာသာစကား (Language) နန့် ပြောရပါရေ။</p>
+<p><img src="Pre-Programming/./illustration/human_computer_interaction.png" alt="Human Computer Interaction" /></p>
+<p><em>ဥပမာ</em> - နိုင်ငံခြားသား တစ်ယောက်ကို လမ်းညွှန်ချင်ရေ ဆိုပါဖိ။ သူနားလည်တဲ့ ဘာသာစကား (ဥပမာ - အင်္ဂလိပ်စကား) နန့် ပြောမှရဖို့။ အေပိုင်ပါယာ၊ ကွန်ပျူတာနန့် ဆက်သွယ်ဖို့ Python, JavaScript, C++ စရေ <strong>Programming Languages</strong> တိကို သုံးရပါရေ။</p>
+<h2 id="၃-ဇာဖြစလို-သငယူသငလဲ-why-learn-programming"><a class="header" href="#၃-ဇာဖြစလို-သငယူသငလဲ-why-learn-programming">၃။ ဇာဖြစ်လို့ သင်ယူသင့်လဲ? (Why Learn Programming?)</a></h2>
+<p>Software Developer တစ်ယောက် ဖြစ်ဖို့အတွက်ပဲ သင်ယူရစွာ မဟုတ်ပါ။</p>
+<ul>
+<li><strong>Logic &amp; Problem Solving</strong>: ပြဿနာတိကို စနစ်တကျ တွေးခေါ် ဖြေရှင်းတတ်လာဖို့။</li>
+<li><strong>Automation</strong>: ပျင်းဖို့ကောင်းပနာ ထပ်ခါထပ်ခါ လုပ်နီရရေ အလုပ်တိကို ကွန်ပျူတာနန့် အစားထိုး ခိုင်းစီနိုင်ဖို့။</li>
+<li><strong>Creation</strong>: ကိုယ်ပိုင် Website၊ App သို့မဟုတ် Game တိကို ဖန်တီးနိုင်ပါဖို့။</li>
+<li><strong>Career Opportunities</strong>: နည်းပညာခေတ်မှာ အလုပ်အကိုင် အခွင့်အလမ်းတိ အများကြီး ရှိပါရေ။</li>
+</ul>
+<hr />
+<p><strong>လေ့ကျင့်ခန်း (Exercise):</strong></p>
+<ol>
+<li><strong>Goal Setting</strong>: မိတ်ဆွေ ဇာကြောင့် Programming သင်ချင်တာလဲ? သင်ပြီးရင် ဇာလုပ်ချင်လဲ? (ဥပမာ - Website ရွီးချင်လို့) စာအုပ်ထဲမှာ ချရေးပါ။</li>
+<li><strong>Hardware Hunt</strong>: ပတ်ဝန်းကျင်မှာ Software နန့် မောင်းနှင်နီရေ ပစ္စည်း ၃ ခုကို ရှာဖွေပြီး စာရင်းပြုစုပါ။ (ဥပမာ - စမတ်ဖုန်း၊ TV remote၊ မီးပွိုင့်)။</li>
+</ol>
+<h2 id="သငခနးစာ-အကျဉးချုပ"><a class="header" href="#သငခနးစာ-အကျဉးချုပ">သင်ခန်းစာ အကျဉ်းချုပ်</a></h2>
+<ul>
+<li><strong>Computer</strong>: အချက်အလက် (Input) ကို ယူပြီး၊ တွက်ချက် (Process) ပနာ၊ ရလဒ် (Output) ထုတ်ပီးရေ စက်။</li>
+<li><strong>Hardware &amp; Software</strong>: ခန္ဓာကိုယ်နန့် စိတ် ပမာ တူညီပါရေ။</li>
+<li><strong>Programming</strong>: ကွန်ပျူတာကို တိကျရေ ညွှန်ကြားချက်တိ ပီးခြင်း။</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="chapter-1-computer-science-basics-ကွနပျူတာသိပပံ-အခြီခံ"><a class="header" href="#chapter-1-computer-science-basics-ကွနပျူတာသိပပံ-အခြီခံ">Chapter 1: Computer Science Basics (ကွန်ပျူတာသိပ္ပံ အခြီခံ)</a></h1>
+<p>Computer Science ဆိုစွာ ကွန်ပျူတာတိအကြောင်းရာ မဟုတ်ပါ။ <strong>ပြဿနာဖြေရှင်းခြင်း (Problem Solving)</strong> အကြောင်း ဖြစ်ပါရေ။ အဓိက အပိုင်းကြီး (၄) ခု ပါဝင်ပါရေ။</p>
+<p><img src="Pre-Programming/./illustration/computer_science_umbrella.png" alt="Computer Science Umbrella" /></p>
+<h2 id="၁-hardware-ကွနပျူတာ-အစိတအပိုငးတိအကြောငး"><a class="header" href="#၁-hardware-ကွနပျူတာ-အစိတအပိုငးတိအကြောငး">၁။ Hardware: ကွန်ပျူတာ အစိတ်အပိုင်းတိအကြောင်း</a></h2>
+<p>Hardware ဆိုစွာ ကွန်ပျူတာဧ့ ကိုင်တွယ်လို့ရရေ အစိတ်အပိုင်းတိ ဖြစ်ပါရေ။ ကွန်ပျူတာ Hardware လုပ်ဆောင်ပုံကို လူခန္ဓာကိုယ်နန့် နှိုင်းယှဉ်ကြည့်နိုင်ပါရေ။</p>
+<p><img src="Pre-Programming/./illustration/computer_anatomy_analogy.png" alt="Computer Anatomy Analogy" /></p>
+<div class="table-wrapper"><table><thead><tr><th style="text-align: left">လူခန္ဓာကိုယ် (Human)</th><th style="text-align: left">ကွန်ပျူတာ (Computer)</th><th style="text-align: left">လုပ်ဆောင်ချက် (Function)</th></tr></thead><tbody>
+<tr><td style="text-align: left"><strong>မျက်လုံး၊ နား</strong></td><td style="text-align: left"><strong>Input Devices</strong> (Keyboard, Mouse, Camera)</td><td style="text-align: left">အချက်အလက်တိကို လက်ခံယူဖို့ (See/Hear)</td></tr>
+<tr><td style="text-align: left"><strong>ဦးနှောက်</strong></td><td style="text-align: left"><strong>CPU</strong> (Central Processing Unit)</td><td style="text-align: left">တွက်ချက်ဖို့၊ စဉ်းစားဖို့ (Think/Process)</td></tr>
+<tr><td style="text-align: left"><strong>စာအုပ်/မှတ်ဉာဏ်</strong></td><td style="text-align: left"><strong>Storage</strong> (Hard Disk / SSD)</td><td style="text-align: left">အရာရာကို မှတ်သားထားဖို့ (Remember)</td></tr>
+<tr><td style="text-align: left"><strong>ပါးစပ်၊ လက်</strong></td><td style="text-align: left"><strong>Output Devices</strong> (Monitor, Printer, Speaker)</td><td style="text-align: left">ရလဒ်ကို ပြောပြဖို့၊ ပြသဖို့ (Speak/Act)</td></tr>
+</tbody></table>
+</div>
+<h2 id="၂-networking-အငတာနကနန-ချိတဆကမှုတိအကြောငး"><a class="header" href="#၂-networking-အငတာနကနန-ချိတဆကမှုတိအကြောငး">၂။ Networking: အင်တာနက်နန့် ချိတ်ဆက်မှုတိအကြောင်း</a></h2>
+<p>ကွန်ပျူတာတစ်လုံးတည်း အလုပ်လုပ်စွာထက်၊ ကွန်ပျူတာအချင်းချင်း ချိတ်ဆက်ပနာ အလုပ်လုပ်ကေ ပိုထိရောက်ပါရေ။</p>
+<p><img src="Pre-Programming/./illustration/network_lan_wan.png" alt="LAN vs WAN" /></p>
+<ul>
+<li>
+<p><strong>LAN (Local Area Network)</strong>: <strong>&quot;ရွာကလေး&quot;</strong> တစ်ရွာနန့် တူပါရေ။ အိမ်တစ်အိမ် (သို့) ရုံးခန်းတစ်ခု အနားမှာရှိရေ ကွန်ပျူတာတိ အချင်းချင်း ချိတ်ဆက်ထားစွာပါ။ (ဥပမာ - ရုံးမှာ Printer မျှဝေသုံးစွဲခြင်း)</p>
+</li>
+<li>
+<p><strong>WAN (Wide Area Network)</strong>: <strong>&quot;ကမ္ဘာကြီး&quot;</strong> နန့် တူပါရေ။ တစ်ကမ္ဘာလုံးက မြို့တိ၊ နိုင်ငံတိကို ချိတ်ဆက်ထားစွာပါ။ (ဥပမာ - Internet)</p>
+</li>
+<li>
+<p><strong>Client-Server Concept</strong>: စားသောက်ဆိုင် ဥပမာပိုင်ပါ။</p>
+<ul>
+<li><strong>Client (Customer)</strong>: မှာယူလူ (ဖုန်း/ကွန်ပျူတာ)</li>
+<li><strong>Server (Chef)</strong>: ချက်ပြုတ်ပီးလူ (Websites, Apps သိမ်းထားရာ နေရာ)</li>
+</ul>
+</li>
+</ul>
+<h2 id="၃-ai-artificial-intelligence-စကရုပနန-ဉာဏရညတုအကြောငး"><a class="header" href="#၃-ai-artificial-intelligence-စကရုပနန-ဉာဏရညတုအကြောငး">၃။ AI (Artificial Intelligence): စက်ရုပ်နန့် ဉာဏ်ရည်တုအကြောင်း</a></h2>
+<p>AI ဆိုစွာ ကွန်ပျူတာတိကို လူသားတိပိုင် တွေးခေါ်တတ်အောင် သင်ကြားပီးတဲ့ နည်းပညာ ဖြစ်ပါရေ။ ဇာပိုင် သင်ကြားပီးလဲ ဆိုစွာကို အောက်ပါပုံမှာ လေ့လာကြည့်ပါနန့်။</p>
+<p><img src="Pre-Programming/./illustration/ai_training_analogy.png" alt="AI Training Analogy" /></p>
+<h3 id="လူနန-ai-သငယူပုံ-နှိုငးယှဉချက"><a class="header" href="#လူနန-ai-သငယူပုံ-နှိုငးယှဉချက">လူနန့် AI သင်ယူပုံ နှိုင်းယှဉ်ချက်</a></h3>
+<ol>
+<li>
+<p><strong>Human Learning (လူသားများ သင်ယူခြင်း)</strong>:</p>
+<ul>
+<li>အချေတစ်ယောက်ကို မိဘက &quot;ဒါက ခွေးလေး&quot;၊ &quot;ဒါက ကြောင်လေး&quot; လို့ ရုပ်ပုံကဒ်တိ ပြပြီး သင်ပီးရပါရေ။ အချေက အကြိမ်ကြိမ် ကြည့်ပြီး မှတ်သားပါရေ။</li>
+</ul>
+</li>
+<li>
+<p><strong>Machine Learning (စက်တိကို သင်ယူခြင်း)</strong>:</p>
+<ul>
+<li><strong>Step 1 (Data Input)</strong>: ကွန်ပျူတာကို ခွီးပုံပေါင်း (၁၀၀၀)၊ ကြောင်ပုံပေါင်း (၁၀၀၀) ထည့်သွင်းပီးရပါရေ။</li>
+<li><strong>Step 2 (Training)</strong>: ကွန်ပျူတာက ယင်းပုံတိရဲ့ ကွာခြားချက် (ဥပမာ - နားရွက်ပုံစံ၊ နှာဖူးပုံစံ) ကို သူ့အလိုလို ရှာဖွေ လေ့လာပါရေ။</li>
+<li><strong>Step 3 (Prediction)</strong>: လေ့လာပြီးလားရေအခါ၊ ပုံသစ်တစ်ပုံ ပြလိုက်ကေ &quot;အေစာ ခွီးပါ&quot; လို့ တိတိကျကျ ဖြေနိုင်လာပါရေ။</li>
+</ul>
+</li>
+</ol>
+<ul>
+<li><strong>Applications</strong>: ဖုန်းထဲက Face ID (မျက်နှာကို မှတ်မိစွာ)၊ Google Translate (ဘာသာပြန်စွာ)၊ Driverless Cars (မောင်းသူမဲ့ ကားတိ)။</li>
+</ul>
+<h2 id="၄-programming-ကွနပျူတာကို-ခိုငးစီဖို-ကုဒရွီးခြငး"><a class="header" href="#၄-programming-ကွနပျူတာကို-ခိုငးစီဖို-ကုဒရွီးခြငး">၄။ Programming: ကွန်ပျူတာကို ခိုင်းစီဖို့ ကုဒ်ရွီးခြင်း</a></h2>
+<p>အထက်ပါ Hardware, Network, AI တိ အားလုံး အလုပ်လုပ်ဖို့အတွက် ညွှန်ကြားချက်တိ လိုပါရေ။ ယင်းညွှန်ကြားချက်တိကို ရွီးသားခြင်းကို Programming လို့ ခေါ်ပါရေ။</p>
+<h3 id="hardware-vs-software-နှိုငးယှဉချက"><a class="header" href="#hardware-vs-software-နှိုငးယှဉချက">Hardware vs Software (နှိုင်းယှဉ်ချက်)</a></h3>
+<div class="table-wrapper"><table><thead><tr><th style="text-align: left">Feature</th><th style="text-align: left">Hardware (ဟာ့ဒ်ဝဲလ်)</th><th style="text-align: left">Software (ဆော့ဖ်ဝဲလ်)</th></tr></thead><tbody>
+<tr><td style="text-align: left"><strong>Definition</strong></td><td style="text-align: left">ထိတွေ့ကိုင်တွယ်၍ရသော အစိတ်အပိုင်းများ</td><td style="text-align: left">ကွန်ပျူတာကို ခိုင်းစီရေညွှန်ကြားချက်တိ</td></tr>
+<tr><td style="text-align: left"><strong>Example</strong></td><td style="text-align: left">Monitor, Keyboard, CPU</td><td style="text-align: left">Windows, Browser, Games</td></tr>
+<tr><td style="text-align: left"><strong>Nature</strong></td><td style="text-align: left">ပျက်စီးယိုယွင်းနိုင်သည် (Wear out)</td><td style="text-align: left">ဟောင်းမလားပါ၊ Update လုပ်၍ရသည်</td></tr>
+<tr><td style="text-align: left"><strong>Type</strong></td><td style="text-align: left">Physical (ရုပ်ပိုင်းဆိုင်ရာ)</td><td style="text-align: left">Logical (ယုတ္တိပိုင်းဆိုင်ရာ)</td></tr>
+</tbody></table>
+</div>
+<ul>
+<li><strong>Low-level Language</strong>: စက်နန့် နီးစပ်တဲ့ ဘာသာစကား (ဥပမာ - 0s and 1s, Assembly)။ ရွီးရခက်ပါရေ။</li>
+<li><strong>High-level Language</strong>: လူနားလည်လွယ်တဲ့ ဘာသာစကား (ဥပမာ - Python, JavaScript,Java)။ ကျွန်တော်တို့ လေ့လာဖို့က ဒေ High-level languages တိ ဖြစ်ပါရေ။</li>
+</ul>
+<hr />
+<p><strong>လေ့ကျင့်ခန်း (Exercise):</strong>
+<strong>Hardware Hunt</strong> - သင့်ပတ်ဝန်းကျင် (အခန်းထဲ) ကို ကြည့်ပြီး အောက်ပါတို့ကို ရှာဖွေပါ။</p>
+<ol>
+<li><strong>Input Device</strong> ၂ ခု (ဥပမာ - Phone Touchscreen, ...)</li>
+<li><strong>Output Device</strong> ၂ ခု (ဥပမာ - Earbuds, ...)</li>
+</ol>
+<hr />
+<p><em>Computer Science ဟာ ပင်လယ်ပြင်ကြီးပိုင် ကျယ်ပါရေ။ အခုဖော်ပြခစွာကတော့ ငပလီကမ်းခြေက သဲပွင့်ချေတိလောက်ရာ ရှိပါသိရေ။</em></p>
+<h2 id="သငခနးစာ-အကျဉးချုပ-1"><a class="header" href="#သငခနးစာ-အကျဉးချုပ-1">သင်ခန်းစာ အကျဉ်းချုပ်</a></h2>
+<ul>
+<li><strong>Components</strong>: Input, Output, CPU, Storage (မှတ်ဉာဏ်)။</li>
+<li><strong>Network</strong>: LAN (ရွာ) နန့် WAN (ကမ္ဘာ)။</li>
+<li><strong>AI</strong>: ကွန်ပျူတာကို လူပိုင် သင်ယူခိုင်းခြင်း (Machine Learning)။</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="chapter-2-logic--algorithms-ယုတတိဗေဒနန-လုပထုံးလုပနညးတိ"><a class="header" href="#chapter-2-logic--algorithms-ယုတတိဗေဒနန-လုပထုံးလုပနညးတိ">Chapter 2: Logic &amp; Algorithms (ယုတ္တိဗေဒနန့် လုပ်ထုံးလုပ်နည်းတိ)</a></h1>
+<p>ကွန်ပျူတာတစ်လုံးပိုင် ဇာပိုင် စဉ်းစားလဲဆိုစွာကို လေ့လာလားပါဖို့။ ကုဒ် (Code) တိ စမခင်မှာ အရေးအကြီးဆုံးက &quot;အတွေးအခေါ်&quot; (Thinking) ပါပဲ။</p>
+<h2 id="၁-thinking-like-a-computer-ကွနပျူတာတစလုံးပိုင-တွေးခေါခြငး"><a class="header" href="#၁-thinking-like-a-computer-ကွနပျူတာတစလုံးပိုင-တွေးခေါခြငး">၁။ Thinking Like a Computer (ကွန်ပျူတာတစ်လုံးပိုင် တွေးခေါ်ခြင်း)</a></h2>
+<p>ကွန်ပျူတာတိက လူတိပိုင် ပါးနပ်မှု မရှိပါ။ သူရို့က ခိုင်းစွာကို တိတိကျကျ လုပ်တေ စက်တိပါ။ ယင်းကြောင့် ကျွန်တော်ရို့က ပြဿနာတစ်ခုကို ဖြေရှင်းချင်ကေ ကွန်ပျူတာ နားလည်အောင် အဆင့်ဆင့် ခွဲခြမ်းစိတ်ဖြာပနာ ပြောပြဖို့ လိုပါရေ။ <strong>Computational Thinking</strong> လို့ ခေါ်ပါရေ။</p>
+<p>အေမှာ အဓိက သဘောတရား နှစ်ခု ရှိပါရေ -</p>
+<p><img src="Pre-Programming/./illustration/decomposition_bicycle.png" alt="Decomposition Example" /></p>
+<p>This diagram shows how a complex object (a bicycle) is broken down into smaller, manageable parts.</p>
+<ol>
+<li><strong>Decomposition (ပြဿနာကို ခွဲခြမ်းစိတ်ဖြာခြင်း)</strong>: ကြီးမားရှုပ်ထွီးရေ ပြဿနာကြီးကို ငယ်အောင်လုပ်ပနာ ဖြေရှင်းရလွယ်ကူရေ အပိုင်းချေတိအဖြစ် ခွဲထုတ်လိုက်စွာပါ။
+<ul>
+<li><em>ဥပမာ</em> - စက်သီးတစ်စီး တပ်ဆင်ဖို့ဗျာယ်ဆိုကေ ဂါရီတပ်ဖို့၊ ဟန်းကိုင်တပ်ဖို့၊ ထိုင်ခုံတပ်ဖို့ စသဖြင့် အပိုင်းလိုက် ခွဲလုပ်စွာမျိုးပေါ့။</li>
+</ul>
+</li>
+<li><strong>Pattern Recognition (ပုံစံတူ ရှာဖွေခြင်း)</strong>: ပြဿနာတိထဲမှာ တူညီရေ ပုံစံတိကို ရှာဖွေပနာ အဖြေထုတ်စွာပါ။</li>
+</ol>
+<h2 id="၂-algorithms-ဆိုစွာ-ဇာလဲ-what-is-an-algorithm"><a class="header" href="#၂-algorithms-ဆိုစွာ-ဇာလဲ-what-is-an-algorithm">၂။ Algorithms ဆိုစွာ ဇာလဲ? (What is an Algorithm?)</a></h2>
+<p>Algorithm (အယ်လဂိုရစ်သမ်) ဆိုစွာ လုပ်ငန်းဆောင်တာတစ်ခု ပြီးဆုံးဖို့အတွက် လုပ်ဆောင်ရဖို့ အဆင့်ဆင့်သော ညွှန်ကြားချက်တိ (Step-by-step instructions) ဖြစ်ပါရေ။</p>
+<p><strong>ဥပမာ - ခေါက်ဆွဲပြုတ်ခြင်း</strong></p>
+<ol>
+<li>အိုးထဲ ရီထည့်ပါ။</li>
+<li>ရီပူဆူအောင် တည်ပါ။</li>
+<li>ရီဆူလာကေ ခေါက်ဆွဲထည့်ပါ။</li>
+<li>၃ မိနစ်ခန့် ပြုတ်ပါ။</li>
+<li>အမွှီးအကြိုင် ထည့်ပါ။</li>
+<li>ပန်းကန်ထဲ ထည့်ပနာ စားသုံးနိုင်ဗျာ။</li>
+</ol>
+<p>ယင့်စာရေ Algorithm တစ်ခုပါယာ။ အဆင့်ကျော်လို့ မရပိုင်၊ အစီအစဉ် မှားလို့လေ့ မရပါ။ Programming ဆိုစွာကလည်း အေပိုင် ညွှန်ကြားချက်တိကို ကွန်ပျူတာနားလည်ရေ ဘာသာစကားနန့် ရွီးသားခြင်း ပါဗျာယ်။</p>
+<h2 id="၃-flowcharts--pseudocode"><a class="header" href="#၃-flowcharts--pseudocode">၃။ Flowcharts &amp; Pseudocode</a></h2>
+<p>ကျွန်တော်တို့ရဲ့ Algorithm တိကို ပုံဖော်ဖို့အတွက် Flowchart နန့် Pseudocode ကို သုံးပါရေ။</p>
+<h3 id="flowchart-စီးဆငးမှုပုံပြကားချပ"><a class="header" href="#flowchart-စီးဆငးမှုပုံပြကားချပ">Flowchart (စီးဆင်းမှုပုံပြကားချပ်)</a></h3>
+<p>Flowchart ဆိုစွာ လုပ်ဆောင်ပုံအဆင့်ဆင့်ကို ပုံတိ၊ မြှားတိနန့် ဆွဲပြစွာပါ။</p>
+<p><img src="Pre-Programming/./illustration/flowchart_symbols_reference.png" alt="Flowchart Symbols Reference" /></p>
+<ul>
+<li><strong>Oval (ဘဲဥပုံ)</strong>: အစ (Start) နန့် အဆုံး (End) ကို ပြသပါရေ။</li>
+<li><strong>Parallelogram (စတုဂံရွဲ့)</strong>: အချက်အလက် သွင်းခြင်း/ထုတ်ခြင်း (Input/Output) ကို ပြသပါရေ။</li>
+<li><strong>Rectangle (စတုဂံ)</strong>: လုပ်ဆောင်ချက် (Process) ကို ပြသပါရေ။</li>
+<li><strong>Diamond (စိန်ပုံ)</strong>: ဆုံးဖြတ်ချက် (Decision) ကို ပြသပါရေ။ (Yes/No လမ်းခွဲတိ ထွက်လာပါရေ)</li>
+</ul>
+<p><img src="Pre-Programming/./illustration/comprehensive_flowchart_example.png" alt="Comprehensive Flowchart Example" /></p>
+<h3 id="pseudocode-ကုဒတု"><a class="header" href="#pseudocode-ကုဒတု">Pseudocode (ကုဒ်တု)</a></h3>
+<p>Pseudocode ဆိုစွာ တကယ့် programming language မဟုတ်ဘဲ လူနားလည်လွယ်ဖို့ စကားလုံးတိနန့် ရွီးသားထားရေ ကုဒ်အကြမ်းဖျင်း ဖြစ်ပါရေ။ အောက်ပါ Keywords တိကို အသုံးများပါရေ -</p>
+<div class="table-wrapper"><table><thead><tr><th style="text-align: left">Keyword</th><th style="text-align: left">Meaning (အဓိပ္ပာယ်)</th><th style="text-align: left">Example</th></tr></thead><tbody>
+<tr><td style="text-align: left"><strong>INPUT / READ</strong></td><td style="text-align: left">အချက်အလက် လက်ခံခြင်း</td><td style="text-align: left"><code>INPUT temperature</code></td></tr>
+<tr><td style="text-align: left"><strong>OUTPUT / PRINT</strong></td><td style="text-align: left">ရလဒ် ပြသခြင်း</td><td style="text-align: left"><code>PRINT &quot;Hello&quot;</code></td></tr>
+<tr><td style="text-align: left"><strong>IF / ELSE</strong></td><td style="text-align: left">ဆုံးဖြတ်ချက်ချခြင်း</td><td style="text-align: left"><code>IF rain THEN take_umbrella ELSE wear_hat</code></td></tr>
+<tr><td style="text-align: left"><strong>WHILE / FOR</strong></td><td style="text-align: left">ထပ်ခါထပ်ခါ လုပ်ဆောင်ခြင်း</td><td style="text-align: left"><code>WHILE hungry DO eat</code></td></tr>
+<tr><td style="text-align: left"><strong>SET / COMPUTE</strong></td><td style="text-align: left">တန်ဖိုးသတ်မှတ်ခြင်း/တွက်ချက်ခြင်း</td><td style="text-align: left"><code>SET x = 5</code></td></tr>
+</tbody></table>
+</div>
+<p><strong>Pseudocode Example (မိုးရွာမရွာ စစ်ဆေးခြင်း):</strong></p>
+<pre><code>START
+  Look_Outside
+  IF Raining THEN
+    PRINT &quot;Take Umbrella&quot;
+  ELSE
+    PRINT &quot;Wear Hat&quot;
+  END IF
+END
+</code></pre>
+<hr />
+<h2 id="သငခနးစာ-အကျဉးချုပ-2"><a class="header" href="#သငခနးစာ-အကျဉးချုပ-2">သင်ခန်းစာ အကျဉ်းချုပ်</a></h2>
+<ul>
+<li><strong>Computational Thinking</strong>: ပြဿနာကို ခွဲခြမ်းစိတ်ဖြာခြင်း (Decomposition) နန့် ပုံစံတူရှာခြင်း (Pattern Recognition)။</li>
+<li><strong>Algorithm</strong>: လုပ်ဆောင်ပုံ အဆင့်ဆင့် (Step-by-step instructions)။</li>
+<li><strong>Tools</strong>: Flowchart (ပုံ) နန့် Pseudocode (စာ)။</li>
+</ul>
+<p><strong>လေ့ကျင့်ခန်း (Exercise):</strong></p>
+<ol>
+<li>
+<p><strong>Morning Routine</strong> မိုးသားဖက် လုပ်ရိုးလုပ်စဉ် (Morning Routine) ကို Algorithm တစ်ခုအနေနန့် အဆင့်ဆင့် ချရေးကြည့်ပါ။ (သွားတိုက်စွာ၊ မျက်နှာသစ်စွာ စသဖြင့် အသေးစိတ် ရွီးကြည့်ပါ)။</p>
+</li>
+<li>
+<p><strong>&quot;သွားတိုက်ခြင်း&quot;</strong> လုပ်ငန်းစဉ်ကို Algorithm ရွီးကြည့်ပါ။</p>
+</li>
+<li>
+<p><strong>Flowcharting a Sandwich</strong>: ပေါင်မုန့်မီးကင် (Toast) လုပ်စားပုံကို (Flowchart ဆွဲကြည့်ပါ။ Decision ထည့်ပါ၊ ဥပမာ - ထောပတ်သုတ်မလား? Yes/No)</p>
+</li>
+</ol>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="chapter-3-data-representation-အချကအလကတိ-သိမးဆညးပုံ"><a class="header" href="#chapter-3-data-representation-အချကအလကတိ-သိမးဆညးပုံ">Chapter 3: Data Representation (အချက်အလက်တိ သိမ်းဆည်းပုံ)</a></h1>
+<p>ကွန်ပျူတာတိက ကျွန်တော်တို့ မြင်နီရတဲ့ စာတိ၊ ပုံတိ၊ ဗီဒီယိုတိကို အေအတိုင်း မသိမ်းဆည်းပါ။ သူရို့က လျှပ်စစ်ပတ်လမ်းတိနန့် တည်ဆောက်ထားစွာဖြစ်လို့ <strong>အဖွင့် (On)</strong> နန့် <strong>အပိတ် (Off)</strong> အခြေအနေ နှစ်ခုကိုပဲ နားလည်ပါရေ။</p>
+<h2 id="၁-binary-system-သုည-နန-တစ"><a class="header" href="#၁-binary-system-သုည-နန-တစ">၁။ Binary System (သုည နန့် တစ်)</a></h2>
+<p>&quot;အဖွင့်&quot; နန့် &quot;အပိတ်&quot; ကို ဂဏန်းနန့် ကိုယ်စားပြုကေ <strong>1 (On)</strong> နန့် <strong>0 (Off)</strong> ဖြစ်ပါရေ။ <strong>Binary System</strong> (ဒွိစုံသင်္ချာ) လို့ ခေါ်ပါရေ။</p>
+<p><img src="Pre-Programming/./illustration/binary_switches.png" alt="Binary Switches" /></p>
+<p>ကွန်ပျူတာထဲမှာ ရှိသမျှ အရာအားလုံး - ရိုက်လိုက်တေ စာလုံး 'A'၊ နားထောင်နီရေ တေးခင်း၊ ကြည့်နီရေ ဓာတ်ပုံ - အားလုံးကို နောက်ကွယ်မှာ <code>0</code> နန့် <code>1</code> တိ အများကြီးနန့် ဖွဲ့စည်းထားစွာပါ။</p>
+<ul>
+<li><strong>Bit</strong>: <code>0</code> သို့မဟုတ် <code>1</code> တစ်လုံးကို &quot;Bit&quot; လို့ ခေါ်ပါရေ။</li>
+<li><strong>Byte</strong>: Bit (၈) လုံး စုပေါင်းထားစွာကို &quot;Byte&quot; လို့ ခေါ်ပါရေ။ (ဥပမာ - <code>01000001</code>)</li>
+</ul>
+<blockquote>
+<p>[!TIP]
+<strong>Brain Teaser</strong>:
+<code>01000001</code> သည် <code>A</code> ဖြစ်လျှင် <code>01000010</code> သည် ဘာဖြစ်နိုင်မလဲ?
+(အဖြေ: <code>B</code> - Binary ဂဏန်းတိရေ တစ်ခုတိုးလားတိုင်း အက္ခရာစဉ်သည်လည်း တစ်ခုတိုးလားလေ့ဟိရေ)</p>
+</blockquote>
+<h3 id="data-sizes--units-အချကအလက-ပမာဏ-အတိုငးအတာများ"><a class="header" href="#data-sizes--units-အချကအလက-ပမာဏ-အတိုငးအတာများ">Data Sizes &amp; Units (အချက်အလက် ပမာဏ အတိုင်းအတာများ)</a></h3>
+<p>ကျွန်တော်ရို့ ဖုန်းတိ၊ ကွန်ပျူတာတိမှာ Storage ဇလောက်ရှိရေလဲ ဆိုစွာကို အောက်ပါ အတိုင်းအတာတိနန့် ပြောလေ့ရှိပါရေ။</p>
+<div class="table-wrapper"><table><thead><tr><th style="text-align: left">Unit</th><th style="text-align: left">Size</th><th style="text-align: left">Analogy (ဥပမာ တင်စားချက်)</th></tr></thead><tbody>
+<tr><td style="text-align: left"><strong>Bit (b)</strong></td><td style="text-align: left">0 or 1</td><td style="text-align: left">အက်တမ် (Atom) တစ်ခု</td></tr>
+<tr><td style="text-align: left"><strong>Byte (B)</strong></td><td style="text-align: left">8 bits</td><td style="text-align: left">စာလုံး (Letter) တစ်လုံး (ဥပမာ 'A')</td></tr>
+<tr><td style="text-align: left"><strong>Kilobyte (KB)</strong></td><td style="text-align: left">1,024 Bytes</td><td style="text-align: left">စာတစ်မျက်နှာ (A page of text)</td></tr>
+<tr><td style="text-align: left"><strong>Megabyte (MB)</strong></td><td style="text-align: left">1,024 KB</td><td style="text-align: left">စာအုပ်တစ်အုပ် (A book)</td></tr>
+<tr><td style="text-align: left"><strong>Gigabyte (GB)</strong></td><td style="text-align: left">1,024 MB</td><td style="text-align: left">စာအုပ်စင်တစ်ခု (A bookshelf)</td></tr>
+<tr><td style="text-align: left"><strong>Terabyte (TB)</strong></td><td style="text-align: left">1,024 GB</td><td style="text-align: left">စာကြည့်တိုက်တစ်ခု (A library)</td></tr>
+</tbody></table>
+</div>
+<blockquote>
+<p>[!NOTE]
+ကွန်ပျူတာသည် 2 ၏ ထပ်ကိန်းများ (Powers of 2) ဖြင့် အလုပ်လုပ်သောကြောင့် 1,000 အစား <strong>1,024</strong> ဖြင့် မြှောက်လေ့ရှိပါသည်။</p>
+</blockquote>
+<h2 id="၂-variables--data-types-ကိနးရှငတိနန-အချကအလကအမျိုးအစားတိ"><a class="header" href="#၂-variables--data-types-ကိနးရှငတိနန-အချကအလကအမျိုးအစားတိ">၂။ Variables &amp; Data Types (ကိန်းရှင်တိနန့် အချက်အလက်အမျိုးအစားတိ)</a></h2>
+<p>Programming မှာ အချက်အလက်တိကို ခေတ္တသိမ်းဆည်းထားဖို့ <strong>Variables (ကိန်းရှင်တိ)</strong> ကို သုံးပါရေ။ Variable တစ်ခုကို &quot;ပုံး&quot; (Box) တစ်ခုလို့ မြင်ယောင်ကြည့်ပါ။</p>
+<p><img src="Pre-Programming/./illustration/variable_box.png" alt="Variable Box" /></p>
+<p>ပုံးတိုင်းမှာ နာမည်ရှိရပါဖို့ (ဥပမာ - <code>score</code>, <code>username</code>)။ အထဲမှာ တန်ဖိုး (Data) ထည့်လို့ရရေ။</p>
+<h3 id="data-types-အချကအလက-အမျိုးအစားတိ"><a class="header" href="#data-types-အချကအလက-အမျိုးအစားတိ">Data Types (အချက်အလက် အမျိုးအစားတိ)</a></h3>
+<p>ပုံးထဲကို ဇာထည့်မလဲပေါ်မူတည်ပနာ အမျိုးအစား ကွဲပြားပါရေ။</p>
+<h4 id="1-integer-ကိနးပြည"><a class="header" href="#1-integer-ကိနးပြည">1. Integer (ကိန်းပြည့်)</a></h4>
+<p>ဒသမ (အစက်အပျောက်) မပါရေ ကိန်းဂဏန်းတိ ဖြစ်ပါရေ။ ရေတွက်လို့ရရေ အရာတိအတွက် သုံးပါရေ။</p>
+<ul>
+<li><em>Example</em>: <code>age = 25</code>, <code>count = 100</code>, <code>year = 2024</code></li>
+</ul>
+<h4 id="2-float-ဒသမကိနး"><a class="header" href="#2-float-ဒသမကိနး">2. Float (ဒသမကိန်း)</a></h4>
+<p>ဒသမ အစက်အပျောက် ပါရေ ကိန်းဂဏန်းတိ ဖြစ်ပါရေ။ အတိအကျ တိုင်းတာမှုတိအတွက် သုံးပါရေ။</p>
+<ul>
+<li><em>Example</em>: <code>price = 9.99</code>, <code>temperature = 36.5</code>, <code>pi = 3.14</code></li>
+</ul>
+<h4 id="3-string-စာသား"><a class="header" href="#3-string-စာသား">3. String (စာသား)</a></h4>
+<p>စာလုံးတိကို စုစည်းထားစွာ ဖြစ်ပါရေ။ စာသားဖြစ်ကြောင်းပြဖို့ <code>&quot;</code> (Quotes) သုံးရပါရေ။</p>
+<ul>
+<li><em>Example</em>: <code>name = &quot;Mg Mg&quot;</code>, <code>message = &quot;Hello World&quot;</code>, <code>phone = &quot;09123456&quot;</code> (&quot;09...&quot; သည် တွက်ချက်စရာမလိုသောကြောင့် String အဖြစ်ထားလေ့ရှိသည်)</li>
+</ul>
+<h4 id="4-char-စာလုံး"><a class="header" href="#4-char-စာလုံး">4. Char (စာလုံး)</a></h4>
+<p>စာလုံး တစ်လုံးတည်းကိုရာ ကိုယ်စားပြုပါရေ။</p>
+<ul>
+<li><em>Example</em>: <code>grade = 'A'</code>, <code>gender = 'M'</code></li>
+</ul>
+<h4 id="5-boolean-အမှားအမှန"><a class="header" href="#5-boolean-အမှားအမှန">5. Boolean (အမှား/အမှန်)</a></h4>
+<p><code>True</code> (မှန်) သို့မဟုတ် <code>False</code> (မှား) နှစ်မျိုးသာ ရှိပါရေ။ ဆုံးဖြတ်ချက်ချဖို့အတွက် သုံးပါရေ။</p>
+<ul>
+<li><em>Example</em>: <code>is_raining = True</code>, <code>has_passed = False</code></li>
+</ul>
+<h3 id="why-do-data-types-matter-အချကအလက-အမျိုးအစားတိ-ဇာဖြစလို-အရေးကြီးလဲ"><a class="header" href="#why-do-data-types-matter-အချကအလက-အမျိုးအစားတိ-ဇာဖြစလို-အရေးကြီးလဲ">Why do Data Types Matter? (အချက်အလက် အမျိုးအစားတိ ဇာဖြစ်လို့ အရေးကြီးလဲ?)</a></h3>
+<p>ကွန်ပျူတာက Data Type ပေါ်မူတည်ပနာ အလုပ်လုပ်ပုံ ကွဲပြားလို့ပါ။</p>
+<ul>
+<li><strong>Numbers</strong>: <code>1 + 1</code> လို့ ရေးရင် ကွန်ပျူတာက <strong>2</strong> လို့ ပေါင်းပြပါဖို့။</li>
+<li><strong>Strings</strong>: <code>&quot;1&quot; + &quot;1&quot;</code> လို့ ရေးရင် ကွန်ပျူတာက စာသားနှစ်ခု ဆက်ပနာ <strong>&quot;11&quot;</strong> လို့ ပြပါဖို့။</li>
+</ul>
+<p>ကိုယ်လိုချင်တဲ့ ရလဒ်ရဖို့ Data Type မှန်ကန်စွာ သုံးဖို့ လိုပါရေ။</p>
+<hr />
+<h2 id="သငခနးစာ-အကျဉးချုပ-3"><a class="header" href="#သငခနးစာ-အကျဉးချုပ-3">သင်ခန်းစာ အကျဉ်းချုပ်</a></h2>
+<ul>
+<li><strong>Binary</strong>: 0 နန့် 1 ကိုသာ ကွန်ပျူတာ နားလည်ပါရေ။</li>
+<li><strong>Variables</strong>: Data သိမ်းရေ ပုံးတိ။</li>
+<li><strong>Data Types</strong>: Integer (ကိန်းပြည့်)၊ String (စာသား)၊ Boolean (အမှား/အမှန်)။</li>
+</ul>
+<p><strong>လေ့ကျင့်ခန်း (Exercise):</strong></p>
+<ol>
+<li><strong>My Age in Binary</strong> - သင့်အသက်ကို Binary ပြောင်းကြည့်ပါ။
+<ul>
+<li>အဆင့် (၁): အသက်ကို ချရေးပါ (ဥပမာ - 20)။</li>
+<li>အဆင့် (၂): 128, 64, 32, 16, 8, 4, 2, 1 တန်ဖိုးများကို သုံးပြီး ပေါင်းစပ်ကြည့်ပါ။
+(Hint: 20 = 16 + 4, So binary is <code>00010100</code>)</li>
+</ul>
+</li>
+<li>မိတ်ဆွေရဲ့ နာမည်၊ အသက် နန့် အရပ်အမောင်းကို Variable တိအဖြစ် ဖန်တီးကြည့်ပါ။ ဇာ Data Type ကို သုံးမလဲ စိုင်းစားပါ။
+(ဥပမာ - <code>name = &quot;Mg Mg&quot;</code> (String))</li>
+</ol>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="chapter-4-control-structures-ထိနးချုပမှု-တညဆောကပုံတိ"><a class="header" href="#chapter-4-control-structures-ထိနးချုပမှု-တညဆောကပုံတိ">Chapter 4: Control Structures (ထိန်းချုပ်မှု တည်ဆောက်ပုံတိ)</a></h1>
+<p>ပရိုဂရမ်တစ်ခုစာ အထက်ကနီ အောက်ကို တစ်ကြောင်းချင်းစီ ပုံမှန် အလုပ်လုပ်ပါရေ။ ယကေလေ့ တစ်ခါတလေမှာ ကျွန်တော်တို့က အချို့အလုပ်တိကို ကျော်ခိုင်းချင်စွာ (သို့မဟုတ်) ထပ်ခါထပ်ခါ လုပ်ခိုင်းချင်စွာမျိုး ရှိပါရေ။ ယင့်စာကို <strong>Control Structures</strong> နန့် လုပ်ဆောင်နိုင်ပါရေ။</p>
+<h2 id="၁-sequence-အစဉလိုက-လုပဆောငခြငး"><a class="header" href="#၁-sequence-အစဉလိုက-လုပဆောငခြငး">၁။ Sequence (အစဉ်လိုက် လုပ်ဆောင်ခြင်း)</a></h2>
+<p>ပုံမှန် အလုပ်လုပ်ပုံပါ။ ညွှန်ကြားချက်တိကို အထက်ဆုံးစာကြောင်းကနီ အောက်ဆုံးထိ တစ်ဆင့်ချင်းစီ လုပ်လားစွာ ဖြစ်ပါရေ။ အဆင့်ကျော်လို့ မရပါ။</p>
+<pre><code class="language-text">START
+  Wake Up
+  Brush Teeth
+  Eat Breakfast
+END
+</code></pre>
+<hr />
+<h2 id="၂-selection-ရွီးချယလုပဆောငခြငး"><a class="header" href="#၂-selection-ရွီးချယလုပဆောငခြငး">၂။ Selection (ရွီးချယ်လုပ်ဆောင်ခြင်း)</a></h2>
+<p>အခြေအနိန်တစ်ခုပေါ် မူတည်ပနာ ဇာဆက်လုပ်ရဖို့လဲ ဆုံးဖြတ်စွာပါ။ <strong>If, Else</strong> statements တိကို သုံးပါရေ။</p>
+<p><img src="Pre-Programming/./illustration/conditional_traffic_light.png" alt="Traffic Light Conditionals" /></p>
+<h3 id="example-စာမေးပွဲ-အောငရှုံး-pass-or-fail"><a class="header" href="#example-စာမေးပွဲ-အောငရှုံး-pass-or-fail">Example: စာမေးပွဲ အောင်/ရှုံး (Pass or Fail)</a></h3>
+<p>အောက်ပါ Flowchart မှာ အမှတ် ၅၀ ကျော်ကေ &quot;Pass&quot;၊ မကျော်ကေ &quot;Fail&quot; လို့ ပြသပုံကို တွက်ချက်ပြထားပါရေ။</p>
+<p><img src="Pre-Programming/./illustration/flowchart_selection_example.png" alt="Selection Flowchart" /></p>
+<hr />
+<pre><code>IF Score &gt;= 50 THEN
+    PRINT &quot;Pass&quot;
+ELSE
+    PRINT &quot;Fail&quot;
+END IF
+</code></pre>
+<h2 id="၃-iteration-ထပခါထပခါ-လုပဆောငခြငး"><a class="header" href="#၃-iteration-ထပခါထပခါ-လုပဆောငခြငး">၃။ Iteration (ထပ်ခါထပ်ခါ လုပ်ဆောင်ခြင်း)</a></h2>
+<p>အေစာကို <strong>Loop</strong> ပတ်ရေလို့ ခေါ်ပါရေ။ အလုပ်တစ်ခုကို အကြိမ်အရေအတွက် တစ်ခုအထိ (သို့မဟုတ်) အခြေအနေတစ်ခု ပြည့်လားတဲ့အထိ ထပ်ခါထပ်ခါ လုပ်ခိုင်းစွာပါ။</p>
+<p><img src="Pre-Programming/./illustration/loop_cycle.png" alt="Loop Cycle" /></p>
+<h3 id="31-loop-အမျိုးအစားတိ"><a class="header" href="#31-loop-အမျိုးအစားတိ">3.1 Loop အမျိုးအစားတိ</a></h3>
+<h4 id="a-for-loop-အကြိမရေ-အတိအကျ-သိသောအခါ"><a class="header" href="#a-for-loop-အကြိမရေ-အတိအကျ-သိသောအခါ">A. For Loop (အကြိမ်ရေ အတိအကျ သိသောအခါ)</a></h4>
+<p>အလုပ်တစ်ခုကို ဇာနှစ်ခါ လုပ်ပါဆိုပြီး အတိအကျ ခိုင်းချင်တဲ့အခါ သုံးပါရေ။
+<em>Example: ၁၀ ပတ်တိတိ ပြေးပါ (Run 10 laps).</em></p>
+<pre><code class="language-text">START
+  count = 0
+  WHILE count &lt; 10
+    Run 1 Lap
+    count = count + 1
+  END WHILE
+  Stop Running
+END
+</code></pre>
+<h4 id="b-while-loop-အခြေအနေတစခုပေါ-မူတညသောအခါ"><a class="header" href="#b-while-loop-အခြေအနေတစခုပေါ-မူတညသောအခါ">B. While Loop (အခြေအနေတစ်ခုပေါ် မူတည်သောအခါ)</a></h4>
+<p>အကြိမ်ရေ မသိလည်း အခြီအနနိတစ်ခု မှန်နီသရွိ့ ဆက်လုပ်နီစီချင်ရေအခါ သုံးပါရေ။
+<em>Example: ဝမ်းမဝမချင်း စားပါ (Eat while hungry).</em></p>
+<pre><code class="language-text">START
+  WHILE Hungry is True
+    Eat Food
+  END WHILE
+  Stop Eating
+END
+</code></pre>
+<hr />
+<h2 id="သငခနးစာ-အကျဉးချုပ-4"><a class="header" href="#သငခနးစာ-အကျဉးချုပ-4">သင်ခန်းစာ အကျဉ်းချုပ်</a></h2>
+<ul>
+<li><strong>Sequence</strong>: အစဉ်လိုက် လုပ်ဆောင်ခြင်း။</li>
+<li><strong>Selection</strong>: အခြေအနေပေါ်မူတည်ပနာ ရွီးချယ်ခြင်း (If/Else)။</li>
+<li><strong>Iteration</strong>: ထပ်ခါထပ်ခါ လုပ်ဆောင်ခြင်း (Loops)။</li>
+</ul>
+<p><strong>လေ့ကျင့်ခန်း (Exercise):</strong></p>
+<ol>
+<li><strong>Staircase Algorithm</strong>: လှေကား ၁၀ ထစ် တက်ပုံကို Algorithm ရေးပါ။
+<ul>
+<li><strong>For Loop</strong>: လှေကားထစ် အရွီအတွက် သိတဲ့အခါ (၁၀ ထစ်)။</li>
+<li><strong>While Loop</strong>: လှေကားထစ် မသိတဲ့အခါ (အထက်ဆုံး မရောက်မချင်း တက်မယ်)။</li>
+</ul>
+</li>
+<li>နိတိုင်း ထပ်ခါထပ်ခါ လုပ်နီတဲ့ အလုပ်တစ်ခုကို Loop နဲ့ ရေးကြည့်ပါ။</li>
+</ol>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="chapter-5-problem-solving--debugging-ပြဿနာဖြေရှငးခြငးနန-အမှားရှာခြငး"><a class="header" href="#chapter-5-problem-solving--debugging-ပြဿနာဖြေရှငးခြငးနန-အမှားရှာခြငး">Chapter 5: Problem Solving &amp; Debugging (ပြဿနာဖြေရှင်းခြင်းနန့် အမှားရှာခြင်း)</a></h1>
+<p>Code ရွီးတတ်ရုံနန့် မပြီးပါ။ Programmer ကောင်းတစ်ယောက်ဖြစ်ဖို့ ပြဿနာတိကို စနစ်တကျ ဖြေရှင်းတတ်ဖို့နန့် ကိုယ်ရွီးထားရေ Code မှာ အမှားပါကေ ရှာဖွေပြင်ဆင်တတ်ဖို့ လိုပါရေ။</p>
+<h2 id="၁-ipo-model-input-process-output"><a class="header" href="#၁-ipo-model-input-process-output">၁။ IPO Model (Input-Process-Output)</a></h2>
+<p>ကွန်ပျူတာပရိုဂရမ်တိုင်းဧ့ အခြီခံလုပ်ဆောင်ပုံကတော့ IPO Model ပါ။ ပြဿနာတစ်ခုကို ဖြေရှင်းဖို့ဆိုကေ ဒီ (၃) ပိုင်း ခွဲပြီး စိုင်းစားရပါဖို့။</p>
+<ol>
+<li><strong>Input</strong>: ဇာတိ လိုအပ်သလဲ? (ကုန်ကြမ်း)</li>
+<li><strong>Process</strong>: ဇာတိ လုပ်ဆောင်ရဖို့လဲ? (လုပ်ဆောင်ချက်)</li>
+<li><strong>Output</strong>: ဇာရလဒ် လိုချင်စွာလဲ? (ကုန်ချော)</li>
+</ol>
+<pre><code class="language-text">[Input: Ingredients] -&gt; [Process: Cooking] -&gt; [Output: Meal]
+</code></pre>
+<p><em>ဥပမာ - ထမင်းကြော်ခြင်း</em>
+... (Retain text) ...</p>
+<p><em>ဥပမာ - ထမင်းကြော်ခြင်း</em></p>
+<ul>
+<li><strong>Input</strong>: ထမင်း၊ ကြက်ဥ၊ ဆီ၊ ဆား</li>
+<li><strong>Process</strong>: ကြော်ဗျ၊ ဆီထည့်၊ ကြက်ဥမွှေ၊ ထမင်းထည့်ကြော်</li>
+<li><strong>Output</strong>: ထမင်းကြော်</li>
+</ul>
+<h2 id="၂-debugging-အမှားရှာခြငး"><a class="header" href="#၂-debugging-အမှားရှာခြငး">၂။ Debugging (အမှားရှာခြင်း)</a></h2>
+<p>Code ရေးကေ အမှား (Bug) ဆိုစွာ မလွဲမသွေ ကြုံရမှာပါ။ ယင်းအမှားတိကို ရှာဖွေပြင်ဆင်ခြင်းကို <strong>Debugging</strong> လို့ ခေါ်ပါရေ။</p>
+<p><img src="Pre-Programming/./illustration/debugging_magnifying_glass.png" alt="Debugging" /></p>
+<h3 id="the-debugging-cycle-အမှားရှာဖွေခြငး-သံသရာ"><a class="header" href="#the-debugging-cycle-အမှားရှာဖွေခြငး-သံသရာ">The Debugging Cycle (အမှားရှာဖွေခြင်း သံသရာ)</a></h3>
+<p>အမှားရှာခြင်းဆိုစာ တစ်ခါတည်းနဲ့ ပြီးရေအလုပ် မဟုတ်ပါ။ အမှားမကင်းမချင်း ထပ်ခါထပ်ခါ လုပ်ရတဲ့ လုပ်ငန်းစဉ်ပါ။</p>
+<pre><code class="language-text">1. START: Run Program
+2. CHECK: Is there an Error?
+   - NO:  Success! (END)
+   - YES: Go to Step 3
+3. READ: Read Error Message
+4. LOCATE: Find Line Number
+5. FIX: Edit Code
+6. RETRY: Go back to Step 1
+</code></pre>
+<h3 id="common-error-types-အမှားအမျိုးအစားတိ"><a class="header" href="#common-error-types-အမှားအမျိုးအစားတိ">Common Error Types (အမှားအမျိုးအစားတိ)</a></h3>
+<p>Programming မှာ အမှား (၂) မျိုး အတွေ့ရများပါရေ။</p>
+<ol>
+<li>
+<p><strong>Syntax Errors (သဒ္ဒါအမှား)</strong>:</p>
+<ul>
+<li>ဘာသာစကား စည်းမျဉ်းစည်းကမ်း မှားစွာပါ။ ဥပမာ - စာလုံးပေါင်းမှားစွာ၊ ကွင်းပိတ်ကျန်ခစွာ။</li>
+<li><em>Analogy</em>: &quot;စိုက် ချီး&quot; လို့ ပြောလိုက်သလိုမျိုးပါ။ အဓိပ္ပာယ်တော့ ရှိပေမယ့် စကားလုံး အစီအစဉ် မှားနေလို့ နားမလည်တာမျိုးပါ။</li>
+<li>ကွန်ပျူတာက ယင့်ပိုင်အမှားမျိုးဆို ချက်ချင်းတန့်လားဖို့ ပြောပြပါရေ။</li>
+</ul>
+</li>
+<li>
+<p><strong>Logic Errors (ယုတ္တိအမှား)</strong>:</p>
+<ul>
+<li>စည်းမျဉ်းတော့ မှန်ရေ၊ ယကေလေ့ ကိုယ်လိုချင်တဲ့ အဖြေမထွက်စွာပါ။ ဥပမာ - ပေါင်းရဖို့အစား နှုတ်မိစွာ။</li>
+<li><em>Analogy</em>: &quot;ဆားထည့်ပါ&quot; လို့ ပြောရဖို့အစား &quot;သကြားထည့်ပါ&quot; လို့ မှားပြောမိတာမျိုးပါ။ ဟင်းချက်လို့တော့ ရကေလည်း အရသာ (Output) မှားသွားပါလိမ့်မယ်။</li>
+<li>ဒေအမှားက ရှာရ နည်းနည်းခက်ပါရေ။ Program က Run လို့ရနေလို့ပါ။</li>
+</ul>
+</li>
+</ol>
+<h3 id="21-common-logic-errors-အတွိရများရေ-ယုတတိအမှားတိ"><a class="header" href="#21-common-logic-errors-အတွိရများရေ-ယုတတိအမှားတိ">2.1 Common Logic Errors (အတွိ့ရများရေ ယုတ္တိအမှားတိ)</a></h3>
+<ol>
+<li><strong>Infinite Loop</strong>: Loop ပတ်တာ လုံးဝ မရပ်ဘဲ Program ဟန်း (Hang) လားခြင်း။ (Stop Condition မှားရွီမိလို့ ဖြစ်တတ်သည်)</li>
+<li><strong>Off-by-one Error</strong>: ၁၀ ကြိမ် လုပ်ရမည့်အစား ၉ ကြိမ် (သို့) ၁၁ ကြိမ် လုပ်မိခြင်း။</li>
+</ol>
+<h3 id="အမှားရှာနညးတိ"><a class="header" href="#အမှားရှာနညးတိ">အမှားရှာနည်းတိ</a></h3>
+<ul>
+<li><strong>Rubber Duck Debugging</strong>: ကိုယ့်ပြဿနာကို အရုပ်ချေတစ်ရုပ် (သို့မဟုတ် သူငယ်ချင်း) ကို တစ်ဆင့်ချင်းစီ ပြန်ရှင်းပြကြည့်ပါ။ ရှင်းပြရင်းနန့် အမှားကို ကိုယ်တိုင် သတိထားမိလာတတ်ပါရေ။</li>
+<li><strong>Print Statements</strong>: Code နေရာအနှံ့မှာ စာတိ ထုတ်ကြည့်ပနာ ဇာနားရောက်ကေ မှားလားလဲ လိုက်စစ်ဆေးစွာပါ။</li>
+</ul>
+<hr />
+<h2 id="သငခနးစာ-အကျဉးချုပ-5"><a class="header" href="#သငခနးစာ-အကျဉးချုပ-5">သင်ခန်းစာ အကျဉ်းချုပ်</a></h2>
+<ul>
+<li><strong>IPO Model</strong>: Input -&gt; Process -&gt; Output။</li>
+<li><strong>Debugging</strong>: အမှားရှာဖွေ ပြင်ဆင်ခြင်း။</li>
+<li><strong>Errors</strong>: Syntax Error (သဒ္ဒါမှား) vs Logic Error (တွေးခေါ်ပုံမှား)။</li>
+</ul>
+<p><strong>လေ့ကျင့်ခန်း (Exercise):</strong></p>
+<ol>
+<li><strong>Debug the Tea</strong>: လက်ဖက်ရည်ဖျော်နည်း Algorithm မှာ အောက်ပါ အမှားနှစ်ခု ပါနီပါရေ၊ ပြင်ဆင်ရွီးသားပီးပါ။
+<ul>
+<li><em>Step 1</em>: ရေနွီးအိုး တည်ပါ။</li>
+<li><em>Step 2</em>: ခွက်ထဲကို လက်ဖက်ခြောက် ထည့်ပါ။</li>
+<li><em>Step 3</em>: သကြား ထည့်ပါ။</li>
+<li><em>Step 4</em>: ရီနွီး ဆူဗျာယ်။ (ရီနွီးမထည့်ရသိပါ!)</li>
+<li><em>Step 5</em>: သောက်ပါ။</li>
+</ul>
+</li>
+<li>ဖုန်းပျောက်လားရေ ဆိုပါစို့။ ဖုန်းပြန်ရှာဖို့အတွက် IPO Model ကိုသုံးပနာ ဇာပိုင် ဖြေရှင်းမလဲ စဉ်းစားရွီးသားပါ။</li>
+</ol>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="chapter-6-conclusion--next-steps-နိဂုံးနန-ရှေဆကရန"><a class="header" href="#chapter-6-conclusion--next-steps-နိဂုံးနန-ရှေဆကရန">Chapter 6: Conclusion &amp; Next Steps (နိဂုံးနန့် ရှေ့ဆက်ရန်)</a></h1>
+<p>အခုအချိန်မှာ &quot;Code မရေးတတ်သိးကေလေ့ Programmer တစ်ယောက်ပိုင် တွေးခေါ်တတ်နီဗျာ&quot; လို့ ပြောနိုင်ပါရေ။</p>
+<h2 id="၁-ဇာဘာသာစကားကို-စလေလာသငလဲ-choosing-your-first-language"><a class="header" href="#၁-ဇာဘာသာစကားကို-စလေလာသငလဲ-choosing-your-first-language">၁။ ဇာဘာသာစကားကို စလေ့လာသင့်လဲ? (Choosing your first language)</a></h2>
+<p>လူတိုင်းမီးကတ်တေ မေးခွန်းပါ။ အဖြေကတော့ &quot;ဇာလုပ်ချင်လဲ?&quot; ပေါ်မှာ မူတည်ပါရေ။</p>
+<p><img src="Pre-Programming/./illustration/programming_language_roadmap.png" alt="Programming Language Roadmap" /></p>
+<ol>
+<li>
+<p><strong>Python</strong>:</p>
+<ul>
+<li><strong>ဇာလုပ်လို့ရလဲ</strong>: Data Science, Artificial Intelligence (AI), Web Backend, Automation.</li>
+<li><strong>အားသာချက်</strong>: လွယ်ရေ၊ လူသုံးများရေ။ Beginner တိအတွက် အသင့်တော်ဆုံးပါ။</li>
+</ul>
+</li>
+<li>
+<p><strong>JavaScript</strong>:</p>
+<ul>
+<li><strong>ဇာလုပ်လို့ရလဲ</strong>: Web Development (Websites ဖန်တီးချင်ကေ မဖြစ်မနေ သင်ရပါဖို့)။</li>
+<li><strong>အားသာချက်</strong>: Browser တိုင်းမှာ Run လို့ရရေ။ ရလဒ်ကို ချက်ချင်း မြင်ရရေ။</li>
+</ul>
+</li>
+<li>
+<p><strong>Java</strong>:</p>
+<ul>
+<li><strong>ဇာလုပ်လို့ရလဲ</strong>: Android Apps, Enterprise Software (ဘဏ်လို ကြီးမားတဲ့ လုပ်ငန်းကြီးတိရဲ့ System).</li>
+<li><strong>အားသာချက်</strong>: နေရာစုံမှာ သုံးလို့ရရေ။ (Write Once, Run Anywhere).</li>
+</ul>
+</li>
+<li>
+<p><strong>C / C++</strong>:</p>
+<ul>
+<li><strong>ဇာလုပ်လို့ရလဲ</strong>: Game Development, Computer Software.</li>
+<li><strong>အားသာချက်</strong>: ကွန်ပျူတာရဲ့ လုပ်ဆောင်မှုကို နက်နက်နဲနဲ နားလည်စေပါရေ။</li>
+</ul>
+</li>
+</ol>
+<h2 id="၂-ဆကလကလေလာရန-အရငးအမြစတိ"><a class="header" href="#၂-ဆကလကလေလာရန-အရငးအမြစတိ">၂။ ဆက်လက်လေ့လာရန် အရင်းအမြစ်တိ</a></h2>
+<ul>
+<li><strong>FreeCodeCamp</strong>: Web Development အတွက် အကောင်းဆုံး အခမဲ့ နေရာပါ။</li>
+<li><strong>CS50 (Harvard)</strong>: Computer Science အခြေခံကို သေချာသင်ချင်ကေ Harvard တက္ကသိုလ်ရဲ့ CS50 Course ကို YouTube မှာ အခမဲ့ ကြည့်ရှုနိုင်ပါရေ။</li>
+<li><strong>W3Schools</strong>: ကုဒ်တိကို လက်တွေ့ စမ်းရေးကြည့်ဖို့ ကောင်းပါရေ။</li>
+</ul>
+<h2 id="၃-programming-ethics-ကျငဝတတိ"><a class="header" href="#၃-programming-ethics-ကျငဝတတိ">၃။ Programming Ethics (ကျင့်ဝတ်တိ)</a></h2>
+<p>Programmer တစ်ယောက်မှာ စွမ်းရည် (Power) ရှိသလို တာဝန်ယူမှု (Responsibility) လည်း ရှိရပါဖို့။</p>
+<ul>
+<li><strong>Do No Harm</strong>: သူတစ်ပါးကို ထိခိုက်စေမယ့် Virus တိ၊ Hack စွာတိ မလုပ်ရပါ။</li>
+<li><strong>Respect Privacy</strong>: အသုံးပြုလူတိရဲ့ ကိုယ်ရေးအချက်အလက် (Data) ကို လေးစားလိုက်နာရပါဖို့။</li>
+<li><strong>Be Honest</strong>: မိမိရွီးရေ ကုဒ်ကြောင့် ဖြစ်လာမယ့် အကျိုးဆက်တိကို တာဝန်ယူရပါဖို့။</li>
+</ul>
+<h2 id="၄-နိဂုံး-final-words"><a class="header" href="#၄-နိဂုံး-final-words">၄။ နိဂုံး (Final Words)</a></h2>
+<p>Programming သင်ယူရစွာ ခက်ခဲနိုင်ပါရေ။ အထူးသဖြင့် အစပိုင်းမှာပါ။ Error တက်တိုင်း စိတ်မပျက်ပါကေ့။ Programmer တိုင်း (Google မှာ လုပ်နီလူတိတောင်မှ) နိတိုင်း Error တက်ပနာ နိတိုင်း ရှာဖွေဖြေရှင်းနီကြရစွာပါ။</p>
+<p>&quot;Consistency is Key&quot; - နိတိုင်း နည်းနည်းချင်းစီ ပုံမှန် လေ့လာလားပါ။</p>
+<h2 id="သငခနးစာ-အကျဉးချုပ-6"><a class="header" href="#သငခနးစာ-အကျဉးချုပ-6">သင်ခန်းစာ အကျဉ်းချုပ်</a></h2>
+<ul>
+<li><strong>Language Choice</strong>: Web (JS)၊ AI (Python)၊ System (C++)။</li>
+<li><strong>Ethics</strong>: သူတစ်ပါးကို မထိခိုက်စီရ၊ Data ကို လေးစားရမည်။</li>
+<li><strong>Consistency</strong>: နေ့စဉ် ပုံမှန် လေ့လာခြင်းက အဓိက။</li>
+</ul>
+<p><strong>လေ့ကျင့်ခန်း (Exercise):</strong>
+<strong>Your First Project Idea</strong>:
+ဒီစာအုပ်ကို ဖတ်ပြီးတဲ့နောက် သင် ပထမဆုံး ကိုယ်တိုင် ရွီးချင်ရေ Project တစ်ခုကို စဉ်းစားပါ။</p>
+<ul>
+<li><strong>Project Name</strong>: (ဥပမာ - My Calculator)</li>
+<li><strong>Purpose</strong>: (ဇာလုပ်ပီးဖို့လဲ?)</li>
+<li><strong>Inputs</strong>: (ဇာတိ ထည့်သွင်းရဖို့လဲ?)</li>
+</ul>
+<p>ဖိုက်တင်းပါ။</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="data-structures-အချကအလက-တညဆောကပုံများ"><a class="header" href="#data-structures-အချကအလက-တညဆောကပုံများ">Data Structures (အချက်အလက် တည်ဆောက်ပုံများ)</a></h1>
+<p>Data Structure ဆိုစွာ ကွန်ပျူတာထဲမှာ အချက်အလက် (Data) တိကို စနစ်တကျ သိမ်းဆည်းရေ ပုံစံတိ ဖြစ်ပါရေ။ ဇာပိုင်သိမ်းလဲ၊ ဇာပိုင်ပြန်ယူလဲဆိုစွာ ကိုယ်လုပ်ဖို့ အလုပ်ပေါ်မူတည်ပနာ ရွီးချယ်ရပါဖို့။</p>
+<h2 id="မာတိကာ"><a class="header" href="#မာတိကာ">မာတိကာ</a></h2>
+<h3 id="chapter-1-linear-data-structures"><a class="header" href="#chapter-1-linear-data-structures"><a href="Data%20Structure/chapter_1_linear.html">Chapter 1: Linear Data Structures</a></a></h3>
+<p>အချက်အလက်တိကို တစ်ခုပြီးတစ်ခု အစဉ်လိုက် သိမ်းဆည်းရေ ပုံစံတိ။</p>
+<ul>
+<li>Array</li>
+<li>Linked List</li>
+<li>Stack</li>
+<li>Queue</li>
+</ul>
+<h3 id="chapter-2-non-linear-data-structures"><a class="header" href="#chapter-2-non-linear-data-structures"><a href="Data%20Structure/chapter_2_non_linear.html">Chapter 2: Non-Linear Data Structures</a></a></h3>
+<p>အချက်အလက်တိကို ရှုပ်ထွီးရေ ချိတ်ဆက်မှုတိနန့် သိမ်းဆည်းရေ ပုံစံတိ။</p>
+<ul>
+<li>Hash Map</li>
+<li>Binary Search Tree (BST)</li>
+<li>Heap</li>
+<li>Graph</li>
+<li>Trie</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="chapter-1-linear-data-structures-အစဉလိုက-အချကအလက-တညဆောကပုံများ"><a class="header" href="#chapter-1-linear-data-structures-အစဉလိုက-အချကအလက-တညဆောကပုံများ">Chapter 1: Linear Data Structures (အစဉ်လိုက် အချက်အလက် တည်ဆောက်ပုံများ)</a></h1>
+<p>အချက်အလက်တိကို တစ်ခုပြီးတစ်ခု အစဉ်လိုက် သိမ်းဆည်းရေ Data Structure တိကို လေ့လာကတ်ပါဖို့။</p>
+<hr />
+<h2 id="1-array-အစဉလိုက-စီထားရေ-ဇယား"><a class="header" href="#1-array-အစဉလိုက-စီထားရေ-ဇယား">1. Array (အစဉ်လိုက် စီထားရေ ဇယား)</a></h2>
+<p><img src="Data%20Structure/illustration/array.png" alt="Array Visual" /></p>
+<p><strong>ယင်းက ဇာလဲ?</strong>
+အရွယ်အစား သတ်မှတ်ထားပြီးသား အခန်းကန့်ချေတိမှာ Data တိကို တစ်ခုပြီးတစ်ခု အစဉ်လိုက် ထည့်ထားရေ ပုံစံပါ။</p>
+<p><strong>လက်တွိ့ဘဝ ဥပမာ -</strong>
+<strong>ကြက်ဥကပ် (Egg Carton)</strong> ပိုင်ပါရာ။ ကြက်ဥကပ်တစ်ခုမှာ အလုံး ၃၀ ဆံ့ရေဆိုကေ ၃၀ ရာ ထည့်လို့ရဖို့။ ၃၁ လုံးမြောက် ထပ်ထည့်ချင်ကေ ကပ်အသစ် လိုပါလိမ့်မေ။ ၅ လုံးမြောက် ကြက်ဥကို ယူချင်ကေ တန်းပနာ ယူလိုက်ရုံပါရာ။</p>
+<p><strong>ဇာခါ သုံးဖို့လဲ?</strong></p>
+<ul>
+<li>သိမ်းရဖို့ အရွီအတွက်ကို ကြိုသိထားရေ အခါ။</li>
+<li>Data တိကို နံပါတ်စဉ် (Index) နန့် အမြန်ဆုံး ယူချင်ရေ အခါ။</li>
+</ul>
+<p><strong>Visualization:</strong></p>
+<pre><code class="language-text">Index:  0    1    2    3    4
+Data: [ 10 | 20 | 30 | 40 | 50 ]
+</code></pre>
+<hr />
+<h2 id="2-linked-list-ကွငးဆက-ဇယား"><a class="header" href="#2-linked-list-ကွငးဆက-ဇယား">2. Linked List (ကွင်းဆက် ဇယား)</a></h2>
+<p><img src="Data%20Structure/illustration/linked_list.png" alt="Linked List Visual" /></p>
+<p><strong>ယင်းက ဇာလဲ?</strong>
+Data တစ်ခုနန့် တစ်ခု လက်တွဲပနာ ချိတ်ထားရေ ပုံစံပါ။ Data တစ်ခုစီမှာ သူ့နောက်က Data ဇာနားမှာ ရှိရေလဲဆိုစွာ လိပ်စာ (Pointer) ပါပါရေ။</p>
+<p><strong>လက်တွိ့ဘဝ ဥပမာ -</strong>
+<strong>ရတနာသိုက် လမ်းညွှန်</strong> ပိုင်ပါရာ။ ပထမ သဲလွန်စကို တွိ့မှ ဒုတိယ သဲလွန်စ ရှိရေနီရာကို သိရဖို့။ ဒုတိယကို ရမှ တတိယကို ဆက်သွားလို့ရဖို့။ ချက်ချင်းကြီး ပဉ္စမမြောက်နီရာကို ရောက်မသွားနိုင်ပါ။</p>
+<p><strong>ဇာခါ သုံးဖို့လဲ?</strong></p>
+<ul>
+<li>Data အရွီအတွက် အတိအကျ မသိရေ အခါ (လိုသလောက် ထပ်ချိတ်လားလို့ရရေ)။</li>
+<li>ကြားထဲက Data တိကို ဖျက်စွာ၊ ထပ်ထည့်စွာ မကြာမကြ လုပ်ရရေ အခါ။</li>
+</ul>
+<p><strong>Visualization:</strong></p>
+<pre><code class="language-text">[Head] -&gt; [Data|Next] -&gt; [Data|Next] -&gt; null
+</code></pre>
+<hr />
+<h2 id="3-stack-ထပစီ---နောကဆုံးဝင-ပထမထွက"><a class="header" href="#3-stack-ထပစီ---နောကဆုံးဝင-ပထမထွက">3. Stack (ထပ်စီ - နောက်ဆုံးဝင် ပထမထွက်)</a></h2>
+<p><img src="Data%20Structure/illustration/stack.png" alt="Stack Visual" /></p>
+<p><strong>ယင်းက ဇာလဲ?</strong>
+LIFO (Last In, First Out) ပုံစံပါ။ နောက်ဆုံးမှ ရောက်လာရေ အရာက အရင်ဆုံး ပြန်ထွက်ရပါရေ။</p>
+<p><strong>လက်တွိ့ဘဝ ဥပမာ -</strong>
+<strong>ပန်းကန်ပြား ဆီးပြီး ထပ်ထားစွာ</strong> မျိုးပါ။ ဆီးပြီးသား ပန်းကန်တိကို တစ်ချပ်ပြီး တစ်ချပ် ထပ်လိုက်မေ။ ပြန်ယူသုံးရေ အခါ ထိပ်ဆုံး (နောက်ဆုံးမှထားရေ) ပန်းကန်ကိုရာ အရင်ယူလို့ ရပါဖို့။</p>
+<p><strong>ဇာခါ သုံးဖို့လဲ?</strong></p>
+<ul>
+<li>Undo (Ctrl+Z) လုပ်ဆောင်ချက် (နောက်ဆုံးမှားစွာကို အရင်ဖျက်စွာ)။</li>
+<li>Web Browser ရဲ့ Back Button (နောက်ဆုံးကြည့်ထားရေ စာမျက်နှာကို ပြန်ခေါ်စွာ)။</li>
+</ul>
+<p><strong>Visualization:</strong></p>
+<pre><code class="language-text">|  Top  |
+|_______|
+</code></pre>
+<hr />
+<h2 id="4-queue-တနးစီ---ဦးသူ-ပထမထွက"><a class="header" href="#4-queue-တနးစီ---ဦးသူ-ပထမထွက">4. Queue (တန်းစီ - ဦးသူ ပထမထွက်)</a></h2>
+<p><img src="Data%20Structure/illustration/queue.png" alt="Queue Visual" /></p>
+<p><strong>ယင်းက ဇာလဲ?</strong>
+FIFO (First In, First Out) ပုံစံပါ။ အရင်ဆုံး ရောက်ရေလူက အရင်ဆုံး ဝန်ဆောင်မှု ရပါရေ။</p>
+<p><strong>လက်တွိ့ဘဝ ဥပမာ -</strong>
+<strong>ဘတ်စ်ကားမှတ်တိုင်မှာ တန်းစီစွာ</strong> မျိုးပါ။ အရင်ရောက်ရေလူ အရင်ကားထက်တက်ရရေ။ နောက်မှ ရောက်ရေလူက အနောက်ဆုံးမှာ နီရရေ။</p>
+<p><strong>ဇာခါ သုံးဖို့လဲ?</strong></p>
+<ul>
+<li>Printer မှာ စာရွက်ထုတ်ဖို့ စောင့်စွာ (အရင်ပို့ရေ ဖိုင် အရင်ထွက်ဖို့)။</li>
+<li>Customer Service မှာ ဖုန်းပြောဖို့ စောင့်စွာ။</li>
+</ul>
+<p><strong>Visualization:</strong></p>
+<pre><code class="language-text">Rear -&gt; [ C ] -&gt; [ B ] -&gt; [ A ] -&gt; Front
+</code></pre>
+<hr />
+<h2 id="သငခနးစာ-အကျဉးချုပ-7"><a class="header" href="#သငခနးစာ-အကျဉးချုပ-7">သင်ခန်းစာ အကျဉ်းချုပ်</a></h2>
+<ul>
+<li><strong>Array</strong>: အရွယ်အစား သတ်မှတ်ထားရေ အစဉ်လိုက် ဇယား။</li>
+<li><strong>Linked List</strong>: တစ်ခုနန့် တစ်ခု ချိတ်ဆက်ထားရေ ကွင်းဆက်။</li>
+<li><strong>Stack</strong>: နောက်ဆုံးဝင် ပထမထွက် (LIFO)။</li>
+<li><strong>Queue</strong>: ဦးသူ ပထမထွက် (FIFO)။</li>
+</ul>
+<h2 id="လေကျငခနး-exercises"><a class="header" href="#လေကျငခနး-exercises">လေ့ကျင့်ခန်း (Exercises)</a></h2>
+<ol>
+<li><strong>Music Playlist</strong>: မင်းရေ MP3 App တစ်ခု ရွီးနီရေ ဆိုပါစို့။ &quot;Next Song&quot; နှင့် &quot;Previous Song&quot; ကို လွယ်လွယ်ကူကူ လားနိုင်ရန် <em>Array</em> နှင့် <em>Linked List</em> မည်သည်ကို ရွီးချယ်ဖို့လဲ? ဇာကြောင့်လဲ?</li>
+<li><strong>Browser History</strong>: Web Browser ၏ &quot;Back&quot; ခလုတ်ကို ဖိလိုက်ကေ နောက်ဆုံးကြည့်ထားရေ စာမျက်နှာကို ပြန်ရောက်လားရေ။ အေစနစ်အတွက် <em>Stack</em> သို့မဟုတ် <em>Queue</em> မည်သည်ကို သုံးသင့်လဲ?</li>
+</ol>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="chapter-2-non-linear-data-structures-ကွနရကပုံစံ-အချကအလက-တညဆောကပုံများ"><a class="header" href="#chapter-2-non-linear-data-structures-ကွနရကပုံစံ-အချကအလက-တညဆောကပုံများ">Chapter 2: Non-Linear Data Structures (ကွန်ရက်ပုံစံ အချက်အလက် တည်ဆောက်ပုံများ)</a></h1>
+<p>အချက်အလက်တိကို ရှုပ်ထွီးရေ ချိတ်ဆက်မှုတိနန့် သိမ်းဆည်းရေ Data Structure တိကို လေ့လာကတ်ပါဖို့။</p>
+<hr />
+<h2 id="1-hash-map-သောချိတ-ဇယား"><a class="header" href="#1-hash-map-သောချိတ-ဇယား">1. Hash Map (သော့ချိတ် ဇယား)</a></h2>
+<p><img src="Data%20Structure/illustration/hash_map.png" alt="Hash Map Visual" /></p>
+<p><strong>ယင်းက ဇာလဲ?</strong>
+Key (သော့) နန့် Value (တန်ဖိုး) တွဲပနာ သိမ်းရေ ပုံစံပါ။ Key ကို သိစွာနန့် Value ကို ချက်ချင်း ရှာတွိ့နိုင်ပါရေ။</p>
+<p><strong>လက်တွိ့ဘဝ ဥပမာ -</strong>
+<strong>ဖုန်းစာအုပ် (Contacts)</strong> ပိုင်ပါရာ။ &quot;မောင်မောင်&quot; (Key) ဆိုရေ နာမည်ကို ရှာလိုက်စွာနန့် သူ့ဖုန်းနံပါတ် (Value) ကို တန်းတွိ့ပါရေ။ တစ်ရွက်ချင်းစီ လှန်ရှာစရာ မလိုပါ။</p>
+<p><strong>ဇာခါ သုံးဖို့လဲ?</strong></p>
+<ul>
+<li>Data တိကို အမြန်ဆုံး ရှာဖွေချင်ရေ အခါ။</li>
+<li>Password တိ၊ Username တိ စစ်ဆေးရေ အခါ။</li>
+</ul>
+<p><strong>Visualization:</strong></p>
+<pre><code class="language-text">Key &quot;John&quot; -&gt; Hash() -&gt; Index 0 -&gt; [ &quot;John&quot;: 25 ]
+Key &quot;Jane&quot; -&gt; Hash() -&gt; Index 1 -&gt; [ &quot;Jane&quot;: 30 ]
+</code></pre>
+<hr />
+<h2 id="2-binary-search-tree-သစပငပုံစံ"><a class="header" href="#2-binary-search-tree-သစပငပုံစံ">2. Binary Search Tree (သစ်ပင်ပုံစံ)</a></h2>
+<p><img src="Data%20Structure/illustration/bst.png" alt="BST Visual" /></p>
+<p><strong>ယင်းက ဇာလဲ?</strong>
+Data တိကို အဆင့်ဆင့် ခွဲပနာ သိမ်းရေ ပုံစံပါ။ ဘယ်ဘက် အကိုင်းမှာ ငယ်ရေ ဂဏန်း၊ ညာဘက် အကိုင်းမှာ ကြီးရေ ဂဏန်း ဆိုပနာ စည်းကမ်းနန့် သိမ်းပါရေ။</p>
+<p><strong>လက်တွိ့ဘဝ ဥပမာ -</strong>
+<strong>ဆုံးဖြတ်ချက်ချရေ ပုံစံ (Decision Tree)</strong> ပိုင်ပါရာ။ မေးခွန်းတစ်ခုမေးမေ &quot;ဟုတ်/မဟုတ်&quot; ဖြေမေ။ အဖြေပေါ်မူတည်ပနာ နောက်တဆင့် ထပ်လားပိုင်ပါရာ။</p>
+<p><strong>ဇာခါ သုံးဖို့လဲ?</strong></p>
+<ul>
+<li>Data တိကို စီထားရေ အတိုင်း လိုချင်ရေ အခါ။</li>
+<li>ရှာဖွီစွာ မြန်ချင်ရေ အခါ (Linked List ထက် ပိုယင်ရေ)။</li>
+</ul>
+<p><strong>Visualization:</strong></p>
+<pre><code class="language-text">      10
+     /  \
+    5    15
+</code></pre>
+<hr />
+<h2 id="3-heap-ဦးစားပီး-အစီအစိုင"><a class="header" href="#3-heap-ဦးစားပီး-အစီအစိုင">3. Heap (ဦးစားပီး အစီအစိုင်)</a></h2>
+<p><img src="Data%20Structure/illustration/heap.png" alt="Heap Visual" /></p>
+<p><strong>ယင်းက ဇာလဲ?</strong>
+အရေးကြီးဆုံး (သို့) အငယ်ဆုံး/အကြီးဆုံး Data ကို ထိပ်ဆုံးမှာ အမြဲထားရေ ပုံစံပါ။</p>
+<p><strong>လက်တွိ့ဘဝ ဥပမာ -</strong>
+<strong>ဆီးရုံ အရေးပေါ်ဌာန</strong> ပိုင်ပါရာ။ ဇာလူအရင်ရောက်ရောက်၊ အသည်းအသန် ဖြစ်နီရေ လူနာ (Priority High) ကို ဆရာဝန်က အရင်ကုပေးသပိုင်မျိုးပါ။</p>
+<p><strong>ဇာခါ သုံးဖို့လဲ?</strong></p>
+<ul>
+<li>အလုပ်တိကို ဦးစားပီး အဆင့်နန့် လုပ်ဆောင်ချင်ရေ အခါ။</li>
+<li>Google Maps မှာ အတိုဆုံး လမ်းကြောင်း ရှာရေ အခါ (အကွာအဝီး အနည်းဆုံးလမ်းကို ဦးစားပီး ရှာစွာ)။</li>
+</ul>
+<p><strong>Visualization (Min-Heap):</strong></p>
+<pre><code class="language-text">       10 (Smallest)
+     /    \
+    20     30
+</code></pre>
+<hr />
+<h2 id="4-graph-ကွနရက"><a class="header" href="#4-graph-ကွနရက">4. Graph (ကွန်ရက်)</a></h2>
+<p><img src="Data%20Structure/illustration/graph.png" alt="Graph Visual" /></p>
+<p><strong>ယင်းက ဇာလဲ?</strong>
+Data တိ တစ်ခုနန့် တစ်ခု ဇာပိုင် ပတ်သက်ဆက်နွယ်နီလဲ ဆိုစွာကို ပြရေ ကွန်ရက်ကြီးပါ။</p>
+<p><strong>လက်တွိ့ဘဝ ဥပမာ -</strong>
+<strong>Facebook Friends</strong> ပိုင်ပါရာ။ ကိုယ်နန့် သူငယ်ချင်းတိ ချိတ်ဆက်နီရေ။ သူတို့ကလည်း တခြားလူတိနန့် ထပ်ချိတ်ဆက်နီရေ။
+<strong>မြေပုံ</strong> ပိုင်မျိုးလည်း မြင်နိုင်ပါရေ။ မြို့တိက Data ဆိုကေ လမ်းတိက ချိတ်ဆက်မှု (Edge) တိပါ။</p>
+<p><strong>ဇာခါ သုံးဖို့လဲ?</strong></p>
+<ul>
+<li>GPS လမ်းကြောင်း ရှာရေ အခါ။</li>
+<li>လူမှုကွန်ရက် (Social Network) တိ တည်ဆောက်ရေ အခါ။</li>
+</ul>
+<p><strong>Visualization:</strong></p>
+<pre><code class="language-text">(A) -- (B)
+ |      |
+(D) -- (E)
+</code></pre>
+<hr />
+<h2 id="5-trie-စာလုံးစစ-သစပင"><a class="header" href="#5-trie-စာလုံးစစ-သစပင">5. Trie (စာလုံးစစ် သစ်ပင်)</a></h2>
+<p><img src="Data%20Structure/illustration/trie.png" alt="Trie Visual" /></p>
+<p><strong>ယင်းက ဇာလဲ?</strong>
+စာလုံးတိကို ရှိစကားလုံး (Prefix) တူစာချင်း စုပနာ သိမ်းရေ ပုံစံပါ။</p>
+<p><strong>လက်တွိ့ဘဝ ဥပမာ -</strong>
+<strong>Google မှာ စာရိုက်ရှာစွာ (Autocomplete)</strong> မျိုးပါ။ &quot;Alg&quot; လို့ ရိုက်လိုက်စွာနန့် &quot;Algorithm&quot;, &quot;Algebra&quot; စသဖြင့် &quot;Alg&quot; နန့် စရေ စကားလုံးတိကို အကြံပီးပိုင်မျိုးပါ။</p>
+<p><strong>ဇာခါ သုံးဖို့လဲ?</strong></p>
+<ul>
+<li>စာလုံးပေါင်း စစ်ရေ အခါ (Spell Checker)။</li>
+<li>ရှာဖွေရီး စနစ်တိမှာ စာလုံး ဖြည့်စွက်ပီးချင်ရေ အခါ (Auto-complete)။</li>
+</ul>
+<p><strong>Visualization:</strong></p>
+<pre><code class="language-text">Root -&gt; [C] -&gt; [A] -&gt; [T] (End)
+            -&gt; [R] -&gt; [R] (End)
+</code></pre>
+<hr />
+<h2 id="သငခနးစာ-အကျဉးချုပ-8"><a class="header" href="#သငခနးစာ-အကျဉးချုပ-8">သင်ခန်းစာ အကျဉ်းချုပ်</a></h2>
+<ul>
+<li><strong>Hash Map</strong>: Key နန့် Value တွဲသိမ်းရေ ပုံစံ။</li>
+<li><strong>BST</strong>: ဘယ်ငယ် ညာကြီး စည်းကမ်းနန့် သိမ်းရေ သစ်ပင်။</li>
+<li><strong>Graph</strong>: ကွန်ရက်ပုံစံ ချိတ်ဆက်မှုတိ။</li>
+</ul>
+<h2 id="လေကျငခနး-exercises-1"><a class="header" href="#လေကျငခနး-exercises-1">လေ့ကျင့်ခန်း (Exercises)</a></h2>
+<ol>
+<li><strong>Library System</strong>: စာအုပ်နာမည် ရိုက်ထည့်လိုက်သည်နှင့် စာအုပ်ရှိမရှိ ချက်ချင်း သိချင်ရေ။ ဇာ Data Structure ရေ အသင့်တော်ဆုံးလဲ? (Hint: Hash Map vs Array)</li>
+<li><strong>Friend Recommendation</strong>: &quot;မင်း သူငယ်ချင်း၏ သူငယ်ချင်းတိ&quot; ကို ရှာဖွေပြီး မိတ်ဆက်ပီးချင်ရေ။ ဇာ Data Structure ကို သုံးဖို့လဲ?</li>
+</ol>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="algorithms-လုပဆောငပုံ-အဆငဆင"><a class="header" href="#algorithms-လုပဆောငပုံ-အဆငဆင">Algorithms (လုပ်ဆောင်ပုံ အဆင့်ဆင့်)</a></h1>
+<p>ကွန်ပျူတာပရိုဂရမ်တစ်ခု ဇာပိုင်အလုပ်လုပ်သလဲဆိုစွာ နားလည်ဖို့အတွက် အသုံးများရေ <strong>Algorithms</strong> တိကို အပိုင်း (၃) ပိုင်းခွဲပြီး လေ့လာလားပါဖို့။</p>
+<h2 id="မာတိကာ-1"><a class="header" href="#မာတိကာ-1">မာတိကာ</a></h2>
+<h3 id="chapter-1-searching-algorithms"><a class="header" href="#chapter-1-searching-algorithms"><a href="Algorithem/chapter_1_searching.html">Chapter 1: Searching Algorithms</a></a></h3>
+<p>အချက်အလက်တိကို ရှာဖွေရေ နည်းလမ်းတိ။</p>
+<ul>
+<li>Linear Search</li>
+<li>Binary Search</li>
+</ul>
+<h3 id="chapter-2-sorting-algorithms"><a class="header" href="#chapter-2-sorting-algorithms"><a href="Algorithem/chapter_2_sorting.html">Chapter 2: Sorting Algorithms</a></a></h3>
+<p>အချက်အလက်တိကို စနစ်တကျ စီစီညီညီဖြစ်အောင် စီရေ နည်းလမ်းတိ။</p>
+<ul>
+<li>Bubble Sort</li>
+<li>Selection Sort</li>
+<li>Insertion Sort</li>
+<li>Merge Sort</li>
+<li>Quick Sort</li>
+</ul>
+<h3 id="chapter-3-graph-algorithms"><a class="header" href="#chapter-3-graph-algorithms"><a href="Algorithem/chapter_3_graph_algorithms.html">Chapter 3: Graph Algorithms</a></a></h3>
+<p>လမ်းကြောင်း ရှာဖွေရေ (Routing) နန့် ကွန်ရက် (Network) ဆိုင်ရာ နည်းလမ်းတိ။</p>
+<ul>
+<li>Breadth-First Search (BFS)</li>
+<li>Depth-First Search (DFS)</li>
+<li>Dijkstra's Algorithm</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="chapter-1-searching-algorithms-ရှာဖွီခြငး-algorithms"><a class="header" href="#chapter-1-searching-algorithms-ရှာဖွီခြငး-algorithms">Chapter 1: Searching Algorithms (ရှာဖွီခြင်း Algorithms)</a></h1>
+<p>Information တိကို ရှာဖွေရာမှာ အသုံးပြုရေ အခြေခံ Algorithms တိကို လေ့လာကတ်ပါဖို့။</p>
+<hr />
+<h2 id="1-linear-search-အစဉလိုက-ရှာဖွီခြငး"><a class="header" href="#1-linear-search-အစဉလိုက-ရှာဖွီခြငး">1. Linear Search (အစဉ်လိုက် ရှာဖွီခြင်း)</a></h2>
+<p><img src="Algorithem/illustration/linear_vs_binary_search.png" alt="Linear Search vs Binary Search" /></p>
+<p><strong>ယင်းက ဇာလဲ?</strong>
+စာအုပ်ပုံထဲမှာ ကိုယ်လိုချင်ရေ စာအုပ်ကို မတွိ့မချင်း တစ်အုပ်ပြီးတစ်အုပ် လိုက်ရှာရေ နည်းလမ်းပါ။ ရှာစရာရှိစွာ အကုန်လုံးကို အစကနီ အဆုံးထိ တစ်ခုချင်းစီ လိုက်စစ်ဆေးပါရေ။</p>
+<p><strong>လက်တွိ့ဘဝ ဥပမာ -</strong>
+အင်္ကျီဆိုင်မှာ ကိုယ်လိုချင်ရေ &quot;အနီရောင်တီရှပ်&quot; ကို ရှာရေအခါ၊ ချိတ်ထားရေ အင်္ကျီတိကို ထိပ်ဆုံးကနီစပြီး &quot;ဒါလား? မဟုတ်ဘူး.. ဒါလား? မဟုတ်ဘူး&quot; နန့် မတွိ့မချင်း လိုက်ကြည့်သပိုင်မျိုးပါ။</p>
+<p><strong>ဇာပိုင် အလုပ်လုပ်သလဲ?</strong></p>
+<ol>
+<li>ပထမဆုံး တစ်ခုကို ယူကြည့်ပါ။</li>
+<li>ကိုယ်ရှာချင်စွာ ဟုတ်လား?
+<ul>
+<li><strong>ဟုတ်ရေ</strong> ဆိုကေ တွိ့ဗျာယ်! (ပြီးပါယာ)</li>
+<li><strong>မဟုတ်ဘူး</strong> ဆိုကေ နောက်တစ်ခုကို ဆက်ကြည့်မယ်။</li>
+</ul>
+</li>
+<li>အကုန်ကုန်ရေအထိ မတွိ့ကေ &quot;မရှိပါ&quot; လို့ ပြန်ပြောပါ။</li>
+</ol>
+<p><strong>Visualization:</strong></p>
+<pre><code class="language-text">Target: 30 (၃၀ ကို ရှာမေ)
+[ 10 ] -&gt; [ 50 ] -&gt; [ 30 ] -&gt; တွိ့ပြီ!
+ စစ်မည်    စစ်မည်    စစ်မည်
+</code></pre>
+<p><strong>Pseudocode:</strong></p>
+<pre><code class="language-text">START
+  FOR EACH Item IN List
+    IF Item == Target THEN
+      RETURN Index (Found)
+    END IF
+  END FOR
+  RETURN -1 (Not Found)
+END
+</code></pre>
+<hr />
+<h2 id="2-binary-search-ထကဝကခွဲ-ရှာဖွေခြငး"><a class="header" href="#2-binary-search-ထကဝကခွဲ-ရှာဖွေခြငး">2. Binary Search (ထက်ဝက်ခွဲ ရှာဖွေခြင်း)</a></h2>
+<p><strong>ယင်းက ဇာလဲ?</strong>
+ဒါကတော့ ပိုယင်ရေ နည်းလမ်းပါ။ ယေလည်း Data တိက <strong>အစဉ်လိုက် စီထားပြီးသား (Sorted)</strong> ဖြစ်မှ သုံးလို့ရပါဖို့။ ရှာရဖို့ အပိုင်းအခြားကို ထက်ဝက်စီ ချိုးပြီး ရှာစွာပါ။</p>
+<p><strong>လက်တွိ့ဘဝ ဥပမာ -</strong>
+၁ ကနီ ၁၀၀ ကြား ဂဏန်းတစ်ခု စဉ်းစားထားပါ။ ကျွန်တော်က ၅၀ လို့ ခန့်မှန်းလိုက်မေ။</p>
+<ul>
+<li>မင်းက &quot;၅၀ ထက်ကြီးရေ&quot; လို့ပြောကေ ၁-၅၀ ထိ ဂဏန်းတိကို ကျွန်တော် ထပ်ရှာစရာ မလိုဗျာယ်။ ၅၁-၁၀၀ ကြားကိုရာ ဆက်ရှာမေ။</li>
+<li>ဒီပိုင်နည်းနန့် မလိုအပ်ရေ ထက်ဝက်ကို ဖယ်ထုတ်လိုက်စွာကြောင့် တဝယင်ပါရေ။</li>
+</ul>
+<p><strong>ဇာပိုင် အလုပ်လုပ်သလဲ?</strong></p>
+<ol>
+<li>အလယ်တည့်တည့်က Data ကို ရွီးလိုက်ပါ။</li>
+<li>ကိုယ်ရှာချင်စွာနန့် တူလား?
+<ul>
+<li>တူကေ တွိ့ဗျာယ်!</li>
+<li>ကိုယ်ရှာချင်စွာက <strong>ပိုကြီးနီကေ</strong> ညာဘက်ခြမ်း (ဂဏန်းကြီးရေဘက်) ကို ဆက်ရှာပါ။</li>
+<li>ကိုယ်ရှာချင်စွာက <strong>ပိုငယ်နီကေ</strong> ဘယ်ဘက်ခြမ်း (ဂဏန်းငယ်ရေဘက်) ကို ဆက်ရှာပါ။</li>
+</ul>
+</li>
+<li>မတွိ့မချင်း ထက်ဝက်စီ ခွဲပြီး ရှာလားပါ။</li>
+</ol>
+<p><strong>Pseudocode:</strong></p>
+<pre><code class="language-text">START
+  Left = 0, Right = Length - 1
+  WHILE Left &lt;= Right
+    Mid = (Left + Right) / 2
+    IF Array[Mid] == Target THEN
+      RETURN Mid (Found)
+    ELSE IF Target &lt; Array[Mid] THEN
+      Right = Mid - 1
+    ELSE
+      Left = Mid + 1
+    END IF
+  END WHILE
+  RETURN -1 (Not Found)
+END
+</code></pre>
+<hr />
+<h2 id="သငခနးစာ-အကျဉးချုပ-9"><a class="header" href="#သငခနးစာ-အကျဉးချုပ-9">သင်ခန်းစာ အကျဉ်းချုပ်</a></h2>
+<ul>
+<li><strong>Linear Search</strong>: တစ်ခုချင်းစီ လိုက်ရှာရေ နည်းလမ်း (နှေးရေ)။</li>
+<li><strong>Binary Search</strong>: ထက်ဝက်စီ ခွဲရှာရေ နည်းလမ်း (ယင်ရေ၊ Data စီထားဖို့လိုရေ)။</li>
+</ul>
+<h2 id="လေကျငခနး-exercises-2"><a class="header" href="#လေကျငခနး-exercises-2">လေ့ကျင့်ခန်း (Exercises)</a></h2>
+<ol>
+<li><strong>Phone Book</strong>: ဖုန်းစာအုပ်ထဲတွင် &quot;Mg Mg&quot; ဆိုသော အမည်ကို ရှာချင်ရေ။ ဖုန်းစာအုပ်ရေ အက္ခရာစဉ်အလိုက် စီထားလျှင် <em>Linear Search</em> သို့မဟုတ် <em>Binary Search</em> ဇာကို သုံးသင့်လဲ?</li>
+<li><strong>Missing Sock</strong>: အဝတ်ပုံထဲမှာ ပျောက်နီရေ ခြီစွပ်တစ်ဖက်ကို ရှာချင်ရေ။ <em>Linear Search</em> နှင့် တူလား၊ <em>Binary Search</em> နှင့် တူလား?</li>
+</ol>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="chapter-2-sorting-algorithms-အစဉလိုက-စီခြငး-algorithms"><a class="header" href="#chapter-2-sorting-algorithms-အစဉလိုက-စီခြငး-algorithms">Chapter 2: Sorting Algorithms (အစဉ်လိုက် စီခြင်း Algorithms)</a></h1>
+<p>အချက်အလက်တိကို စနစ်တကျ စီစီညီညီဖြစ်အောင် စီရေ Algorithms တိကို လေ့လာကတ်ပါဖို့။</p>
+<hr />
+<h2 id="1-bubble-sort-ပူပေါငးစီခြငး"><a class="header" href="#1-bubble-sort-ပူပေါငးစီခြငး">1. Bubble Sort (ပူပေါင်းစီခြင်း)</a></h2>
+<p><img src="Algorithem/illustration/bubble_sort.png" alt="Bubble Sort Visual" /></p>
+<p><strong>ယင်းက ဇာလဲ?</strong>
+အစီအစဉ်မကျရေ Data တိကို ငယ်စဉ်ကြီးလိုက် (သို့) ကြီးစဉ်ငယ်လိုက် စီချင်ရေအခါ သုံးပါရေ။ ကပ်လျက်နှစ်ခုကို ယှဉ်ကြည့်ပြီး နီရာမှားနီကေ ချိန်း (Swap) ပါရေ။</p>
+<p><strong>လက်တွိ့ဘဝ ဥပမာ -</strong>
+ကျောင်းသားတိကို အရပ်အမြင့်အတိုင်း တန်းစီခိုင်းပိုင်ပါ။
+ထိပ်ဆုံးက နှစ်ယောက်ကို ယှဉ်မေ။ ဘယ်ဘက်ကလူ ပိုရှည်နီကေ နီရာချိန်းမေ။ ပြီးကေ နောက်တစ်တွဲ ဆက်ယှဉ်မေ။ ယင့်ပိုင်နည်းနန့် အရပ်အရှည်ဆုံးလူက နောက်ဆုံး (ညာဘက်အစွန်) ကို အသာသာ ရောက်လားပါလိမ့်မေ။</p>
+<p><strong>Pseudocode:</strong></p>
+<pre><code class="language-text">START
+  REPEAT
+    Swapped = False
+    FOR i FROM 0 TO Length - 2
+      IF Array[i] &gt; Array[i+1] THEN
+        Swap(Array[i], Array[i+1])
+        Swapped = True
+      END IF
+    END FOR
+  UNTIL Swapped == False
+END
+</code></pre>
+<hr />
+<h2 id="2-selection-sort-ရွီးထုတစီခြငး"><a class="header" href="#2-selection-sort-ရွီးထုတစီခြငး">2. Selection Sort (ရွီးထုတ်စီခြင်း)</a></h2>
+<p><img src="Algorithem/illustration/selection_sort.png" alt="Selection Sort Visual" /></p>
+<p><strong>ယင်းက ဇာလဲ?</strong>
+Data စီရေနည်းပါရာ။ သူကတော့ အားလုံးထဲမှာ <strong>အငယ်ဆုံး</strong> တစ်ခုကို ရှာပြီး ရှိဆုံးမှာ လာထားပါရေ။ ပြီးကေ ကျန်စွာထဲက အငယ်ဆုံးကို ထပ်ရှာပြီး ဒုတိယနီရာမှာ ထားပါရေ။</p>
+<p><strong>လက်တွိ့ဘဝ ဥပမာ -</strong>
+ဖဲချပ်တိကို လက်ထဲမှာ ကိုင်ထားပြီး အငယ်ဆုံး (ဥပမာ - ၂) ကို ရှာပြီး ထိပ်ဆုံးမှာ ထုတ်ထားလိုက်ရေ။ ပြီးကေ ကျန်စွာထဲက အငယ်ဆုံး (ဥပမာ - ၃) ကို ရှာပြီး ၂ ရဲ့ဘေးမှာ ထပ်ထားပိုင်မျိုးပါ။</p>
+<p><strong>Pseudocode:</strong></p>
+<pre><code class="language-text">START
+  FOR i FROM 0 TO Length - 1
+    MinIndex = i
+    FOR j FROM i + 1 TO Length - 1
+      IF Array[j] &lt; Array[MinIndex] THEN
+        MinIndex = j
+      END IF
+    END FOR
+    Swap(Array[i], Array[MinIndex])
+  END FOR
+END
+</code></pre>
+<hr />
+<h2 id="3-insertion-sort-ထိုးထညစီခြငး"><a class="header" href="#3-insertion-sort-ထိုးထညစီခြငး">3. Insertion Sort (ထိုးထည့်စီခြင်း)</a></h2>
+<p><img src="Algorithem/illustration/insertion_sort.png" alt="Insertion Sort Visual" /></p>
+<p><strong>ယင်းက ဇာလဲ?</strong>
+Data တစ်ခုချင်းစီကို ယူပြီး သူ့နီရာအမှန်မှာ လိုက်ထည့်ရေ နည်းလမ်းပါ။</p>
+<p><strong>လက်တွိ့ဘဝ ဥပမာ -</strong>
+ဖဲကစပ်ရေအခါ ဖဲချပ်အသစ်တစ်ချပ် ဆွဲလိုက်တိုင်း လက်ထဲမှာရှိပြီးသား ဖဲချပ်တိကြားထဲက နီရာမှန် (ဥပမာ - ၅ နန့် ၇ ကြားမှာ ၆ ကို ထိုးထည့်) မှာ ထည့်လိုက်သပိုင်မျိုးပါ။</p>
+<p><strong>Pseudocode:</strong></p>
+<pre><code class="language-text">START
+  FOR i FROM 1 TO Length - 1
+    Key = Array[i]
+    j = i - 1
+    WHILE j &gt;= 0 AND Array[j] &gt; Key
+      Array[j + 1] = Array[j]
+      j = j - 1
+    END WHILE
+    Array[j + 1] = Key
+  END FOR
+END
+</code></pre>
+<hr />
+<h2 id="4-merge-sort-ပေါငးစညးစီခြငး"><a class="header" href="#4-merge-sort-ပေါငးစညးစီခြငး">4. Merge Sort (ပေါင်းစည်းစီခြင်း)</a></h2>
+<p><img src="Algorithem/illustration/merge_sort.png" alt="Merge Sort Visual" /></p>
+<p><strong>ယင်းက ဇာလဲ?</strong>
+Data တိအများကြီးကို တစ်ခါတည်း စီဖို့အစား၊ အရင်ဆုံး တစ်ဝက်စီ ခွဲထုတ်လိုက်ပါရေ။ တစ်ယောက်တစ်ဝက် စီပြီးမှ ပြန်ပေါင်း (Merge) ရေ နည်းလမ်းပါ။</p>
+<p><strong>လက်တွိ့ဘဝ ဥပမာ -</strong>
+စာမေးပွဲအဖြေလွှာ အုပ်ကြီးတစ်ခုလုံးကို ဆရာတစ်ယောက်တည်း စီကေကြာလို့ နှစ်ပုံခွဲပြီး ဆရာနှစ်ယောက်ကို စီခိုင်းလိုက်ရေ။ ပြီးမှ ဆရာနှစ်ယောက် ပြန်ပီးလာရေ အစီအစဉ်ကျပြီးသား စာရွက်နှစ်ပုံကို ပေါင်းလိုက်စွာပါ။</p>
+<p><strong>Pseudocode:</strong></p>
+<pre><code class="language-text">FUNCTION MergeSort(List)
+  IF Length of List &lt;= 1 THEN
+    RETURN List
+  END IF
+  Mid = Length / 2
+  Left = MergeSort(List[0...Mid])
+  Right = MergeSort(List[Mid...End])
+  RETURN Merge(Left, Right)
+END FUNCTION
+</code></pre>
+<hr />
+<h2 id="5-quick-sort-အမြနစီခြငး"><a class="header" href="#5-quick-sort-အမြနစီခြငး">5. Quick Sort (အမြန်စီခြင်း)</a></h2>
+<p><img src="Algorithem/illustration/quick_sort.png" alt="Quick Sort Visual" /></p>
+<p><strong>ယင်းက ဇာလဲ?</strong>
+Data တစ်ခု (Pivot) ကို ရွီးလိုက်ပြီး၊ သူ့ထက်ငယ်စွာတိကို ဘယ်ဘက်၊ ကြီးစွာတိကို ညာဘက် ပို့လိုက်ရေ နည်းလမ်းပါ။</p>
+<p><strong>လက်တွိ့ဘဝ ဥပမာ -</strong>
+အားကစားကွင်းမှာ ကျောင်းသားတိကို ခွဲရေအခါ &quot;မောင်မောင် (Pivot) ထက် အရပ်ပုရေလူတိ ဘယ်ဘက်လား၊ ရှည်ရေလူတိ ညာဘက်လား&quot; လို့ အုပ်စုခွဲလိုက်သပိုင်ပါရာ။ ပြီးမှ ယင့်အုပ်စုတိကို ထပ်ပြီး ခွဲလားစွာပါ။</p>
+<p><strong>Pseudocode:</strong></p>
+<pre><code class="language-text">FUNCTION QuickSort(List)
+  IF Length of List &lt;= 1 THEN
+    RETURN List
+  END IF
+  Pivot = SelectPivot(List)
+  Left = Elements &lt; Pivot
+  Right = Elements &gt; Pivot
+  RETURN QuickSort(Left) + [Pivot] + QuickSort(Right)
+END FUNCTION
+</code></pre>
+<hr />
+<h2 id="သငခနးစာ-အကျဉးချုပ-10"><a class="header" href="#သငခနးစာ-အကျဉးချုပ-10">သင်ခန်းစာ အကျဉ်းချုပ်</a></h2>
+<ul>
+<li><strong>Bubble Sort</strong>: ဘေးချင်းယှဉ်ပြီး ချိန်းရေနည်း။</li>
+<li><strong>Selection Sort</strong>: အငယ်ဆုံးကို ရွီးထုတ်ရေနည်း။</li>
+<li><strong>Merge Sort</strong>: ခွဲထုတ်ပြီးမှ ပြန်ပေါင်းစီရေနည်း။</li>
+</ul>
+<h2 id="လေကျငခနး-exercises-3"><a class="header" href="#လေကျငခနး-exercises-3">လေ့ကျင့်ခန်း (Exercises)</a></h2>
+<ol>
+<li><strong>Card Game</strong>: ဖဲချပ်တိကို လက်ထဲတွင် ကိုင်ထားပြီး ငယ်စဉ်ကြီးလိုက် စီချင်သည်။ ဖဲချပ်အသစ်တစ်ချပ် ဆွဲတိုင်း နေရာမှန်တွင် ထိုးထည့်လိုက်ခြင်းသည် မည်သည့် Sorting Algorithm နှင့် တူသနည်း?</li>
+<li><strong>School Assembly</strong>: ကျောင်းသားတိကို အရပ်အမြင့်အလိုက် တန်းစီခိုင်းသည်။ ဘေးချင်းယှဉ်ရပ်နီရေ ကျောင်းသားနှစ်ဦးကို ကြည့်ပြီး အရပ်ရှည်သူကို နောက်ပို့ရေနည်းလမ်းရေ ဇာ Algorithm လဲ?</li>
+</ol>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="chapter-3-graph-algorithms-ကွနရက-ရှာဖွီခြငး-algorithms"><a class="header" href="#chapter-3-graph-algorithms-ကွနရက-ရှာဖွီခြငး-algorithms">Chapter 3: Graph Algorithms (ကွန်ရက် ရှာဖွီခြင်း Algorithms)</a></h1>
+<p>Algorithm လောကမှာ အရေးအကြီးဆုံးဖြစ်ရေ Graph (ကွန်ရက်) တိကို ဇာပိုင် ရှာဖွီလဲ၊ အတိုဆုံးလမ်းကြောင်း ဇာပိုင်ရှာလဲ ဆိုစွာကို လေ့လာကတ်ပါဖို့။</p>
+<hr />
+<h2 id="1-breadth-first-search-bfs---ရီပြငညီ-ရှာဖွီခြငး"><a class="header" href="#1-breadth-first-search-bfs---ရီပြငညီ-ရှာဖွီခြငး">1. Breadth-First Search (BFS - ရီပြင်ညီ ရှာဖွီခြင်း)</a></h2>
+<p><img src="Algorithem/illustration/bfs_dfs.png" alt="BFS vs DFS Visual" /></p>
+<p><strong>ယင်းက ဇာလဲ?</strong>
+နီရာတစ်ခုကနီ စပြီး ကိုယ်နန့် အနီးဆုံးနီရာတိကို အရင်လိုက်ရှာရေ နည်းလမ်းပါ။</p>
+<p><strong>လက်တွိ့ဘဝ ဥပမာ -</strong>
+ရီကန်ထဲ ကျောက်ခဲပစ်ချလိုက်ကေ လှိုင်းတိက အလယ်ကနီ ဘေးကို အသာသာ ပြန့်ပိုင်မျိုးပါ။ ကိုယ်နန့် အနီးဆုံး သူငယ်ချင်းတိကို အရင်ရှာ၊ ပြီးမှ သူရို့ သူငယ်ချင်းတိကို ဆက်ရှာစွာမျိုး (Facebook Friends) ပိုင်။</p>
+<p><strong>Pseudocode:</strong></p>
+<pre><code class="language-text">START
+  Queue.Enqueue(StartNode)
+  Mark StartNode as Visited
+  WHILE Queue is NOT Empty
+    Node = Queue.Dequeue()
+    Process(Node)
+    FOR EACH Neighbor of Node
+      IF Neighbor is NOT Visited THEN
+        Mark Neighbor as Visited
+        Queue.Enqueue(Neighbor)
+      END IF
+    END FOR
+  END WHILE
+END
+</code></pre>
+<hr />
+<h2 id="2-depth-first-search-dfs---ဒေါငလိုက-ရှာဖွီခြငး"><a class="header" href="#2-depth-first-search-dfs---ဒေါငလိုက-ရှာဖွီခြငး">2. Depth-First Search (DFS - ဒေါင်လိုက် ရှာဖွီခြင်း)</a></h2>
+<p><strong>ယင်းက ဇာလဲ?</strong>
+လမ်းတစ်ခုကို ရွီးပြီးကေ ယင့်လမ်းအတိုင်း မဆုံးမချင်း (သို့) လမ်းပိတ်ရေအထိ ဆက်လားပြီးမှ နောက်ပြန်လှည့်ရေ နည်းလမ်းပါ။</p>
+<p><strong>လက်တွိ့ဘဝ ဥပမာ -</strong>
+ဝင်္ကပါ (Maze) ထဲက ထွက်ပေါက်ရှာပိုင်ပါရာ။ လမ်းတစ်ခုတွိ့ကေ ဝင်လားဖို့။ လမ်းပိတ်နီကေ ပြန်လှည့်လာ၊ နောက်လမ်းတစ်ခုကို ဆက်စမ်းမေ။</p>
+<p><strong>Pseudocode:</strong></p>
+<pre><code class="language-text">FUNCTION DFS(Node)
+  Mark Node as Visited
+  Process(Node)
+  FOR EACH Neighbor of Node
+    IF Neighbor is NOT Visited THEN
+      DFS(Neighbor)
+    END IF
+  END FOR
+END FUNCTION
+</code></pre>
+<hr />
+<h2 id="3-dijkstras-algorithm-အတိုဆုံးလမးကြောငး-ရှာဖွီခြငး"><a class="header" href="#3-dijkstras-algorithm-အတိုဆုံးလမးကြောငး-ရှာဖွီခြငး">3. Dijkstra's Algorithm (အတိုဆုံးလမ်းကြောင်း ရှာဖွီခြင်း)</a></h2>
+<p><img src="Algorithem/illustration/dijkstra.png" alt="Dijkstra Visual" /></p>
+<p><strong>ယင်းက ဇာလဲ?</strong>
+နီရာနှစ်ခုကြား လားလို့ရရေ လမ်းတိအများကြီးထဲကနီ အချိန်အနည်းဆုံး၊ သို့ ခရီးအနီးဆုံး လမ်းကို တွက်ချက်ပီးစွာပါ။</p>
+<p><strong>လက်တွိ့ဘဝ ဥပမာ -</strong>
+<strong>Google Maps</strong> ပါရာ။ အိမ်ကနီ ရုံးကိုလားဖို့ လမ်းတိအများကြီးရှိကေလည်း၊ ယင့် Algorithm က ကားပိတ်ရေလမ်း၊ ဝီးရေလမ်းတိကို ရှောင်ပြီး အယင်ဆုံးရောက်ဖို့ လမ်းကြောင်းကို တွက်ပီးစွာဖြစ်ပါရေ။</p>
+<p><strong>Pseudocode:</strong></p>
+<pre><code class="language-text">START
+  Init Distances to Infinity, StartNode to 0
+  PriorityQueue.Add(StartNode, 0)
+  WHILE PriorityQueue is NOT Empty
+    CurrentNode = PriorityQueue.PopMin()
+    FOR EACH Neighbor of CurrentNode
+      NewDist = Distances[CurrentNode] + EdgeWeight
+      IF NewDist &lt; Distances[Neighbor] THEN
+        Distances[Neighbor] = NewDist
+        PriorityQueue.Update(Neighbor, NewDist)
+      END IF
+    END FOR
+  END WHILE
+END
+</code></pre>
+<hr />
+<h2 id="သငခနးစာ-အကျဉးချုပ-11"><a class="header" href="#သငခနးစာ-အကျဉးချုပ-11">သင်ခန်းစာ အကျဉ်းချုပ်</a></h2>
+<ul>
+<li><strong>BFS</strong>: ရီပြင်ညီ ရှာဖွီခြင်း (အပါးဆုံးက အရင်)။</li>
+<li><strong>DFS</strong>: ဒေါင်လိုက် ရှာဖွီခြင်း (အဆုံးထိလားပြီးမှ ပြန်လှည့်)။</li>
+<li><strong>Dijkstra</strong>: အတိုဆုံး လမ်းကြောင်း ရှာဖွီခြင်း။</li>
+</ul>
+<h2 id="လေကျငခနး-exercises-4"><a class="header" href="#လေကျငခနး-exercises-4">လေ့ကျင့်ခန်း (Exercises)</a></h2>
+<ol>
+<li><strong>Shortest Path</strong>: သံတွဲက ပုဏ္ဏားကျွန်းသို့ ခရီးစရိတ် အနည်းဆုံး (သို့) အချိန်အနည်းဆုံးဖြင့် လားလိုရေ။ Google Maps ကဲ့သို့သော စနစ်တိရေ ဇာ Graph Algorithm ကို အသုံးပြုဖို့ ထင်ပါလဲ?</li>
+<li><strong>Maze Solver</strong>: ဝင်္ကပါထဲမှ ထွက်ပေါက်ရှာစာမာ လမ်းဆုံးရေအထိ ဆက်လားပြီးမှ ပြန်လှည့်စာရေ <em>BFS</em> လား၊ <em>DFS</em> လား?</li>
+</ol>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="object-oriented-programming-oop"><a class="header" href="#object-oriented-programming-oop">Object Oriented Programming (OOP)</a></h1>
+<p>OOP ဆိုစွာ ပရိုဂရမ်းမင်းကို ရွီးသားရာမှာ လက်တွိ့လောက (Real World) က အရာဝတ္ထုတိ (Objects) ကို အခြီခံပြီး စိုင်းစားရေ နည်းလမ်းတစ်ခု ဖြစ်ပါရေ။</p>
+<h2 id="ဇာဖြစလို-oop-ကို-သုံးရစွာလဲ"><a class="header" href="#ဇာဖြစလို-oop-ကို-သုံးရစွာလဲ">ဇာဖြစ်လို့ OOP ကို သုံးရစွာလဲ?</a></h2>
+<ul>
+<li>ကုဒ်တိကို ပြန်သုံးဖို့ လွယ်ကူစီခြင်း (Reusability)</li>
+<li>ပြင်ဆင်ရ လွယ်ကူခြင်း (Maintainability)</li>
+<li>ရှုပ်ထွီးရေ ပြဿနာတိကို ရှင်းလင်းစွာ ဖြေရှင်းနိုင်ခြင်း</li>
+</ul>
+<h2 id="သငခနးစာတိ"><a class="header" href="#သငခနးစာတိ">သင်ခန်းစာတိ</a></h2>
+<h3 id="chapter-1-classes--objects-အခြေခံ-သဘောတရားများ"><a class="header" href="#chapter-1-classes--objects-အခြေခံ-သဘောတရားများ"><a href="OOP/chapter_1_basics.html">Chapter 1: Classes &amp; Objects (အခြေခံ သဘောတရားများ)</a></a></h3>
+<p>Blueprint နန့် အိမ်ဆောက်သလို၊ Class နန့် Object တိကို နားလည်ခြင်း။</p>
+<h3 id="chapter-2-inheritance--polymorphism"><a class="header" href="#chapter-2-inheritance--polymorphism"><a href="OOP/chapter_2_inheritance_polymorphism.html">Chapter 2: Inheritance &amp; Polymorphism</a></a></h3>
+<p>မျိုးရိုးလိုက်ခြင်းနန့် ပုံစံအမျိုးမျိုး ပြောင်းလဲလုပ်ဆောင်ခြင်း။</p>
+<h3 id="chapter-3-encapsulation--abstraction"><a class="header" href="#chapter-3-encapsulation--abstraction"><a href="OOP/chapter_3_encapsulation_abstraction.html">Chapter 3: Encapsulation &amp; Abstraction</a></a></h3>
+<p>အချက်အလက်ကို လုံခြုံစွာ သိမ်းဆည်းခြင်းနန့် မလိုရေ အစိတ်အပိုင်းတိကို ဖျောက်ထားခြင်း။</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="chapter-1-classes--objects"><a class="header" href="#chapter-1-classes--objects">Chapter 1: Classes &amp; Objects</a></h1>
+<p>OOP မှာ အဓိက အကျဆုံးက Class နန့် Object ပါ။  အေသဘောတရားနှစ်ခုက ကျွန်တော်ရို့ နိန့်စဉ်ဘဝမှာ မြင်နီတွိ့နီရေ အရာတိနန့် တူပါရေ။</p>
+<h2 id="class-vs-object-နားလညလွယမယ-ဥပမာများ"><a class="header" href="#class-vs-object-နားလညလွယမယ-ဥပမာများ">Class vs Object နားလည်လွယ်မယ့် ဥပမာများ</a></h2>
+<h3 id="၁-မုနပေါငး-ဥပမာ"><a class="header" href="#၁-မုနပေါငး-ဥပမာ">၁။ မုန့်ပေါင်း ဥပမာ</a></h3>
+<ul>
+<li><strong>Class</strong>: မုန့်လုပ်ဖို့ ပုံစံခွက် (Mold or Cutter)။ ယင့်စာကို စားလို့မရပါ၊ မုန့်ပုံစံထွက်ဖို့ရာ လုပ်ထားရေ ပုံစံခွက်ရာ ဖြစ်ပါရေ။</li>
+<li><strong>Object</strong>: အေ ပုံစံခွက်က ထွက်လာရေ မုန့်တိ (မုန့်ပေါင်း)။ မုန့်ကို ကိုင်လို့ရရေ၊ စားလို့ရရေ အရာဝတ္ထုတိ ဖြစ်ပါရေ။</li>
+</ul>
+<blockquote>
+<p><em>ပုံစံခွက်တစ်ခုတည်းကနေ မုန့်အများကြီး ထုတ်လို့ရပိုင်၊ Class တစ်ခုတည်းကနိန် Object အများကြီး ဆောက်လို့ရပါရေ။</em></p>
+</blockquote>
+<h3 id="၂-အိမဆောကပလန-house-blueprint-ဥပမာ"><a class="header" href="#၂-အိမဆောကပလန-house-blueprint-ဥပမာ">၂။ အိမ်ဆောက်ပလန် (House Blueprint) ဥပမာ</a></h3>
+<ul>
+<li><strong>Class</strong>: အိမ်ပုံစံ ဒီဇိုင်း (Blueprint)။ စက္ကူမှာ ဆွဲထားရေ ပုံရာ ဖြစ်ပါရေ။ နီလို့မရပါ။</li>
+<li><strong>Object</strong>: အမှန်ဆောက်လိုက်လို့ ပေါ်လာရေ အိမ် (House)။ လူနီလို့ရပါရေ။</li>
+</ul>
+<hr />
+<h2 id="attributes--methods"><a class="header" href="#attributes--methods">Attributes &amp; Methods</a></h2>
+<p>အရာဝတ္ထုတိုင်းမှာ (၂) ပိုင်း ဟိတတ်ပါရေ။</p>
+<ol>
+<li><strong>Attributes (Properties)</strong>: သူမွာ ဇာတိဟိလဲ? (What it has)</li>
+<li><strong>Methods (Actions/Behaviors)</strong>: သူဇာတိလုပ်နိုင်လဲ? (What it does)</li>
+</ol>
+<h3 id="လကတွိဥပမာ---မိုဘိုငးဖုနး-mobile-phone"><a class="header" href="#လကတွိဥပမာ---မိုဘိုငးဖုနး-mobile-phone">လက်တွိ့ဥပမာ - မိုဘိုင်းဖုန်း (Mobile Phone)</a></h3>
+<p>ကျွန်တော်တို့ ကိုင်နီရေ ဖုန်းကို Class တစ်ခုအဖြစ် မြင်ကြည့်ရအောင်။</p>
+<p><strong>Attributes (သူ့မှာဟိရေ အချက်အလက်တိ)</strong></p>
+<ul>
+<li>Brand (ဥပမာ - Apple, Samsung)</li>
+<li>Color (အမဲ၊ အဖြူ)</li>
+<li>Battery Level (30%, 80%)</li>
+</ul>
+<p><strong>Methods (သူလုပ်ပီးနိုင်ရေ အလုပ်တိ)</strong></p>
+<ul>
+<li>Phone Call (ဖုန်းခေါ်ခြင်း)</li>
+<li>Take Photo (ဓာတ်ပုံရိုက်ခြင်း)</li>
+<li>Charge (အားသွင်းခြင်း)</li>
+</ul>
+<h3 id="pseudo-code-နန-ရွီးကြညခြငး"><a class="header" href="#pseudo-code-နန-ရွီးကြညခြငး">Pseudo Code နန့် ရွီးကြည့်ခြင်း</a></h3>
+<pre><code class="language-pseudo">Class MobilePhone
+    // Attributes
+    Attribute brand = &quot;Samsung&quot;
+    Attribute color = &quot;Black&quot;
+    Attribute batteryLevel = 50
+    
+    // Methods
+    Method makeCall(number)
+        PRINT &quot;Calling &quot; + number + &quot;...&quot;
+    End Method
+    
+    Method takePhoto()
+        PRINT &quot;Click! Photo taken.&quot;
+    End Method
+    
+    Method charge()
+        batteryLevel = batteryLevel + 10
+        PRINT &quot;Charging... Battery is now &quot; + batteryLevel + &quot;%&quot;
+    End Method
+End Class
+</code></pre>
+<h3 id="အနှစချုပ"><a class="header" href="#အနှစချုပ">အနှစ်ချုပ်</a></h3>
+<ul>
+<li><strong>Class</strong> ဆိုစွာ အရာဝတ္ထုတိကို ဖန်တီးဖို့ ပုံစံခွက် သို့မဟုတ် ဒီဇိုင်း (Design/Blueprint) ပါ။</li>
+<li><strong>Object</strong> ဆိုစွာ အေ Class ကိုသုံးပနာ အဂယောင့်ဖန်တီးထားရေ အရာ (Real instance) ပါ။</li>
+</ul>
+<hr />
+<h2 id="သငခနးစာ-အကျဉးချုပ-12"><a class="header" href="#သငခနးစာ-အကျဉးချုပ-12">သင်ခန်းစာ အကျဉ်းချုပ်</a></h2>
+<ul>
+<li><strong>Class</strong>: အရာဝတ္ထုတိ ဖန်တီးဖို့ ပုံစံခွက် (Blueprint)။</li>
+<li><strong>Object</strong>: ပုံစံခွက်ကနေ တကယ်ထွက်လာရေ အရာ (Instance)။</li>
+<li><strong>Attributes</strong>: သူ့မှာဟိရေ အချက်အလက်တိ (Properties)။</li>
+<li><strong>Methods</strong>: သူလုပ်နိုင်ရေ အလုပ်တိ (Actions)။</li>
+</ul>
+<h2 id="လေကျငခနး-exercises-5"><a class="header" href="#လေကျငခနး-exercises-5">လေ့ကျင့်ခန်း (Exercises)</a></h2>
+<ol>
+<li><strong>Design a Student</strong>: <code>Student</code> ဟု အမည်ရရေ Class တစ်ခုကို Pseudo Code ဖြင့် ရေးကြည့်ပါ။
+<ul>
+<li><strong>Attributes</strong>: <code>name</code>, <code>age</code>, <code>grade</code></li>
+<li><strong>Methods</strong>: <code>study()</code>, <code>takeExam()</code></li>
+</ul>
+</li>
+<li><strong>Object Creation</strong>: အထက်ပါ <code>Student</code> Class ကိုသုံးပြီး သင့်ကိုယ်ပိုင် Object (Instance) တစ်ခု တည်ဆောက်ပြပါ။</li>
+</ol>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="chapter-2-inheritance--polymorphism-1"><a class="header" href="#chapter-2-inheritance--polymorphism-1">Chapter 2: Inheritance &amp; Polymorphism</a></h1>
+<p>OOP ရဲ့ အားသာချက်ကတော့ ကုဒ်တိကို ထပ်ခါထပ်ခါ မရွီးရဘဲ ပြန်လို့အသုံးပြုနိုင်ခြင်း (Reusability) နန့် ပြောင်းလွယ်ပြင်လွယ်ဟိခြင်း (Flexibility) ဖြစ်ပါရေ။</p>
+<h2 id="1-inheritance-မျိုးရိုးလိုကခြငး"><a class="header" href="#1-inheritance-မျိုးရိုးလိုကခြငး">1. Inheritance (မျိုးရိုးလိုက်ခြင်း)</a></h2>
+<p>မျိုးရိုးလိုက်ရေဆိုစွာ &quot;အီးယို&quot; ပါးက အရည်အချင်းတိကို &quot;သားသမီး&quot; က အမွီဆက်ခံရဟိခြင်း ဖြစ်ပါရေ။</p>
+<h3 id="လကတွိဥပမာ---ဖုနး-phone"><a class="header" href="#လကတွိဥပမာ---ဖုနး-phone">လက်တွိ့ဥပမာ - ဖုန်း (Phone)</a></h3>
+<p>ကျွန်တော်ရို့မှာ ရိုးရိုးဖုန်း (Keypad Phone) တစ်လုံးဟိရေ ဆိုပါဖိ။</p>
+<ul>
+<li><strong>Phone</strong> (Parent): ဖုန်းခေါ်နိုင်ရေ၊ စာပို့နိုင်ရေ။</li>
+</ul>
+<p>နောက်ထပ် စမတ်ဖုန်း (Smart Phone) တစ်လုံး ထပ်ထုတ်ရေ။</p>
+<ul>
+<li><strong>SmartPhone</strong> (Child): ရိုးရိုးဖုန်းလုပ်နိုင်စွာတိ (ဖုန်းခေါ်၊ စာပို့) အကုန်လုပ်နိုင်ရေ။ ယင့်အပြင် အင်တာနက်သုံးစာ၊ ဂိမ်းကစပ်စာတိပါ ထပ်ဖြည့်စွက်နိုင်ရေ။</li>
+</ul>
+<blockquote>
+<p><em>SmartPhone သည် Phone ဖြစ်ရေ (SmartPhone IS-A Phone)</em>. ကုဒ်ပြန်ရွီးစရာမလိုဘဲ Phone က လုပ်ဆောင်ချက်တိကို ယူသုံးလိုက်လို့ရပါရေ။</p>
+</blockquote>
+<pre><code class="language-pseudo">Class Phone
+    Method call()
+        PRINT &quot;Calling...&quot;
+    End Method
+    
+    Method sendSMS()
+        PRINT &quot;Sending Message...&quot;
+    End Method
+End Class
+
+// SmartPhone သည် Phone ဆီက အကုန်အမွေရရေ
+Class SmartPhone INHERITS FROM Phone
+    Method surfInternet()
+        PRINT &quot;Browsing Website...&quot;
+    End Method
+End Class
+</code></pre>
+<hr />
+<h2 id="2-polymorphism-ပုံစံအမျိုးမျိုး-ဆောငခြငး"><a class="header" href="#2-polymorphism-ပုံစံအမျိုးမျိုး-ဆောငခြငး">2. Polymorphism (ပုံစံအမျိုးမျိုး ဆောင်ခြင်း)</a></h2>
+<p>Polymorphism ဆိုစွာ &quot;Poly&quot; (အများ) နန့် &quot;Morph&quot; (ပုံစံ) က လာစွာပါ။ လုပ်ဆောင်ချက် (Method) နာမည် တူကေလည်း လုပ်ဆောင်ပုံ (Behavior) ကွဲပြားနိုင်စွာကို ဆိုလိုပါရေ။</p>
+<h3 id="လကတွေဥပမာ---play-ခလုတ"><a class="header" href="#လကတွေဥပမာ---play-ခလုတ">လက်တွေ့ဥပမာ - &quot;Play&quot; ခလုတ်</a></h3>
+<p>Remote Control က &quot;Play&quot; ခလုတ် တစ်ခုတည်း ဖြစ်ပေမယ့်၊ ဇာစက်နန့် တွဲသုံးလဲပေါ်မူတည်ပနာ အလုပ်လုပ်ပုံ ကွဲလားပါရေ။</p>
+<ul>
+<li><strong>Music Player</strong> မှာ နှိပ်ကေ -&gt; တေးခင်းသံ ထွက်လာဖို့။</li>
+<li><strong>Video Player</strong> မှာ နှိပ်ကေ -&gt; ဗီဒီယို ပြပီးဖို့။</li>
+</ul>
+<h3 id="pseudo-code"><a class="header" href="#pseudo-code">Pseudo Code</a></h3>
+<pre><code class="language-pseudo">Class MusicPlayer
+    Method play()
+        PRINT &quot;Playing Song 🎵&quot;
+    End Method
+End Class
+
+Class VideoPlayer
+    Method play()
+        PRINT &quot;Playing Movie 🎬&quot;
+    End Method
+End Class
+
+// အသုံးပြုပုံ
+player1 = NEW MusicPlayer()
+player1.play() // Output: Playing Song 🎵
+
+player2 = NEW VideoPlayer()
+player2.play() // Output: Playing Movie 🎬
+</code></pre>
+<hr />
+<h2 id="သငခနးစာ-အကျဉးချုပ-13"><a class="header" href="#သငခနးစာ-အကျဉးချုပ-13">သင်ခန်းစာ အကျဉ်းချုပ်</a></h2>
+<ul>
+<li><strong>Inheritance</strong>: မိဘ Class က အရည်အချင်းတိကို သားသမီး Class က ဆက်ခံရဟိခြင်း။ (ကုဒ်ကို ပြန်သုံးနိုင်ရေ)</li>
+<li><strong>Polymorphism</strong>: လုပ်ဆောင်ချက် နာမည်တူကေလည်း အခြီအနိီပေါ်မူတည်ပနာ အလုပ်လုပ်ပုံ ကွဲပြားခြင်း။</li>
+</ul>
+<h2 id="လေကျငခနး-exercises-6"><a class="header" href="#လေကျငခနး-exercises-6">လေ့ကျင့်ခန်း (Exercises)</a></h2>
+<ol>
+<li><strong>Vehicle Inheritance</strong>: <code>Vehicle</code> (ယာဉ်) ဟူသော Parent Class တစ်ခု ရှိပါဖိ။ <code>Car</code> နှင့် <code>Plane</code> ကို Child Classes အဖြစ် သတ်မှတ်ပါ။ <code>Car</code> တွင် <code>drive()</code> ရှိပြီး <code>Plane</code> တွင် <code>fly()</code> ရှိအောင် ဖန်တီးကြည့်ပါ။</li>
+<li><strong>Shape Polymorphism</strong>: <code>Shape</code> Class တွင် <code>draw()</code> method ရှိသည်။ <code>Circle</code> နှင့် <code>Square</code> ရို့ရေ <code>Shape</code> မှ ဆင်းသက်လာပြီး <code>draw()</code> ကို ခေါ်လိုက်လျှင် မတူညီရေ ပုံစံတိ (စက်ဝိုင်း၊ စတုရန်း) ဆွဲပြအောင် ဇာပိုင် စီစိုင်ဖို့လည်း?</li>
+</ol>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="chapter-3-encapsulation--abstraction-1"><a class="header" href="#chapter-3-encapsulation--abstraction-1">Chapter 3: Encapsulation &amp; Abstraction</a></h1>
+<p>ဒေအခန်းမှာတော့ OOP ဧ့ လုံခြုံရီးနန့် ရှုပ်ထွေးမှု လျှော့ချရေ အပိုင်းတိကို လေ့လာလားပါဖို့။ အေသဘောတရားနှစ်ခုက ခွဲခြားရခက်ကေလည်း အလုပ်လုပ်ပုံ မတူပါ (Data Hiding vs Implementation Hiding)။</p>
+<h2 id="1-encapsulation-လုံခြုံစွာ-ထုပပိုးခြငး"><a class="header" href="#1-encapsulation-လုံခြုံစွာ-ထုပပိုးခြငး">1. Encapsulation (လုံခြုံစွာ ထုပ်ပိုးခြင်း)</a></h2>
+<p>Data တိကို အပြင်လူ (External Access) ကနေ တိုက်ရိုက် ဝင်ပြင်လို့မရအောင် ကာကွယ်ထားခြင်း ဖြစ်ပါရေ။</p>
+<h3 id="လကတွိဥပမာ---atm-စက"><a class="header" href="#လကတွိဥပမာ---atm-စက">လက်တွိ့ဥပမာ - ATM စက်</a></h3>
+<p>ATM စက်ထဲမှာ ဖေ့ချာတိ (Data) အများကြီးဟိရေ။ ယေကေလည်း ကျွန်တော်ရို့က အေဖေ့ချာတိကို လက်နန့် တိုက်ရိုက် နှိုက်ယူလို့ မရပါ။</p>
+<ul>
+<li><strong>Private Data</strong>: ဖေ့ချာတိတ္တာ (Money Vault)။</li>
+<li><strong>Public Access</strong>: ကဒ်ထည့်၊ PIN ရိုက်ပြီးမှ ဖေ့ချာထုတ်ယူလို့ရရေ စနစ်။</li>
+</ul>
+<blockquote>
+<p><em>Encapsulation က Data ကို ကာကွယ်ဖို့ (Protect) လုပ်ဆောင်ပါရေ။</em></p>
+</blockquote>
+<h3 id="pseudo-code-1"><a class="header" href="#pseudo-code-1">Pseudo Code</a></h3>
+<p><code>balance</code> (လက်ကျန်ဖေ့ချာ) ကို အပြင်ကနေ တိုက်ရိုက် <code>0</code> လို့ ပြင်ပစ်လို့မရအောင် <code>PRIVATE</code> နန့် ကာကွယ်ထားပါရေ။</p>
+<pre><code class="language-pseudo">Class BankAccount
+    // PRIVATE ဆိုစွာ Class အပြင်ကနေ တိုက်ရိုက်ယူသုံးလို့မရပါ
+    PRIVATE Attribute balance = 1000
+    
+    // ပိုက်ဆံထုတ်ချင်ရင် ဒီ Method ကတစ်ဆင့်ရာ ရပါမယ်
+    Method withdraw(amount)
+        IF amount &gt; balance THEN
+            PRINT &quot;Error: ဖေ့ချာမလောက်ပါ&quot;
+        ELSE
+            balance = balance - amount
+            PRINT &quot;ဖေ့ချာထုတ် အောင်မြင်: &quot; + amount
+        END IF
+    End Method
+End Class
+</code></pre>
+<hr />
+<h2 id="2-abstraction-မလိုအပစာကို-ဖျောကထားခြငး"><a class="header" href="#2-abstraction-မလိုအပစာကို-ဖျောကထားခြငး">2. Abstraction (မလိုအပ်စာကို ဖျောက်ထားခြင်း)</a></h2>
+<p>ရှုပ်ထွေးရေ အလုပ်လုပ်ပုံတိကို အနောက်မှာ ဖျောက်ထားပြီး (Hide Complexity)၊ အသုံးပြုသူအတွက် လွယ်ကူရေ ခလုတ် (Interface) ကိုရာ ပြသထားခြင်း ဖြစ်ပါရေ။</p>
+<h3 id="လကတွိဥပမာ---ကောဖီစက-coffee-machine"><a class="header" href="#လကတွိဥပမာ---ကောဖီစက-coffee-machine">လက်တွိ့ဥပမာ - ကော်ဖီစက် (Coffee Machine)</a></h3>
+<p>ကော်ဖီစက်မှာ ခလုတ်တစ်ခုရာ ဟိမယ် - &quot;Make Coffee&quot;။</p>
+<ul>
+<li>ကျွန်တော်တို့ ခလုတ်နှိပ်လိုက်ကေ ကော်ဖီရရေ။</li>
+<li>စက်ထဲမှာ <em>ရီပူဆူအောင်လုပ်စာ</em>၊ <em>ကော်ဖီစိ့ကြိတ်စာ</em>၊ <em>အရည်ဖျော်စာ</em> တိကို ကျွန်တော်ရို့ သိဖို့မလို၊ လုပ်ဖို့မလိုပါ။ စက်က အလိုအလျောက် လုပ်ပီးလားပါဖို့။</li>
+</ul>
+<blockquote>
+<p><em>Abstraction က ရှုပ်ထွေးမှုကို လျှော့ချဖို့ (Simplify) လုပ်ဆောင်ပါရေ။</em></p>
+</blockquote>
+<h3 id="pseudo-code-2"><a class="header" href="#pseudo-code-2">Pseudo Code</a></h3>
+<pre><code class="language-pseudo">Class CoffeeMachine
+    // အသုံးပြုသူက ဒါကိုရာ မြင်ရပါမယ်
+    Method makeCoffee()
+        PRINT &quot;ကော်ဖီ ဖျော်နီပါရေ...&quot;
+        boilWater()   // အနောက်ကွယ်က အလုပ်
+        brew()        // အနောက်ကွယ်က အလုပ်
+        PRINT &quot;ကော်ဖီရပါပြီ! ☕&quot;
+    End Method
+    
+    // PRIVATE Methods (အသုံးပြုသူ သိစရာမလိုပါ)
+    PRIVATE Method boilWater()
+        PRINT &quot;ရေနွေးတည်နီသည်...&quot;
+    End Method
+    
+    PRIVATE Method brew()
+        PRINT &quot;ကော်ဖီစစ်နီသည်...&quot;
+    End Method
+End Class
+</code></pre>
+<h3 id="summary-အနှစချုပ"><a class="header" href="#summary-အနှစချုပ">Summary (အနှစ်ချုပ်)</a></h3>
+<div class="table-wrapper"><table><thead><tr><th>Concept</th><th>Focus</th><th>Example</th></tr></thead><tbody>
+<tr><td><strong>Encapsulation</strong></td><td><strong>Data Security</strong> (လုံခြုံရေး)</td><td>ATM (ပိုက်ဆံကို တိုက်ရိုက်ယူမရ)</td></tr>
+<tr><td><strong>Abstraction</strong></td><td><strong>Simplicity</strong> (ရိုးရှင်းမှု)</td><td>Coffee Machine (ခလုတ်နှိပ်ရုံဖြင့် ရ)</td></tr>
+</tbody></table>
+</div>
+<hr />
+<h2 id="သငခနးစာ-အကျဉးချုပ-14"><a class="header" href="#သငခနးစာ-အကျဉးချုပ-14">သင်ခန်းစာ အကျဉ်းချုပ်</a></h2>
+<ul>
+<li><strong>Encapsulation</strong>: အချက်အလက်တိကို လုံခြုံအောင် ကာကွယ်ထားခြင်း (Data Security)။</li>
+<li><strong>Abstraction</strong>: ရှုပ်ထွီးရေ လုပ်ဆောင်ချက်တိကို ဖျောက်ထားပနာ ရိုးရှင်းစွာကိုရာ ပြသခြင်း (Simplicity)။</li>
+</ul>
+<h2 id="လေကျငခနး-exercises-7"><a class="header" href="#လေကျငခနး-exercises-7">လေ့ကျင့်ခန်း (Exercises)</a></h2>
+<ol>
+<li><strong>Secure Login</strong>: <code>User</code> Class တစ်ခုတွင် <code>password</code> ကို အပြင်မှ တိုက်ရိုက် မပြောင်းလဲနိုင်အောင် (Encapsulation) ဇာပိုင် ကာကွယ်ဖို့လဲ? (<code>PRIVATE</code> keyword သုံးပြီး စိုင်းစားပါ)</li>
+<li><strong>Car Dashboard</strong>: ကားမောင်းသူရေ အင်ဂျင်အလုပ်လုပ်ပုံကို သိစရာမလိုဘဲ စတီယာရင်နှင့် ဘရိတ်ကိုယာ သုံးရရေ။ အေအခြီအနီရေ OOP ဧ့ ဇာ Concept နှင့် ကိုက်ညီလဲ? (<em>Abstraction</em> or <em>Inheritance</em>?)</li>
+</ol>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="applied-system-design-လကတွေ-စနစဒီဇိုငးများ"><a class="header" href="#applied-system-design-လကတွေ-စနစဒီဇိုငးများ">Applied System Design (လက်တွေ့ စနစ်ဒီဇိုင်းများ)</a></h1>
+<p>ယခင်အခန်းတိမှာ Programming ဧ့ အခြီခံ (Basic), Logic, Data Structure နန့် OOP တို့ကို သင်ယူခပြီး ဖြစ်ပါရေ။ အခုအခန်းမှာ ယင်းစာတိကို ပေါင်းစပ်ပနာ လက်တွိ့ဘဝမှာ အသုံးပြုရေ စနစ်တိကို ဇာပိုင် စဉ်းစားတည်ဆောက်လဲ (System Design) ဆိုစွာကို လေ့လာကတ်ပါဖို့။</p>
+<p>Code ရွီးရုံမကဘဲ၊ စနစ်တစ်ခုလုံးကို အပေါ်စီးက မြင်အောင်ကြည့်ပနာ ဒီဇိုင်းဆွဲတတ်စီဖို့ ရည်ရွယ်ပါရေ။</p>
+<h2 id="သငခနးစာများ"><a class="header" href="#သငခနးစာများ">သင်ခန်းစာများ</a></h2>
+<ul>
+<li><a href="System%20Design/chapter_1_atm.html"><strong>Chapter 1: Design an ATM</strong></a>
+<ul>
+<li>OOP (Classes &amp; Objects) ကို အသုံးပြုပနာ ATMစက်စနစ် တည်ဆောက်ပုံ။</li>
+</ul>
+</li>
+<li><a href="System%20Design/chapter_2_library.html"><strong>Chapter 2: Design a Library</strong></a>
+<ul>
+<li>Data Structure (Hash Map, Queue, Stack) တိကို နီရာမှန်မှာ ရွီးချယ်အသုံးပြုပုံ။</li>
+</ul>
+</li>
+<li><a href="System%20Design/chapter_3_traffic_light.html"><strong>Chapter 3: Traffic Light Controller</strong></a>
+<ul>
+<li>State Machine သဘောတရားနန့် မီးပွိုင့်စနစ် တည်ဆောက်ပုံ။</li>
+</ul>
+</li>
+<li><a href="System%20Design/chapter_4_social_feed.html"><strong>Chapter 4: Social Media Feed</strong></a>
+<ul>
+<li>Algorithms တိကို အသုံးပြုပနာ Facebook/TikTok ပိုင် Feed တစ်ခု တည်ဆောက်ပုံ။</li>
+</ul>
+</li>
+</ul>
+<hr />
+<div style="break-before: page; page-break-before: always;"></div><h1 id="chapter-1-design-an-atm-system-ငွေထုတစက-ဒီဇိုငးဆွဲခြငး"><a class="header" href="#chapter-1-design-an-atm-system-ငွေထုတစက-ဒီဇိုငးဆွဲခြငး">Chapter 1: Design an ATM System (ငွေထုတ်စက် ဒီဇိုင်းဆွဲခြင်း)</a></h1>
+<p>အေ သင်ခန်းစာမှာ ကျွန်တော်ရို့ သင်ထားရေ <strong>OOP Concept</strong> တိကို အသုံးချပနာ ATM စနစ်တစ်ခုကို ဇာပိုင် တည်ဆောက်ဖို့လဲဆိုစွာ လေ့လာကတ်ပါဖို့။</p>
+<hr />
+<h2 id="၁-လိုအပချကတိ-requirements"><a class="header" href="#၁-လိုအပချကတိ-requirements">၁။ လိုအပ်ချက်တိ (Requirements)</a></h2>
+<ul>
+<li>User က Credit Card ထည့်နိုင်ရပါဖို့။</li>
+<li>PIN နံပါတ် မှန်မှ အလုပ်လုပ်ရပါဖို့။</li>
+<li>ငွေထုတ်ဖို့ဆိုကေ လက်ကျန်ငွေ (Balance) လောက်မှ ထုတ်ပီးရပါဖို့။</li>
+</ul>
+<h2 id="၂-class-ခွဲခြားခြငး-designing-classes"><a class="header" href="#၂-class-ခွဲခြားခြငး-designing-classes">၂။ Class ခွဲခြားခြင်း (Designing Classes)</a></h2>
+<p>အဓိက ပါဝင်ဖို့ အရာဝတ္ထုတိကို Class ခွဲကြည့်ကတ်ပါဖို့။</p>
+<ol>
+<li><strong>ATM</strong>: စက်ကြီးတစ်ခုလုံးကို ကိုယ်စားပြုပါရေ။</li>
+<li><strong>BankAccount</strong>: User တစ်ယောက်ချင်းစီဧ့ ဘဏ်အကောင့်ပါ။</li>
+<li><strong>Card</strong>: အကောင့်ထဲကို ဝင်ဖို့သော့ပါ။</li>
+</ol>
+<h2 id="၃-လုပဆောငပုံ-အဆငဆင-logic-flow"><a class="header" href="#၃-လုပဆောငပုံ-အဆငဆင-logic-flow">၃။ လုပ်ဆောင်ပုံ အဆင့်ဆင့် (Logic Flow)</a></h2>
+<ol>
+<li><strong>Insert Card</strong>: Card ကို ဖတ်မေ။</li>
+<li><strong>Validate PIN</strong>: PIN မှန်/မမှန် စစ်မေ။</li>
+<li><strong>Check Balance</strong>: ထုတ်ချင်ရေ ပမာဏက Balance ထက် နည်းလား/များလား စစ်မေ။</li>
+<li><strong>Dispense Cash</strong>: ဖေ့ချာထုတ်ပီးမေ၊ Balance ကို လျှော့မေ။</li>
+</ol>
+<h2 id="၄-pseudocode-implementation"><a class="header" href="#၄-pseudocode-implementation">၄။ Pseudocode Implementation</a></h2>
+<pre><code class="language-text">CLASS BankAccount
+    ATTRIBUTE balance = 1000
+    ATTRIBUTE pin_code = 1234
+    
+    METHOD verifyPIN(input_pin)
+        IF input_pin == pin_code THEN
+            RETURN True
+        ELSE
+            RETURN False
+        END IF
+    END METHOD
+
+    METHOD withdraw(amount)
+        IF amount &gt; balance THEN
+            PRINT &quot;Error: ဖေ့ချာမလောက်ပါ&quot;
+        ELSE
+            balance = balance - amount
+            PRINT &quot;Successful! ကျန်ငွေ: &quot; + balance
+        END IF
+    END METHOD
+END CLASS
+
+CLASS ATM
+    METHOD start()
+        PRINT &quot;ကတ်ထည့်ပါ...&quot;
+        input_pin = GET_USER_INPUT(&quot;PIN ရိုက်ပါ&quot;)
+        
+        IF account.verifyPIN(input_pin) == True THEN
+            amount = GET_USER_INPUT(&quot;ဖေ့ချာပမာဏ ရိုက်ပါ&quot;)
+            account.withdraw(amount)
+        ELSE
+            PRINT &quot;PIN မှားယွင်းနီပါရေ&quot;
+        END IF
+    END METHOD
+END CLASS
+</code></pre>
+<hr />
+<h2 id="သငခနးစာ-အကျဉးချုပ-15"><a class="header" href="#သငခနးစာ-အကျဉးချုပ-15">သင်ခန်းစာ အကျဉ်းချုပ်</a></h2>
+<ul>
+<li><strong>OOP Application</strong>: Class တိ (ATM, BankAccount) ခွဲခြားပြီး တည်ဆောက်ခြင်း။</li>
+<li><strong>Encapsulation</strong>: PIN နန့် Balance ကို အပြင်ကနီ တိုင်းမပြင်နိုင်အောင် Method တိနန့် ထိန်းချုပ်ခြင်း။</li>
+</ul>
+<h2 id="လေကျငခနး-exercises-8"><a class="header" href="#လေကျငခနး-exercises-8">လေ့ကျင့်ခန်း (Exercises)</a></h2>
+<ol>
+<li><strong>Deposit Feature</strong>: အကယ်လို့ ATM မှာ ငွေပြန်သွင်းလို့ရရေ (Deposit) စနစ် ပါလာဖို့ဆိုကေ ဇာ Class မှာ <code>deposit()</code> method ကို ထည့်သင့်လဲ? (<code>ATM</code> လား <code>BankAccount</code> လား? ဇာဖြစ်လို့လဲ?)</li>
+<li><strong>Card Limit</strong>: တစ်နိကို အများဆုံး ၅ သိန်းရာ ထုတ်လို့ရဖို့ဆိုရေ စည်းကမ်း (Limit) သတ်မှတ်ချင်ကေ Logic ကို ဇာနားမှာ ပြင်ရွီးဖို့လဲ?</li>
+</ol>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="chapter-2-design-a-library-management-system-စာကြညတိုကစနစ"><a class="header" href="#chapter-2-design-a-library-management-system-စာကြညတိုကစနစ">Chapter 2: Design a Library Management System (စာကြည့်တိုက်စနစ်)</a></h1>
+<p>အေ သင်ခန်းစာမှာ <strong>Data Structures</strong> (Array, Stack, Queue, Hash Map) တိကို လက်တွိ့ ဇာနီရာမှာ ရွီးချယ်သုံးရဖို့လဲ ဆိုစွာ လေ့လာကတ်ပါဖို့။</p>
+<hr />
+<h2 id="၁-လိုအပချကများ-requirements"><a class="header" href="#၁-လိုအပချကများ-requirements">၁။ လိုအပ်ချက်များ (Requirements)</a></h2>
+<ul>
+<li>စာအုပ်နာမည် ရိုက်ရှာကေ ချက်ချင်း တွိရပါဖို့။</li>
+<li>စာအုပ်ငှားချင်ရေလူတိကို အလှည့်ကျ စောင့်ခိုင်းရပါဖို့။</li>
+<li>စာအုပ်ပြန်အပ်ကေ လှည်း (Cart) မာ တင်ထားမေ၊ စာကြည့်တိုက်မှူးက နောက်ဆုံးအပ်စွာကို အရင်ယူပနာ စင်ထက်ပြန်တင်မေ။</li>
+</ul>
+<h2 id="၂-data-structure-ရွီးချယခြငး"><a class="header" href="#၂-data-structure-ရွီးချယခြငး">၂။ Data Structure ရွီးချယ်ခြင်း</a></h2>
+<h3 id="ပြဿနာ-၁-စာအုပရှာဖွီခြငး-searching"><a class="header" href="#ပြဿနာ-၁-စာအုပရှာဖွီခြငး-searching">ပြဿနာ ၁: စာအုပ်ရှာဖွီခြင်း (Searching)</a></h3>
+<p>စာအုပ်ပေါင်း ၁ သိန်းဟိရေ။ &quot;Harry Potter&quot; လို့ ရှာလိုက်စွာနန့် ဇာစင်မှာဟိလဲ ချက်ချင်း သိချင်ပါရေ။</p>
+<ul>
+<li>Option A (Array): တစ်အုပ်ချင်းစီ လိုက်ရှာမေ (ကြာမေ)။</li>
+<li>Option B (Hash Map): <code>Title</code> ကို Key လုပ်ပနာ <code>Location</code> ကို Value ထားမေ။ <code>Map[&quot;Harry Potter&quot;]</code> ဆိုစာနန့် ချက်ချင်း အဖြေထွက်ဖို့။</li>
+<li><strong>Decision</strong>: <strong>Hash Map</strong> ကို သုံးသင့်ပါရေ။ (အယင်ဆုံးမို့လို့ပါ)</li>
+</ul>
+<h3 id="ပြဿနာ-၂-စာအုပငှားဖို-စောငခြငး-waiting-list"><a class="header" href="#ပြဿနာ-၂-စာအုပငှားဖို-စောငခြငး-waiting-list">ပြဿနာ ၂: စာအုပ်ငှားဖို့ စောင့်ခြင်း (Waiting List)</a></h3>
+<p>စာအုပ်တစ်အုပ်တည်းကို လူ ၅ ယောက်လောက် လိုချင်နီကတ်ပါရေ။</p>
+<ul>
+<li>စည်းကမ်း: အရင်လာရေလူ အရင်ရရဖို့ (First Come, First Served).</li>
+<li><strong>Decision</strong>: <strong>Queue (FIFO)</strong> ကို သုံးရပါဖို့။ လူ A လာကေ <code>Enqueue(A)</code>, လူ B လာကေ <code>Enqueue(B)</code>။ စာအုပ်အားစာနန့် <code>Dequeue()</code> လုပ်ပနာ A ကို ပီးလိုက်မေ။</li>
+</ul>
+<h3 id="ပြဿနာ-၃-စာအုပပြနစီခြငး-restocking"><a class="header" href="#ပြဿနာ-၃-စာအုပပြနစီခြငး-restocking">ပြဿနာ ၃: စာအုပ်ပြန်စီခြင်း (Restocking)</a></h3>
+<p>ပြန်အပ်ထားရေ စာအုပ်ပုံ (Return Pile) ကို လှည်းပေါ်တင်ထားရေ။</p>
+<ul>
+<li>သဘောသဘာဝ: စင်ထက်ကို နောက်ဆုံးမှ တင်လိုက်တေ စာအုပ်က အထက်ဆုံးမှာ ရောက်နီမေ။ ယူကေ ထိပ်ဆုံးက စာကိုရာ အရင်ယူလို့ရမေ။</li>
+<li><strong>Decision</strong>: <strong>Stack (LIFO)</strong> သဘောတရား ဖြစ်နီပါရေ။ နောက်ဆုံးအပ်တေစာအုပ် (Last In) ကို အရင်ယူပနာ (First Out) စင်ပေါ်တင်ရပါဖို့။</li>
+</ul>
+<hr />
+<h2 id="၃-system-visualization"><a class="header" href="#၃-system-visualization">၃။ System Visualization</a></h2>
+<pre><code class="language-text">[ Library System ]
+      |
+      |-- (1) Searching: Hash Map { &quot;Title&quot; : &quot;Shelf A-1&quot; }
+      |
+      |-- (2) Reservation: Queue [ User 1 -&gt; User 2 -&gt; User 3 ]
+      |
+      |-- (3) Returns: Stack [ Book C (Top) | Book B | Book A (Bottom) ]
+</code></pre>
+<hr />
+<h2 id="သငခနးစာ-အကျဉးချုပ-16"><a class="header" href="#သငခနးစာ-အကျဉးချုပ-16">သင်ခန်းစာ အကျဉ်းချုပ်</a></h2>
+<ul>
+<li><strong>Hash Map</strong>: အယင်ဆုံး ရှာဖွေဖို့ သုံးသည်။</li>
+<li><strong>Queue</strong>: အလှည့်ကျ စနစ်တိ (First-come-first-serve) အတွက် သုံးသည်။</li>
+<li><strong>Stack</strong>: နောက်ဆုံးလုပ်စာ အယင်ပြန်ဖျက်/ပြန်ယူ (Last-in-first-out) အတွက် သုံးသည်။</li>
+</ul>
+<h2 id="လေကျငခနး-exercises-9"><a class="header" href="#လေကျငခနး-exercises-9">လေ့ကျင့်ခန်း (Exercises)</a></h2>
+<ol>
+<li><strong>Undo Feature</strong>: စာကြည့်တိုက်မှူးက စာအုပ်အချက်အလက်ကို ပြင်နီယင်း မှားဖျက်မိလားရေ။ &quot;Undo&quot; နှိပ်ပနာ အရင်အခြီအနီကို ပြန်လားချင်ကေ ဇာ Data Structure က အသင့်တော်ဆုံးလဲ? (Hint: Stack vs Queue)</li>
+<li><strong>Books by Author</strong>: စာရွီးဆရာ နာမည်တူ စာအုပ်တိကို စုထားချင်ရေ။ Array နန့် သိမ်းစွာ ကောင်းလား၊ Linked List နန့် ချိတ်ထားစွာ ကောင်းလား?</li>
+</ol>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="chapter-3-design-a-traffic-light-controller-မီးပွိုငစနစ"><a class="header" href="#chapter-3-design-a-traffic-light-controller-မီးပွိုငစနစ">Chapter 3: Design a Traffic Light Controller (မီးပွိုင့်စနစ်)</a></h1>
+<p>အေ သင်ခန်းစာမှာ ကျွန်တော်တို့ သင်ရိုးထဲမှာ မပါသိရေ <strong>State Machine</strong> ဆိုရေ Concept အသစ်ကို မိတ်ဆက်ပီးပါဖို့။ အေစာရေ Logic ကို စနစ်တကျ ထိန်းချုပ်ဖို့ အလွန်အသုံးဝင်ပါရေ။</p>
+<hr />
+<h2 id="၁-လိုအပချကတိ-requirements-1"><a class="header" href="#၁-လိုအပချကတိ-requirements-1">၁။ လိုအပ်ချက်တိ (Requirements)</a></h2>
+<ul>
+<li>မီးပွိုင့်ရေ အနီ (Red)၊ အစိမ်း (Green)၊ အဝါ (Yellow) သုံးမျိုး ပြောင်းလဲရပါဖို့။</li>
+<li>အစိုင်လိုက်ပြောင်းရဖို့: Red -&gt; Green -&gt; Yellow -&gt; Red (Loop)။</li>
+<li>အရောင်တစ်ခုစီအတွက် ကြာချိန် (Timer) သတ်မှတ်ထားရပါဖို့။</li>
+</ul>
+<h2 id="၂-ဇာဖြစလို-if-else-မလုံလောကလဲ"><a class="header" href="#၂-ဇာဖြစလို-if-else-မလုံလောကလဲ">၂။ ဇာဖြစ်လို့ If-Else မလုံလောက်လဲ?</a></h2>
+<pre><code class="language-text">IF red THEN go green
+ELSE IF green THEN go yellow
+...
+</code></pre>
+<p>အေပိုင်ရွီးကေ ရှုပ်ထွေးလားနိုင်ပါရေ။ စနစ်တစ်ခုက &quot;အခြီအနီ&quot; (State) တစ်ခုကနီ နောက်တစ်ခုကို ပြောင်းလဲစာဖြစ်လို့ <strong>Finite State Machine (FSM)</strong> ကို သုံးစွာ အကောင်းဆုံးပါ။</p>
+<h2 id="၃-state-diagram"><a class="header" href="#၃-state-diagram">၃။ State Diagram</a></h2>
+<p>စက်ဝိုင်းပုံစံ လည်ပတ်နီပုံကို ပုံဖော်ကြည့်ပါ။</p>
+<pre><code class="language-mermaid">graph LR
+    RED((Red)) -- 30s --&gt; GREEN((Green))
+    GREEN -- 20s --&gt; YELLOW((Yellow))
+    YELLOW -- 5s --&gt; RED
+</code></pre>
+<h2 id="၄-logic-implementation-pseudocode"><a class="header" href="#၄-logic-implementation-pseudocode">၄။ Logic Implementation (Pseudocode)</a></h2>
+<pre><code class="language-text">STATE TrafficLight
+    INITIAL_STATE = RED
+    
+    METHOD run()
+        LOOP FOREVER
+            CASE CURRENT_STATE OF
+                RED:
+                    TurnOn(RedLight)
+                    WAIT 30 Seconds
+                    CURRENT_STATE = GREEN
+                    
+                GREEN:
+                    TurnOn(GreenLight)
+                    WAIT 20 Seconds
+                    CURRENT_STATE = YELLOW
+                    
+                YELLOW:
+                    TurnOn(YellowLight)
+                    WAIT 5 Seconds
+                    CURRENT_STATE = RED
+            END CASE
+        END LOOP
+    END METHOD
+END STATE
+</code></pre>
+<hr />
+<h2 id="သငခနးစာ-အကျဉးချုပ-17"><a class="header" href="#သငခနးစာ-အကျဉးချုပ-17">သင်ခန်းစာ အကျဉ်းချုပ်</a></h2>
+<ul>
+<li><strong>State Machine</strong>: စနစ်တစ်ခုဧ့ အခြီအနေတိ (States) နှင့် ပြောင်းလဲမှု (Transitions) ကို ထိန်းချုပ်ခြင်း။</li>
+<li><strong>Loop</strong>: မီးပွိုင့်ပိုင် အဆုံးမရှိ လည်ပတ်နီရေ စနစ်တိမှာ သုံးခြင်း။</li>
+</ul>
+<h2 id="လေကျငခနး-exercises-10"><a class="header" href="#လေကျငခနး-exercises-10">လေ့ကျင့်ခန်း (Exercises)</a></h2>
+<ol>
+<li><strong>Pedestrian Button</strong>: လမ်းကူးလူက ခလုတ်ဖိလိုက်ကေ (Input) လက်ဟိဇာအရောင်ဖြစ်နီနီ မီးနီ (Red) ကို ချက်ချင်းပြောင်းချင်ရေ။ State Machine မှာ ဇာပိုင် Logic ထည့်ဖို့?</li>
+<li><strong>Emergency Mode</strong>: Ambulanceကား လာကေ ခလုတ်တစ်ခု ဖိလိုက်စာနန့် မီးအားလုံး အနီဖြစ်လားပနာ တန့်လားရပါဖို့။ ယင့်စာကို State အသစ် တစ်ခုအနီနန့် ထည့်ဖို့လား၊ ဟိပြီးသား State တိကိုရာ ပြင်ဖို့လား?</li>
+</ol>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="chapter-4-design-a-social-news-feed-facebook-feed-design"><a class="header" href="#chapter-4-design-a-social-news-feed-facebook-feed-design">Chapter 4: Design a Social News Feed (Facebook Feed Design)</a></h1>
+<p>အေ သင်ခန်းစာမှာ <strong>Algorithms</strong> (Sorting, Filtering) တိကို အသုံးချပနာ Facebook သို့မဟုတ် TikTok ပိုင် Feed တစ်ခု ဇာပိုင် အလုပ်လုပ်လဲ ဆိုစွာ ဒီဇိုင်းဆွဲကြည့်ကတ်ပါဖို့။</p>
+<hr />
+<h2 id="၁-လိုအပချကတိ-requirements-2"><a class="header" href="#၁-လိုအပချကတိ-requirements-2">၁။ လိုအပ်ချက်တိ (Requirements)</a></h2>
+<ul>
+<li>User က App ကို ဖွင့်လိုက်ကေ သူ့သူငယ်ချင်းတိ တင်ထားရေ Post တိကို တွိရပါဖို့။</li>
+<li>အသစ်တင်စာတိ အရင်ပေါ်ရပါဖို့ (သို့မဟုတ်) နာမည်ကြီးစာတိ အရင်ပေါ်ရပါဖို့။</li>
+</ul>
+<h2 id="၂-algorithm-ရွီးချယခြငး"><a class="header" href="#၂-algorithm-ရွီးချယခြငး">၂။ Algorithm ရွီးချယ်ခြင်း</a></h2>
+<h3 id="အဆင-၁-get-posts-အသူ-post-တွေ-ယူမလဲ"><a class="header" href="#အဆင-၁-get-posts-အသူ-post-တွေ-ယူမလဲ">အဆင့် ၁: Get Posts (အသူ့ Post တွေ ယူမလဲ?)</a></h3>
+<p>Friend List ထဲက လူတိ့ Post အကုန်လုံးကို Database ထဲက ဆွဲထုတ်လိုက်ပါဖို့။
+<code>ALL_POSTS = [ Post A, Post B, Post C, ... ]</code></p>
+<h3 id="အဆင-၂-filtering-မဆိုငစာတိ-ဖယထုတခြငး"><a class="header" href="#အဆင-၂-filtering-မဆိုငစာတိ-ဖယထုတခြငး">အဆင့် ၂: Filtering (မဆိုင်စာတိ ဖယ်ထုတ်ခြင်း)</a></h3>
+<p>အချို့ Post တိက ကိုယ်မမြင်ချင်ရေ စာတိ (ဥပမာ - ကြော်ငြာတိ၊ Block ထားရေလူတိ) ဖြစ်နိုင်ပါရေ။</p>
+<pre><code class="language-text">FOR EACH Post IN ALL_POSTS
+    IF Post.Author is NOT Blocked THEN
+        KEEP Post
+    END IF
+END FOR
+</code></pre>
+<h3 id="အဆင-၃-sorting-စီခြငး---အရေးကြီးဆုံးအပိုငး"><a class="header" href="#အဆင-၃-sorting-စီခြငး---အရေးကြီးဆုံးအပိုငး">အဆင့် ၃: Sorting (စီခြင်း - အရေးကြီးဆုံးအပိုင်း)</a></h3>
+<p>ကျန်ခရေ Post တိကို ဇာစာက အထက်ဆုံးမှ ပြဖို့လဲ?</p>
+<ul>
+<li>
+<p><strong>Option A: Chronological Sort (အချိန်အလိုက်)</strong></p>
+<ul>
+<li>အသစ်ဆုံးစာ အထက်ဆုံးက ပြမေ။</li>
+<li><em>Algorithm</em>: <strong>Quick Sort</strong> or <strong>Merge Sort</strong> based on <code>Timestamp</code>.</li>
+</ul>
+</li>
+<li>
+<p><strong>Option B: Ranking Sort (စိတ်ဝင်စားမှုအလိုက်)</strong></p>
+<ul>
+<li>Like များစာ၊ Comment များစာ အထိပ်ဆုံးက ပြမေ။</li>
+<li><em>Score Calculation</em>: <code>Score = (Likes * 2) + (Comments * 5) + (Shares * 10)</code></li>
+<li>Score အများဆုံးကို ထိပ်ဆုံးတင်မေ။</li>
+</ul>
+</li>
+</ul>
+<h2 id="၃-pseudocode-implementation"><a class="header" href="#၃-pseudocode-implementation">၃။ Pseudocode Implementation</a></h2>
+<pre><code class="language-text">FUNCTION GenerateFeed(User)
+    // 1. Get friends' posts
+    RawPosts = User.GetFriendsPosts()
+    
+    // 2. Calculate Score for each post
+    FOR EACH Post IN RawPosts
+        Score = (Post.Likes * 1) + (Post.TimeRecency * 10)
+        Post.Score = Score
+    END FOR
+    
+    // 3. Sort by Score (High to Low)
+    SortedFeed = QuickSort(RawPosts, key=Score, Order=DESCENDING)
+    
+    RETURN SortedFeed
+END FUNCTION
+</code></pre>
+<hr />
+<h2 id="သငခနးစာ-အကျဉးချုပ-18"><a class="header" href="#သငခနးစာ-အကျဉးချုပ-18">သင်ခန်းစာ အကျဉ်းချုပ်</a></h2>
+<ul>
+<li><strong>Filtering</strong>: မလိုချင်ရေ Data တိကို ဖယ်ထုတ်ခြင်း။</li>
+<li><strong>Ranking</strong>: အရေးကြီးရေ Data ကို ထိပ်ဆုံးသို့ပို့ဖို့ Score တွက်ချက်ခြင်း။</li>
+<li><strong>Sorting</strong>: တွက်ချက်ထားရေ Score အတိုင်း အစိုင်လိုက် စီခြင်း။</li>
+</ul>
+<h2 id="လေကျငခနး-exercises-11"><a class="header" href="#လေကျငခနး-exercises-11">လေ့ကျင့်ခန်း (Exercises)</a></h2>
+<ol>
+<li><strong>Video Recommendation</strong>: TikTok မှာဆိုကေ Friend မဟုတ်တေလူတိနန့် Video တိကိုပါ ပြပီးရေ။ ယင့်စာကိုပါ Algorithm ဇာပိုင် ရွီးဖို့လဲ? (Hint: User ကြိုက်တေ Category တူစာတိကို ရှာဖို့လား?)</li>
+<li><strong>Performance</strong>: Post ပေါင်း ၁ သန်းလောက်ဟိကေ တစ်ခုချင်းတိုင်း လိုက်တွက်ဖို့ တဝကြာလားနိုင်ပါရေ။ ယင်အောင် ဇာပိုင်လုပ်ဖို့လဲ? (Hint: Algorithm အခန်းက Binary Search နန့်ဆိုင်ဖို့လား၊ Hash Map နန့်ဆိုင်မလား?)</li>
+</ol>
+<div style="break-before: page; page-break-before: always;"></div><p>Attribution-ShareAlike 4.0 International</p>
+<p>=======================================================================</p>
+<p>Creative Commons Corporation (&quot;Creative Commons&quot;) is not a law firm and
+does not provide legal services or legal advice. Distribution of
+Creative Commons public licenses does not create a lawyer-client or
+other relationship. Creative Commons makes its licenses and related
+information available on an &quot;as-is&quot; basis. Creative Commons gives no
+warranties regarding its licenses, any material licensed under their
+terms and conditions, or any related information. Creative Commons
+disclaims all liability for damages resulting from their use to the
+fullest extent possible.</p>
+<p>Using Creative Commons Public Licenses</p>
+<p>Creative Commons public licenses provide a standard set of terms and
+conditions that creators and other rights holders may use to share
+original works of authorship and other material subject to copyright
+and certain other rights specified in the public license below. The
+following considerations are for informational purposes only, are not
+exhaustive, and do not form part of our licenses.</p>
+<pre><code> Considerations for licensors: Our public licenses are
+ intended for use by those authorized to give the public
+ permission to use material in ways otherwise restricted by
+ copyright and certain other rights. Our licenses are
+ irrevocable. Licensors should read and understand the terms
+ and conditions of the license they choose before applying it.
+ Licensors should also secure all rights necessary before
+ applying our licenses so that the public can reuse the
+ material as expected. Licensors should clearly mark any
+ material not subject to the license. This includes other CC-
+ licensed material, or material used under an exception or
+ limitation to copyright. More considerations for licensors:
+wiki.creativecommons.org/Considerations_for_licensors
+
+ Considerations for the public: By using one of our public
+ licenses, a licensor grants the public permission to use the
+ licensed material under specified terms and conditions. If
+ the licensor's permission is not necessary for any reason--for
+ example, because of any applicable exception or limitation to
+ copyright--then that use is not regulated by the license. Our
+ licenses grant only permissions under copyright and certain
+ other rights that a licensor has authority to grant. Use of
+ the licensed material may still be restricted for other
+ reasons, including because others have copyright or other
+ rights in the material. A licensor may make special requests,
+ such as asking that all changes be marked or described.
+ Although not required by our licenses, you are encouraged to
+ respect those requests where reasonable. More considerations
+ for the public:
+wiki.creativecommons.org/Considerations_for_licensees
+</code></pre>
+<p>=======================================================================</p>
+<p>Creative Commons Attribution-ShareAlike 4.0 International Public
+License</p>
+<p>By exercising the Licensed Rights (defined below), You accept and agree
+to be bound by the terms and conditions of this Creative Commons
+Attribution-ShareAlike 4.0 International Public License (&quot;Public
+License&quot;). To the extent this Public License may be interpreted as a
+contract, You are granted the Licensed Rights in consideration of Your
+acceptance of these terms and conditions, and the Licensor grants You
+such rights in consideration of benefits the Licensor receives from
+making the Licensed Material available under these terms and
+conditions.</p>
+<p>Section 1 -- Definitions.</p>
+<p>a. Adapted Material means material subject to Copyright and Similar
+Rights that is derived from or based upon the Licensed Material
+and in which the Licensed Material is translated, altered,
+arranged, transformed, or otherwise modified in a manner requiring
+permission under the Copyright and Similar Rights held by the
+Licensor. For purposes of this Public License, where the Licensed
+Material is a musical work, performance, or sound recording,
+Adapted Material is always produced where the Licensed Material is
+synched in timed relation with a moving image.</p>
+<p>b. Adapter's License means the license You apply to Your Copyright
+and Similar Rights in Your contributions to Adapted Material in
+accordance with the terms and conditions of this Public License.</p>
+<p>c. BY-SA Compatible License means a license listed at
+creativecommons.org/compatiblelicenses, approved by Creative
+Commons as essentially the equivalent of this Public License.</p>
+<p>d. Copyright and Similar Rights means copyright and/or similar rights
+closely related to copyright including, without limitation,
+performance, broadcast, sound recording, and Sui Generis Database
+Rights, without regard to how the rights are labeled or
+categorized. For purposes of this Public License, the rights
+specified in Section 2(b)(1)-(2) are not Copyright and Similar
+Rights.</p>
+<p>e. Effective Technological Measures means those measures that, in the
+absence of proper authority, may not be circumvented under laws
+fulfilling obligations under Article 11 of the WIPO Copyright
+Treaty adopted on December 20, 1996, and/or similar international
+agreements.</p>
+<p>f. Exceptions and Limitations means fair use, fair dealing, and/or
+any other exception or limitation to Copyright and Similar Rights
+that applies to Your use of the Licensed Material.</p>
+<p>g. License Elements means the license attributes listed in the name
+of a Creative Commons Public License. The License Elements of this
+Public License are Attribution and ShareAlike.</p>
+<p>h. Licensed Material means the artistic or literary work, database,
+or other material to which the Licensor applied this Public
+License.</p>
+<p>i. Licensed Rights means the rights granted to You subject to the
+terms and conditions of this Public License, which are limited to
+all Copyright and Similar Rights that apply to Your use of the
+Licensed Material and that the Licensor has authority to license.</p>
+<p>j. Licensor means the individual(s) or entity(ies) granting rights
+under this Public License.</p>
+<p>k. Share means to provide material to the public by any means or
+process that requires permission under the Licensed Rights, such
+as reproduction, public display, public performance, distribution,
+dissemination, communication, or importation, and to make material
+available to the public including in ways that members of the
+public may access the material from a place and at a time
+individually chosen by them.</p>
+<p>l. Sui Generis Database Rights means rights other than copyright
+resulting from Directive 96/9/EC of the European Parliament and of
+the Council of 11 March 1996 on the legal protection of databases,
+as amended and/or succeeded, as well as other essentially
+equivalent rights anywhere in the world.</p>
+<p>m. You means the individual or entity exercising the Licensed Rights
+under this Public License. Your has a corresponding meaning.</p>
+<p>Section 2 -- Scope.</p>
+<p>a. License grant.</p>
+<pre><code>   1. Subject to the terms and conditions of this Public License,
+      the Licensor hereby grants You a worldwide, royalty-free,
+      non-sublicensable, non-exclusive, irrevocable license to
+      exercise the Licensed Rights in the Licensed Material to:
+
+        a. reproduce and Share the Licensed Material, in whole or
+           in part; and
+
+        b. produce, reproduce, and Share Adapted Material.
+
+   2. Exceptions and Limitations. For the avoidance of doubt, where
+      Exceptions and Limitations apply to Your use, this Public
+      License does not apply, and You do not need to comply with
+      its terms and conditions.
+
+   3. Term. The term of this Public License is specified in Section
+      6(a).
+
+   4. Media and formats; technical modifications allowed. The
+      Licensor authorizes You to exercise the Licensed Rights in
+      all media and formats whether now known or hereafter created,
+      and to make technical modifications necessary to do so. The
+      Licensor waives and/or agrees not to assert any right or
+      authority to forbid You from making technical modifications
+      necessary to exercise the Licensed Rights, including
+      technical modifications necessary to circumvent Effective
+      Technological Measures. For purposes of this Public License,
+      simply making modifications authorized by this Section 2(a)
+      (4) never produces Adapted Material.
+
+   5. Downstream recipients.
+
+        a. Offer from the Licensor -- Licensed Material. Every
+           recipient of the Licensed Material automatically
+           receives an offer from the Licensor to exercise the
+           Licensed Rights under the terms and conditions of this
+           Public License.
+
+        b. Additional offer from the Licensor -- Adapted Material.
+           Every recipient of Adapted Material from You
+           automatically receives an offer from the Licensor to
+           exercise the Licensed Rights in the Adapted Material
+           under the conditions of the Adapter's License You apply.
+
+        c. No downstream restrictions. You may not offer or impose
+           any additional or different terms or conditions on, or
+           apply any Effective Technological Measures to, the
+           Licensed Material if doing so restricts exercise of the
+           Licensed Rights by any recipient of the Licensed
+           Material.
+
+   6. No endorsement. Nothing in this Public License constitutes or
+      may be construed as permission to assert or imply that You
+      are, or that Your use of the Licensed Material is, connected
+      with, or sponsored, endorsed, or granted official status by,
+      the Licensor or others designated to receive attribution as
+      provided in Section 3(a)(1)(A)(i).
+</code></pre>
+<p>b. Other rights.</p>
+<pre><code>   1. Moral rights, such as the right of integrity, are not
+      licensed under this Public License, nor are publicity,
+      privacy, and/or other similar personality rights; however, to
+      the extent possible, the Licensor waives and/or agrees not to
+      assert any such rights held by the Licensor to the limited
+      extent necessary to allow You to exercise the Licensed
+      Rights, but not otherwise.
+
+   2. Patent and trademark rights are not licensed under this
+      Public License.
+
+   3. To the extent possible, the Licensor waives any right to
+      collect royalties from You for the exercise of the Licensed
+      Rights, whether directly or through a collecting society
+      under any voluntary or waivable statutory or compulsory
+      licensing scheme. In all other cases the Licensor expressly
+      reserves any right to collect such royalties.
+</code></pre>
+<p>Section 3 -- License Conditions.</p>
+<p>Your exercise of the Licensed Rights is expressly made subject to the
+following conditions.</p>
+<p>a. Attribution.</p>
+<pre><code>   1. If You Share the Licensed Material (including in modified
+      form), You must:
+
+        a. retain the following if it is supplied by the Licensor
+           with the Licensed Material:
+
+             i. identification of the creator(s) of the Licensed
+                Material and any others designated to receive
+                attribution, in any reasonable manner requested by
+                the Licensor (including by pseudonym if
+                designated);
+
+            ii. a copyright notice;
+
+           iii. a notice that refers to this Public License;
+
+            iv. a notice that refers to the disclaimer of
+                warranties;
+
+             v. a URI or hyperlink to the Licensed Material to the
+                extent reasonably practicable;
+
+        b. indicate if You modified the Licensed Material and
+           retain an indication of any previous modifications; and
+
+        c. indicate the Licensed Material is licensed under this
+           Public License, and include the text of, or the URI or
+           hyperlink to, this Public License.
+
+   2. You may satisfy the conditions in Section 3(a)(1) in any
+      reasonable manner based on the medium, means, and context in
+      which You Share the Licensed Material. For example, it may be
+      reasonable to satisfy the conditions by providing a URI or
+      hyperlink to a resource that includes the required
+      information.
+
+   3. If requested by the Licensor, You must remove any of the
+      information required by Section 3(a)(1)(A) to the extent
+      reasonably practicable.
+</code></pre>
+<p>b. ShareAlike.</p>
+<pre><code> In addition to the conditions in Section 3(a), if You Share
+ Adapted Material You produce, the following conditions also apply.
+
+   1. The Adapter's License You apply must be a Creative Commons
+      license with the same License Elements, this version or
+      later, or a BY-SA Compatible License.
+
+   2. You must include the text of, or the URI or hyperlink to, the
+      Adapter's License You apply. You may satisfy this condition
+      in any reasonable manner based on the medium, means, and
+      context in which You Share Adapted Material.
+
+   3. You may not offer or impose any additional or different terms
+      or conditions on, or apply any Effective Technological
+      Measures to, Adapted Material that restrict exercise of the
+      rights granted under the Adapter's License You apply.
+</code></pre>
+<p>Section 4 -- Sui Generis Database Rights.</p>
+<p>Where the Licensed Rights include Sui Generis Database Rights that
+apply to Your use of the Licensed Material:</p>
+<p>a. for the avoidance of doubt, Section 2(a)(1) grants You the right
+to extract, reuse, reproduce, and Share all or a substantial
+portion of the contents of the database;</p>
+<p>b. if You include all or a substantial portion of the database
+contents in a database in which You have Sui Generis Database
+Rights, then the database in which You have Sui Generis Database
+Rights (but not its individual contents) is Adapted Material,
+including for purposes of Section 3(b); and</p>
+<p>c. You must comply with the conditions in Section 3(a) if You Share
+all or a substantial portion of the contents of the database.</p>
+<p>For the avoidance of doubt, this Section 4 supplements and does not
+replace Your obligations under this Public License where the Licensed
+Rights include other Copyright and Similar Rights.</p>
+<p>Section 5 -- Disclaimer of Warranties and Limitation of Liability.</p>
+<p>a. UNLESS OTHERWISE SEPARATELY UNDERTAKEN BY THE LICENSOR, TO THE
+EXTENT POSSIBLE, THE LICENSOR OFFERS THE LICENSED MATERIAL AS-IS
+AND AS-AVAILABLE, AND MAKES NO REPRESENTATIONS OR WARRANTIES OF
+ANY KIND CONCERNING THE LICENSED MATERIAL, WHETHER EXPRESS,
+IMPLIED, STATUTORY, OR OTHER. THIS INCLUDES, WITHOUT LIMITATION,
+WARRANTIES OF TITLE, MERCHANTABILITY, FITNESS FOR A PARTICULAR
+PURPOSE, NON-INFRINGEMENT, ABSENCE OF LATENT OR OTHER DEFECTS,
+ACCURACY, OR THE PRESENCE OR ABSENCE OF ERRORS, WHETHER OR NOT
+KNOWN OR DISCOVERABLE. WHERE DISCLAIMERS OF WARRANTIES ARE NOT
+ALLOWED IN FULL OR IN PART, THIS DISCLAIMER MAY NOT APPLY TO YOU.</p>
+<p>b. TO THE EXTENT POSSIBLE, IN NO EVENT WILL THE LICENSOR BE LIABLE
+TO YOU ON ANY LEGAL THEORY (INCLUDING, WITHOUT LIMITATION,
+NEGLIGENCE) OR OTHERWISE FOR ANY DIRECT, SPECIAL, INDIRECT,
+INCIDENTAL, CONSEQUENTIAL, PUNITIVE, EXEMPLARY, OR OTHER LOSSES,
+COSTS, EXPENSES, OR DAMAGES ARISING OUT OF THIS PUBLIC LICENSE OR
+USE OF THE LICENSED MATERIAL, EVEN IF THE LICENSOR HAS BEEN
+ADVISED OF THE POSSIBILITY OF SUCH LOSSES, COSTS, EXPENSES, OR
+DAMAGES. WHERE A LIMITATION OF LIABILITY IS NOT ALLOWED IN FULL OR
+IN PART, THIS LIMITATION MAY NOT APPLY TO YOU.</p>
+<p>c. The disclaimer of warranties and limitation of liability provided
+above shall be interpreted in a manner that, to the extent
+possible, most closely approximates an absolute disclaimer and
+waiver of all liability.</p>
+<p>Section 6 -- Term and Termination.</p>
+<p>a. This Public License applies for the term of the Copyright and
+Similar Rights licensed here. However, if You fail to comply with
+this Public License, then Your rights under this Public License
+terminate automatically.</p>
+<p>b. Where Your right to use the Licensed Material has terminated under
+Section 6(a), it reinstates:</p>
+<pre><code>   1. automatically as of the date the violation is cured, provided
+      it is cured within 30 days of Your discovery of the
+      violation; or
+
+   2. upon express reinstatement by the Licensor.
+
+ For the avoidance of doubt, this Section 6(b) does not affect any
+ right the Licensor may have to seek remedies for Your violations
+ of this Public License.
+</code></pre>
+<p>c. For the avoidance of doubt, the Licensor may also offer the
+Licensed Material under separate terms or conditions or stop
+distributing the Licensed Material at any time; however, doing so
+will not terminate this Public License.</p>
+<p>d. Sections 1, 5, 6, 7, and 8 survive termination of this Public
+License.</p>
+<p>Section 7 -- Other Terms and Conditions.</p>
+<p>a. The Licensor shall not be bound by any additional or different
+terms or conditions communicated by You unless expressly agreed.</p>
+<p>b. Any arrangements, understandings, or agreements regarding the
+Licensed Material not stated herein are separate from and
+independent of the terms and conditions of this Public License.</p>
+<p>Section 8 -- Interpretation.</p>
+<p>a. For the avoidance of doubt, this Public License does not, and
+shall not be interpreted to, reduce, limit, restrict, or impose
+conditions on any use of the Licensed Material that could lawfully
+be made without permission under this Public License.</p>
+<p>b. To the extent possible, if any provision of this Public License is
+deemed unenforceable, it shall be automatically reformed to the
+minimum extent necessary to make it enforceable. If the provision
+cannot be reformed, it shall be severed from this Public License
+without affecting the enforceability of the remaining terms and
+conditions.</p>
+<p>c. No term or condition of this Public License will be waived and no
+failure to comply consented to unless expressly agreed to by the
+Licensor.</p>
+<p>d. Nothing in this Public License constitutes or may be interpreted
+as a limitation upon, or waiver of, any privileges and immunities
+that apply to the Licensor or You, including from the legal
+processes of any jurisdiction or authority.</p>
+<p>=======================================================================</p>
+<p>Creative Commons is not a party to its public
+licenses. Notwithstanding, Creative Commons may elect to apply one of
+its public licenses to material it publishes and in those instances
+will be considered the “Licensor.” The text of the Creative Commons
+public licenses is dedicated to the public domain under the CC0 Public
+Domain Dedication. Except for the limited purpose of indicating that
+material is shared under a Creative Commons public license or as
+otherwise permitted by the Creative Commons policies published at
+creativecommons.org/policies, Creative Commons does not authorize the
+use of the trademark &quot;Creative Commons&quot; or any other trademark or logo
+of Creative Commons without its prior written consent including,
+without limitation, in connection with any unauthorized modifications
+to any of its public licenses or any other arrangements,
+understandings, or agreements concerning use of licensed material. For
+the avoidance of doubt, this paragraph does not form part of the
+public licenses.</p>
+<p>Creative Commons may be contacted at creativecommons.org.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
+
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+        <script>
+        window.addEventListener('load', function() {
+            window.setTimeout(window.print, 100);
+        });
+        </script>
+
+    </div>
+    </body>
+</html>

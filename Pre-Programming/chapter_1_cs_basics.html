@@ -1,0 +1,313 @@
+<!DOCTYPE HTML>
+<html lang="my" class="light" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>၂။ Computer Science Basics - Thinking Like a Computer</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+    </head>
+    <body class="sidebar-visible no-js">
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('light')
+            html.classList.add(theme);
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var body = document.querySelector('body');
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../index.html">Introduction</a></li><li class="chapter-item expanded "><a href="../Pre-Programming/pre-programming.html"><strong aria-hidden="true">1.</strong> Pre-Programming</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../Pre-Programming/chapter_0_introduction.html"><strong aria-hidden="true">1.1.</strong> ၁။ နိဒါန်း (Introduction)</a></li><li class="chapter-item expanded "><a href="../Pre-Programming/chapter_1_cs_basics.html" class="active"><strong aria-hidden="true">1.2.</strong> ၂။ Computer Science Basics</a></li><li class="chapter-item expanded "><a href="../Pre-Programming/chapter_2_logic_and_algorithms.html"><strong aria-hidden="true">1.3.</strong> ၃။ Logic & Algorithms</a></li><li class="chapter-item expanded "><a href="../Pre-Programming/chapter_3_data_representation.html"><strong aria-hidden="true">1.4.</strong> ၄။ Data Representation</a></li><li class="chapter-item expanded "><a href="../Pre-Programming/chapter_4_control_structures.html"><strong aria-hidden="true">1.5.</strong> ၅။ Control Structures</a></li><li class="chapter-item expanded "><a href="../Pre-Programming/chapter_5_problem_solving.html"><strong aria-hidden="true">1.6.</strong> ၆။ Problem Solving & Debugging</a></li><li class="chapter-item expanded "><a href="../Pre-Programming/chapter_6_conclusion.html"><strong aria-hidden="true">1.7.</strong> ၇။ Conclusion & Next Steps</a></li></ol></li><li class="chapter-item expanded "><a href="../Data Structure/data-structure.html"><strong aria-hidden="true">2.</strong> Data Structures</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../Data Structure/chapter_1_linear.html"><strong aria-hidden="true">2.1.</strong> Chapter 1: Linear Data Structures</a></li><li class="chapter-item expanded "><a href="../Data Structure/chapter_2_non_linear.html"><strong aria-hidden="true">2.2.</strong> Chapter 2: Non-Linear Data Structures</a></li></ol></li><li class="chapter-item expanded "><a href="../Algorithem/algorithms.html"><strong aria-hidden="true">3.</strong> Algorithms</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../Algorithem/chapter_1_searching.html"><strong aria-hidden="true">3.1.</strong> Chapter 1: Searching Algorithms</a></li><li class="chapter-item expanded "><a href="../Algorithem/chapter_2_sorting.html"><strong aria-hidden="true">3.2.</strong> Chapter 2: Sorting Algorithms</a></li><li class="chapter-item expanded "><a href="../Algorithem/chapter_3_graph_algorithms.html"><strong aria-hidden="true">3.3.</strong> Chapter 3: Graph Algorithms</a></li></ol></li><li class="chapter-item expanded "><a href="../OOP/oop.html"><strong aria-hidden="true">4.</strong> Object Oriented Programming</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../OOP/chapter_1_basics.html"><strong aria-hidden="true">4.1.</strong> Chapter 1: Classes & Objects</a></li><li class="chapter-item expanded "><a href="../OOP/chapter_2_inheritance_polymorphism.html"><strong aria-hidden="true">4.2.</strong> Chapter 2: Inheritance & Polymorphism</a></li><li class="chapter-item expanded "><a href="../OOP/chapter_3_encapsulation_abstraction.html"><strong aria-hidden="true">4.3.</strong> Chapter 3: Encapsulation & Abstraction</a></li></ol></li><li class="chapter-item expanded "><a href="../System Design/system_design.html"><strong aria-hidden="true">5.</strong> Applied System Design</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../System Design/chapter_1_atm.html"><strong aria-hidden="true">5.1.</strong> Chapter 1: Design an ATM</a></li><li class="chapter-item expanded "><a href="../System Design/chapter_2_library.html"><strong aria-hidden="true">5.2.</strong> Chapter 2: Design a Library</a></li><li class="chapter-item expanded "><a href="../System Design/chapter_3_traffic_light.html"><strong aria-hidden="true">5.3.</strong> Chapter 3: Traffic Light Controller</a></li><li class="chapter-item expanded "><a href="../System Design/chapter_4_social_feed.html"><strong aria-hidden="true">5.4.</strong> Chapter 4: Social Media Feed</a></li></ol></li><li class="chapter-item expanded "><a href="../LICENSE.html">License</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Thinking Like a Computer</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        <a href="https://github.com/KyawTunLinn/think-like-a-computer" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="chapter-1-computer-science-basics-ကွနပျူတာသိပပံ-အခြီခံ"><a class="header" href="#chapter-1-computer-science-basics-ကွနပျူတာသိပပံ-အခြီခံ">Chapter 1: Computer Science Basics (ကွန်ပျူတာသိပ္ပံ အခြီခံ)</a></h1>
+<p>Computer Science ဆိုစွာ ကွန်ပျူတာတိအကြောင်းရာ မဟုတ်ပါ။ <strong>ပြဿနာဖြေရှင်းခြင်း (Problem Solving)</strong> အကြောင်း ဖြစ်ပါရေ။ အဓိက အပိုင်းကြီး (၄) ခု ပါဝင်ပါရေ။</p>
+<p><img src="./illustration/computer_science_umbrella.png" alt="Computer Science Umbrella" /></p>
+<h2 id="၁-hardware-ကွနပျူတာ-အစိတအပိုငးတိအကြောငး"><a class="header" href="#၁-hardware-ကွနပျူတာ-အစိတအပိုငးတိအကြောငး">၁။ Hardware: ကွန်ပျူတာ အစိတ်အပိုင်းတိအကြောင်း</a></h2>
+<p>Hardware ဆိုစွာ ကွန်ပျူတာဧ့ ကိုင်တွယ်လို့ရရေ အစိတ်အပိုင်းတိ ဖြစ်ပါရေ။ ကွန်ပျူတာ Hardware လုပ်ဆောင်ပုံကို လူခန္ဓာကိုယ်နန့် နှိုင်းယှဉ်ကြည့်နိုင်ပါရေ။</p>
+<p><img src="./illustration/computer_anatomy_analogy.png" alt="Computer Anatomy Analogy" /></p>
+<div class="table-wrapper"><table><thead><tr><th style="text-align: left">လူခန္ဓာကိုယ် (Human)</th><th style="text-align: left">ကွန်ပျူတာ (Computer)</th><th style="text-align: left">လုပ်ဆောင်ချက် (Function)</th></tr></thead><tbody>
+<tr><td style="text-align: left"><strong>မျက်လုံး၊ နား</strong></td><td style="text-align: left"><strong>Input Devices</strong> (Keyboard, Mouse, Camera)</td><td style="text-align: left">အချက်အလက်တိကို လက်ခံယူဖို့ (See/Hear)</td></tr>
+<tr><td style="text-align: left"><strong>ဦးနှောက်</strong></td><td style="text-align: left"><strong>CPU</strong> (Central Processing Unit)</td><td style="text-align: left">တွက်ချက်ဖို့၊ စဉ်းစားဖို့ (Think/Process)</td></tr>
+<tr><td style="text-align: left"><strong>စာအုပ်/မှတ်ဉာဏ်</strong></td><td style="text-align: left"><strong>Storage</strong> (Hard Disk / SSD)</td><td style="text-align: left">အရာရာကို မှတ်သားထားဖို့ (Remember)</td></tr>
+<tr><td style="text-align: left"><strong>ပါးစပ်၊ လက်</strong></td><td style="text-align: left"><strong>Output Devices</strong> (Monitor, Printer, Speaker)</td><td style="text-align: left">ရလဒ်ကို ပြောပြဖို့၊ ပြသဖို့ (Speak/Act)</td></tr>
+</tbody></table>
+</div>
+<h2 id="၂-networking-အငတာနကနန-ချိတဆကမှုတိအကြောငး"><a class="header" href="#၂-networking-အငတာနကနန-ချိတဆကမှုတိအကြောငး">၂။ Networking: အင်တာနက်နန့် ချိတ်ဆက်မှုတိအကြောင်း</a></h2>
+<p>ကွန်ပျူတာတစ်လုံးတည်း အလုပ်လုပ်စွာထက်၊ ကွန်ပျူတာအချင်းချင်း ချိတ်ဆက်ပနာ အလုပ်လုပ်ကေ ပိုထိရောက်ပါရေ။</p>
+<p><img src="./illustration/network_lan_wan.png" alt="LAN vs WAN" /></p>
+<ul>
+<li>
+<p><strong>LAN (Local Area Network)</strong>: <strong>&quot;ရွာကလေး&quot;</strong> တစ်ရွာနန့် တူပါရေ။ အိမ်တစ်အိမ် (သို့) ရုံးခန်းတစ်ခု အနားမှာရှိရေ ကွန်ပျူတာတိ အချင်းချင်း ချိတ်ဆက်ထားစွာပါ။ (ဥပမာ - ရုံးမှာ Printer မျှဝေသုံးစွဲခြင်း)</p>
+</li>
+<li>
+<p><strong>WAN (Wide Area Network)</strong>: <strong>&quot;ကမ္ဘာကြီး&quot;</strong> နန့် တူပါရေ။ တစ်ကမ္ဘာလုံးက မြို့တိ၊ နိုင်ငံတိကို ချိတ်ဆက်ထားစွာပါ။ (ဥပမာ - Internet)</p>
+</li>
+<li>
+<p><strong>Client-Server Concept</strong>: စားသောက်ဆိုင် ဥပမာပိုင်ပါ။</p>
+<ul>
+<li><strong>Client (Customer)</strong>: မှာယူလူ (ဖုန်း/ကွန်ပျူတာ)</li>
+<li><strong>Server (Chef)</strong>: ချက်ပြုတ်ပီးလူ (Websites, Apps သိမ်းထားရာ နေရာ)</li>
+</ul>
+</li>
+</ul>
+<h2 id="၃-ai-artificial-intelligence-စကရုပနန-ဉာဏရညတုအကြောငး"><a class="header" href="#၃-ai-artificial-intelligence-စကရုပနန-ဉာဏရညတုအကြောငး">၃။ AI (Artificial Intelligence): စက်ရုပ်နန့် ဉာဏ်ရည်တုအကြောင်း</a></h2>
+<p>AI ဆိုစွာ ကွန်ပျူတာတိကို လူသားတိပိုင် တွေးခေါ်တတ်အောင် သင်ကြားပီးတဲ့ နည်းပညာ ဖြစ်ပါရေ။ ဇာပိုင် သင်ကြားပီးလဲ ဆိုစွာကို အောက်ပါပုံမှာ လေ့လာကြည့်ပါနန့်။</p>
+<p><img src="./illustration/ai_training_analogy.png" alt="AI Training Analogy" /></p>
+<h3 id="လူနန-ai-သငယူပုံ-နှိုငးယှဉချက"><a class="header" href="#လူနန-ai-သငယူပုံ-နှိုငးယှဉချက">လူနန့် AI သင်ယူပုံ နှိုင်းယှဉ်ချက်</a></h3>
+<ol>
+<li>
+<p><strong>Human Learning (လူသားများ သင်ယူခြင်း)</strong>:</p>
+<ul>
+<li>အချေတစ်ယောက်ကို မိဘက &quot;ဒါက ခွေးလေး&quot;၊ &quot;ဒါက ကြောင်လေး&quot; လို့ ရုပ်ပုံကဒ်တိ ပြပြီး သင်ပီးရပါရေ။ အချေက အကြိမ်ကြိမ် ကြည့်ပြီး မှတ်သားပါရေ။</li>
+</ul>
+</li>
+<li>
+<p><strong>Machine Learning (စက်တိကို သင်ယူခြင်း)</strong>:</p>
+<ul>
+<li><strong>Step 1 (Data Input)</strong>: ကွန်ပျူတာကို ခွီးပုံပေါင်း (၁၀၀၀)၊ ကြောင်ပုံပေါင်း (၁၀၀၀) ထည့်သွင်းပီးရပါရေ။</li>
+<li><strong>Step 2 (Training)</strong>: ကွန်ပျူတာက ယင်းပုံတိရဲ့ ကွာခြားချက် (ဥပမာ - နားရွက်ပုံစံ၊ နှာဖူးပုံစံ) ကို သူ့အလိုလို ရှာဖွေ လေ့လာပါရေ။</li>
+<li><strong>Step 3 (Prediction)</strong>: လေ့လာပြီးလားရေအခါ၊ ပုံသစ်တစ်ပုံ ပြလိုက်ကေ &quot;အေစာ ခွီးပါ&quot; လို့ တိတိကျကျ ဖြေနိုင်လာပါရေ။</li>
+</ul>
+</li>
+</ol>
+<ul>
+<li><strong>Applications</strong>: ဖုန်းထဲက Face ID (မျက်နှာကို မှတ်မိစွာ)၊ Google Translate (ဘာသာပြန်စွာ)၊ Driverless Cars (မောင်းသူမဲ့ ကားတိ)။</li>
+</ul>
+<h2 id="၄-programming-ကွနပျူတာကို-ခိုငးစီဖို-ကုဒရွီးခြငး"><a class="header" href="#၄-programming-ကွနပျူတာကို-ခိုငးစီဖို-ကုဒရွီးခြငး">၄။ Programming: ကွန်ပျူတာကို ခိုင်းစီဖို့ ကုဒ်ရွီးခြင်း</a></h2>
+<p>အထက်ပါ Hardware, Network, AI တိ အားလုံး အလုပ်လုပ်ဖို့အတွက် ညွှန်ကြားချက်တိ လိုပါရေ။ ယင်းညွှန်ကြားချက်တိကို ရွီးသားခြင်းကို Programming လို့ ခေါ်ပါရေ။</p>
+<h3 id="hardware-vs-software-နှိုငးယှဉချက"><a class="header" href="#hardware-vs-software-နှိုငးယှဉချက">Hardware vs Software (နှိုင်းယှဉ်ချက်)</a></h3>
+<div class="table-wrapper"><table><thead><tr><th style="text-align: left">Feature</th><th style="text-align: left">Hardware (ဟာ့ဒ်ဝဲလ်)</th><th style="text-align: left">Software (ဆော့ဖ်ဝဲလ်)</th></tr></thead><tbody>
+<tr><td style="text-align: left"><strong>Definition</strong></td><td style="text-align: left">ထိတွေ့ကိုင်တွယ်၍ရသော အစိတ်အပိုင်းများ</td><td style="text-align: left">ကွန်ပျူတာကို ခိုင်းစီရေညွှန်ကြားချက်တိ</td></tr>
+<tr><td style="text-align: left"><strong>Example</strong></td><td style="text-align: left">Monitor, Keyboard, CPU</td><td style="text-align: left">Windows, Browser, Games</td></tr>
+<tr><td style="text-align: left"><strong>Nature</strong></td><td style="text-align: left">ပျက်စီးယိုယွင်းနိုင်သည် (Wear out)</td><td style="text-align: left">ဟောင်းမလားပါ၊ Update လုပ်၍ရသည်</td></tr>
+<tr><td style="text-align: left"><strong>Type</strong></td><td style="text-align: left">Physical (ရုပ်ပိုင်းဆိုင်ရာ)</td><td style="text-align: left">Logical (ယုတ္တိပိုင်းဆိုင်ရာ)</td></tr>
+</tbody></table>
+</div>
+<ul>
+<li><strong>Low-level Language</strong>: စက်နန့် နီးစပ်တဲ့ ဘာသာစကား (ဥပမာ - 0s and 1s, Assembly)။ ရွီးရခက်ပါရေ။</li>
+<li><strong>High-level Language</strong>: လူနားလည်လွယ်တဲ့ ဘာသာစကား (ဥပမာ - Python, JavaScript,Java)။ ကျွန်တော်တို့ လေ့လာဖို့က ဒေ High-level languages တိ ဖြစ်ပါရေ။</li>
+</ul>
+<hr />
+<p><strong>လေ့ကျင့်ခန်း (Exercise):</strong>
+<strong>Hardware Hunt</strong> - သင့်ပတ်ဝန်းကျင် (အခန်းထဲ) ကို ကြည့်ပြီး အောက်ပါတို့ကို ရှာဖွေပါ။</p>
+<ol>
+<li><strong>Input Device</strong> ၂ ခု (ဥပမာ - Phone Touchscreen, ...)</li>
+<li><strong>Output Device</strong> ၂ ခု (ဥပမာ - Earbuds, ...)</li>
+</ol>
+<hr />
+<p><em>Computer Science ဟာ ပင်လယ်ပြင်ကြီးပိုင် ကျယ်ပါရေ။ အခုဖော်ပြခစွာကတော့ ငပလီကမ်းခြေက သဲပွင့်ချေတိလောက်ရာ ရှိပါသိရေ။</em></p>
+<h2 id="သငခနးစာ-အကျဉးချုပ"><a class="header" href="#သငခနးစာ-အကျဉးချုပ">သင်ခန်းစာ အကျဉ်းချုပ်</a></h2>
+<ul>
+<li><strong>Components</strong>: Input, Output, CPU, Storage (မှတ်ဉာဏ်)။</li>
+<li><strong>Network</strong>: LAN (ရွာ) နန့် WAN (ကမ္ဘာ)။</li>
+<li><strong>AI</strong>: ကွန်ပျူတာကို လူပိုင် သင်ယူခိုင်းခြင်း (Machine Learning)။</li>
+</ul>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../Pre-Programming/chapter_0_introduction.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="../Pre-Programming/chapter_2_logic_and_algorithms.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../Pre-Programming/chapter_0_introduction.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="../Pre-Programming/chapter_2_logic_and_algorithms.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../elasticlunr.min.js"></script>
+        <script src="../mark.min.js"></script>
+        <script src="../searcher.js"></script>
+
+        <script src="../clipboard.min.js"></script>
+        <script src="../highlight.js"></script>
+        <script src="../book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </div>
+    </body>
+</html>
