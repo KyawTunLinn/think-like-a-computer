@@ -40,10 +40,7 @@ Algorithm (အယ်လဂိုရစ်သမ်) ဆိုစွာ လုပ
 ### Flowchart (စီးဆင်းမှုပုံပြကားချပ်)
 Flowchart ဆိုစွာ လုပ်ဆောင်ပုံအဆင့်ဆင့်ကို ပုံတိ၊ မြှားတိနန့် ဆွဲပြစွာပါ။
 
-**လေ့ကျင့်ခန်း (Exercise):**
-1.  **"သွားတိုက်ခြင်း"** လုပ်ငန်းစဉ်ကို Algorithm ရွီးကြည့်ပါ။
-2.  **Flowcharting a Sandwich**: ပေါင်မုန့်မီးကင် (Toast) လုပ်စားပုံကို Flowchart ဆွဲကြည့်ပါ။
-    *   Decision ထည့်ပါ (ဥပမာ - ထောပတ်သုတ်မလား? Yes/No)။
+
 
 ![Flowchart Symbols Reference](./illustration/flowchart_symbols_reference.png)
 
@@ -80,7 +77,11 @@ END
 ---
 
 **လေ့ကျင့်ခန်း (Exercise):**
- မိုးသားဖက် လုပ်ရိုးလုပ်စဉ် (Morning Routine) ကို Algorithm တစ်ခုအနေနန့် အဆင့်ဆင့် ချရေးကြည့်ပါ။ (သွားတိုက်စွာ၊ မျက်နှာသစ်စွာ စသဖြင့် အသေးစိတ် ရွီးကြည့်ပါ)။
+1. **Morning Routine** မိုးသားဖက် လုပ်ရိုးလုပ်စဉ် (Morning Routine) ကို Algorithm တစ်ခုအနေနန့် အဆင့်ဆင့် ချရေးကြည့်ပါ။ (သွားတိုက်စွာ၊ မျက်နှာသစ်စွာ စသဖြင့် အသေးစိတ် ရွီးကြည့်ပါ)။
+
+2.  **"သွားတိုက်ခြင်း"** လုပ်ငန်းစဉ်ကို Algorithm ရွီးကြည့်ပါ။
+3.  **Flowcharting a Sandwich**: ပေါင်မုန့်မီးကင် (Toast) လုပ်စားပုံကို Flowchart ဆွဲကြည့်ပါ။
+    *   Decision ထည့်ပါ (ဥပမာ - ထောပတ်သုတ်မလား? Yes/No)။
 
 ## သင်ခန်းစာ အကျဉ်းချုပ်
 - **Computational Thinking**: ပြဿနာကို ခွဲခြမ်းစိတ်ဖြာခြင်း (Decomposition) နန့် ပုံစံတူရှာခြင်း (Pattern Recognition)။
