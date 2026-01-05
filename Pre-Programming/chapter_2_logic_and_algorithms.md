@@ -76,18 +76,18 @@ END
 
 ---
 
-**လေ့ကျင့်ခန်း (Exercise):**
-1. **Morning Routine** မိုးသားဖက် လုပ်ရိုးလုပ်စဉ် (Morning Routine) ကို Algorithm တစ်ခုအနေနန့် အဆင့်ဆင့် ချရေးကြည့်ပါ။ (သွားတိုက်စွာ၊ မျက်နှာသစ်စွာ စသဖြင့် အသေးစိတ် ရွီးကြည့်ပါ)။
-
-2.  **"သွားတိုက်ခြင်း"** လုပ်ငန်းစဉ်ကို Algorithm ရွီးကြည့်ပါ။
-3.  **Flowcharting a Sandwich**: ပေါင်မုန့်မီးကင် (Toast) လုပ်စားပုံကို Flowchart ဆွဲကြည့်ပါ။
-    *   Decision ထည့်ပါ (ဥပမာ - ထောပတ်သုတ်မလား? Yes/No)။
 
 ## သင်ခန်းစာ အကျဉ်းချုပ်
 - **Computational Thinking**: ပြဿနာကို ခွဲခြမ်းစိတ်ဖြာခြင်း (Decomposition) နန့် ပုံစံတူရှာခြင်း (Pattern Recognition)။
 - **Algorithm**: လုပ်ဆောင်ပုံ အဆင့်ဆင့် (Step-by-step instructions)။
 - **Tools**: Flowchart (ပုံ) နန့် Pseudocode (စာ)။
 
+**လေ့ကျင့်ခန်း (Exercise):**
+1. **Morning Routine** မိုးသားဖက် လုပ်ရိုးလုပ်စဉ် (Morning Routine) ကို Algorithm တစ်ခုအနေနန့် အဆင့်ဆင့် ချရေးကြည့်ပါ။ (သွားတိုက်စွာ၊ မျက်နှာသစ်စွာ စသဖြင့် အသေးစိတ် ရွီးကြည့်ပါ)။
+
+2.  **"သွားတိုက်ခြင်း"** လုပ်ငန်းစဉ်ကို Algorithm ရွီးကြည့်ပါ။
+3.  **Flowcharting a Sandwich**: ပေါင်မုန့်မီးကင် (Toast) လုပ်စားပုံကို (Flowchart ဆွဲကြည့်ပါ။
+   *   Decision ထည့်ပါ၊ ဥပမာ - ထောပတ်သုတ်မလား? Yes/No)
 
 
 
